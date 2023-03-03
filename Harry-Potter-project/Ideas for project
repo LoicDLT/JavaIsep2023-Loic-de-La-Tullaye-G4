@@ -1,0 +1,17 @@
+
+=============COMBAT================
+
+-------------MANA------------------
+
+systeme de mana pour les wizard,
+- se regenere à chaque tour si ne fait rien
+- cout unique en mana pour chaque sort
+- certaines familles regenère leur mana plus vite que d'autre
+- Potions de mana
+
+
+----------esquive-----------
+
+esquiver lors de son tour diminue la probabilité de se faire toucher par le sort ennemi (-50% of 70% chance will result in a 35% chance of hitting)
+esquiver rend des points de mana
+
