@@ -26,7 +26,7 @@ public class Testmain {
 
         Wizard Hero = Wizard.builder()
                 .level(1)
-                .firstname("Jo")
+                .firstname("Joe")
                 .lastname("Mama")
                 .maxHealthPoints(200)
                 .currenthHealthPoints(150)
@@ -38,7 +38,7 @@ public class Testmain {
                 .wand(chosenWand)
                 .house(chosenHouse)
                 .build();
-
+    //je sabote eton codde
 
 
         Hero.addPotions(Health_potion);
@@ -54,10 +54,10 @@ public class Testmain {
         Hero.getPotionsNames();
         System.out.println(Potion.proprieties(Luck_potion));
         String todisplay = "";
-        todisplay+=Hero.levelUp();
+        //todisplay+=Hero.levelUp();
         todisplay=ActionCharacter.displayPlayerInfos(Hero)+todisplay;
         ActionCharacter.displayer(todisplay);
+        YearsList.Year_1(Hero);
 
-        String firstname=Main.scanner.nextLine();
     }
 }

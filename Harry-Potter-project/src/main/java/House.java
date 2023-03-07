@@ -1,8 +1,8 @@
 import lombok.AllArgsConstructor;
 import lombok.ToString;
 
-@AllArgsConstructor
 @ToString
+@AllArgsConstructor
 enum House {
     GRYPHONDOR,
     HUFFLEPUFF,
@@ -48,5 +48,6 @@ enum House {
 
         return true;
     }
+
 
 }

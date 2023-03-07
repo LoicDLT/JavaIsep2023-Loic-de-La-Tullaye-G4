@@ -22,7 +22,7 @@ public class Wizard extends Character {
     private House house;
 
     public String levelUp(){
-        String levelannoucement ="you just gained a level !"+ConsoleColors.TOORANGE(String.valueOf(this.level))+" -> ";
+        String levelannoucement ="you just gained a level ! "+ConsoleColors.TOORANGE(String.valueOf(this.level))+" -> ";
         this.level+=1;
         return levelannoucement+=ConsoleColors.TOORANGE(String.valueOf(this.level));
     }

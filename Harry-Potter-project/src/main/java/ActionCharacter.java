@@ -1,4 +1,6 @@
 
+import lombok.ToString;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -25,16 +27,27 @@ public interface ActionCharacter {
 
     static String displayPlayerInfos(Wizard wizard) {
 
-        return String.format(ConsoleColors.WHITE_BOLD + "%s %s" + separator +
-                        ConsoleColors.ORANGE_BOLD + "Level %d" + separator +
-                        ConsoleColors.RED_BOLD_BRIGHT + "❤ %d/%d" + separator +
+        return String.format(ConsoleColors.CYAN_BOLD + "%-9s " + separator +
+                        ConsoleColors.ORANGE_BOLD + "%-8s" + separator +
+                        ConsoleColors.RED_BOLD_BRIGHT + "❤ %-9s" + separator +
                         ConsoleColors.BLUE_BOLD_BRIGHT + "\uD83C\uDF22 %d/%d \n" + ConsoleColors.RESET,
-                wizard.getFirstname(),
-                wizard.getLastname(),
-                wizard.getLevel(),
-                wizard.getCurrenthHealthPoints(),
-                wizard.getMaxHealthPoints(),
+                wizard.getFirstname() + " " + wizard.getLastname(),
+                "Level "+wizard.getLevel(),
+                wizard.getCurrenthHealthPoints()
+                +"/"+wizard.getMaxHealthPoints(),
                 wizard.getCurrentManaPoints(),
                 wizard.getMaxManaPoints());
+    }
+
+    static String displayEnemyInfos(AbstractEnemy enemy) {
+
+        return String.format("\033[38;5;160m%-10s" + separator +
+                        ConsoleColors.ORANGE_BOLD + "%-8s" + separator +
+                        ConsoleColors.RED_BOLD_BRIGHT + "❤ %-9s" + separator+ ConsoleColors.RESET,
+                enemy.getFirstname() + " "+enemy.getLastname(),
+                "Level "+enemy.getLevel(),
+                enemy.getCurrenthHealthPoints()
+                +"/"+enemy.getMaxHealthPoints());
+
     }
 }

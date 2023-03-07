@@ -15,7 +15,7 @@ public class Main {
         System.out.printf("\nwell well well little %s guy ", chosenPet.name()); //TEST FOR PET
 
         Wand chosenWand = Wand.ChooseWand();
-        System.out.printf("\nthen you choosed a %d cm wand with %s as it's core\n", chosenWand.getSize(), valueOf(chosenWand.getCore().name())); //TEST FOR WAND
+        System.out.printf("\nthen you choosed a %d cm wand with %s as it's core\n", chosenWand.getSize(), valueOf((chosenWand.getCore().name()))); //TEST FOR WAND
 
         Wizard Hero = Wizard.builder()
                 .level(1)
