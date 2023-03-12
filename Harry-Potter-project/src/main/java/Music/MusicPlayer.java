@@ -40,7 +40,7 @@ public class MusicPlayer {
             e.printStackTrace();
         }
     }
-    public void stop() {
+    public static void stop() {
         if (clip != null) {
             clip.stop();
             clip.close();

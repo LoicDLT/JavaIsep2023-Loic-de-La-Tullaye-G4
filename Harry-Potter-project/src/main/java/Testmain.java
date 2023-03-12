@@ -1,12 +1,10 @@
+import Music.MusicLibrary;
 import Music.MusicPlayer;
 import Music.SoundEffectPlayer;
 import SPELLS.AbstractSpell;
-import SPELLS.*;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Scanner;
-
 
 
 public class Testmain {
@@ -14,12 +12,9 @@ public class Testmain {
     public static ArrayList<Potion> potionsList = new ArrayList<>();
     public static String separator = ConsoleColors.PURPLE_BOLD_BRIGHT + " || " + ConsoleColors.RESET;
 
-
     public static void main(String[] args) throws InterruptedException {
-        File backgroudMusic = new File("src/main/java/Music/Wide_Putin.wav");
-        File lezgongue = new File("src/main/java/Music/Lezgongue.wav");
 
-        MusicPlayer.playloop(backgroudMusic.getAbsolutePath());
+        MusicPlayer.playloop(MusicLibrary.backgroudMusic);
         MusicPlayer.setVolume(0.05F);
         SoundEffectPlayer.setVolume(0.1F);
 
@@ -84,6 +79,7 @@ public class Testmain {
         System.out.println("\uD83D\uDCB0");
         //starting Year 1
         YearsList.Year_1(Hero);
+        String Choice = Main.scanner.nextLine();
         System.out.println("TEST SORTIE DE YEAR 1");
 
     }

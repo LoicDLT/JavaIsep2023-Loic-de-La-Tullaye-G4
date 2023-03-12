@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+import Music.MusicLibrary;
+import Music.MusicPlayer;
+import Music.SoundEffectPlayer;
 import SPELLS.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -67,6 +70,7 @@ public interface YearsList {
                 int selected = Integer.parseInt(Choice);
                 if (selected >= 1 & selected <= found.size()) {
                     Wizard.usePotion(found.get(selected - 1), Hero);
+                    SoundEffectPlayer.play(MusicLibrary.potionSlurpFortnite);
                     currentState = "\n\n\n" + found.get(selected - 1).getName() + " used successfully!";
                     potion_choosed = true;
                     System.out.println("test");
@@ -168,7 +172,7 @@ public interface YearsList {
         //building enemies
 
         enemyList.add(Enemy.Troll(listTrollAttacks));
-        enemyList.add(Enemy.Trollette(listTrollAttacks));
+        //enemyList.add(Enemy.Trollette(listTrollAttacks));
         Hero.addSpell(Spell.Wingardium_Leviosa());
 
 
@@ -216,7 +220,8 @@ public interface YearsList {
                     case "3":
                         dodge_selected = true;
                         oldAgility = Hero.getDodgingChancePercentage();
-
+                        SoundEffectPlayer.play(MusicLibrary.dodgeLoutre);
+                        SoundEffectPlayer.setVolume(0.1F);
                         attackResult = "You are not attacking this turn, you restore " + ConsoleColors.RED_BOLD_BRIGHT + "❤ 30" + ConsoleColors.RESET + " and " +
                                 ConsoleColors.BLUE_BOLD_BRIGHT + "\uD83C\uDF22 40 " + ConsoleColors.RESET + "\nYou also gain" + ConsoleColors.AGYLITYCOLOR_BOLD + " 💨 35%" + ConsoleColors.RESET + " more temporary Agility";
                         Effect.healthRegen(30, Hero);
@@ -255,6 +260,11 @@ public interface YearsList {
             Thread.sleep(5000);
             currentState = "You died <3";
             endDisplayUpdate(displayer, currentState.stripLeading(), enemyList, Hero, false);
+            MusicPlayer.stop();
+            MusicPlayer.play(MusicLibrary.deathMusicAstronomia);
+            MusicPlayer.setVolume(0.05F);
+
+
         }
         if (enemyList.isEmpty()) {
             Thread.sleep(5000);
@@ -268,4 +278,6 @@ public interface YearsList {
         }
     }
     //TODO MUSIK KAN DEGA PRI
+    //TODO FADE IN MUSIC
+    //TODO REGLER ESPACEMENT ATTAQUES ENEMIES
 }

@@ -1,4 +1,7 @@
 
+import Music.MusicLibrary;
+import Music.MusicPlayer;
+import Music.SoundEffectPlayer;
 import SPELLS.AbstractSpell;
 import SPELLS.Spell;
 import lombok.Data;
@@ -160,6 +163,7 @@ public class Wizard extends Character {
         if (!Hit) {
             script += "\n" + spellChoosed.getDidNotWork();
         } else {
+            SoundEffectPlayer.play(MusicLibrary.minecraftHit);
             boolean Crit = Probability.YesOrNo(currentLuckPoints);
             damageDealt = spellChoosed.getDamage();
             if (Crit) {
