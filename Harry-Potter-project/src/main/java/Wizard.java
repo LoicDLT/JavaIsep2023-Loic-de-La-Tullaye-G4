@@ -3,6 +3,7 @@ import SPELLS.AbstractSpell;
 import SPELLS.Spell;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
@@ -13,8 +14,11 @@ import java.util.ArrayList;
 public class Wizard extends Character {
     public static String separator = ConsoleColors.PURPLE_BOLD_BRIGHT + " || " + ConsoleColors.RESET;
     private int level;
+    private int gold;
+    private float levelUpRatio;
     private int levelPointToSPend;
     private int currentExpPoints;
+    private int maxYear;
     private ArrayList<AbstractSpell> knownSpells;
     private ArrayList<Potion> potions;
     private float maxManaPoints;
@@ -27,6 +31,8 @@ public class Wizard extends Character {
     private Wand wand;
     private House house;
 
+
+
     public String levelUp() {
         String levelannoucement = "you just gained a level ! " + ConsoleColors.TOORANGE(String.valueOf(this.level)) + " -> ";
         this.level += 1;
@@ -37,8 +43,10 @@ public class Wizard extends Character {
     //===============================================================SPELLS==================================================================
     public String getKnownSpellsNames() {
         String spellList = "";
+        int i = 1;
         for (AbstractSpell spell : knownSpells) {
-            spellList += spell.getName() + ConsoleColors.BLUE_BOLD_BRIGHT + " \uD83C\uDF22 " + Math.round(spell.getManaCost()) + ConsoleColors.RESET + "\n";
+            spellList +=i+". "+ spell.getName() + ConsoleColors.BLUE_BOLD_BRIGHT + " \uD83C\uDF22 " + Math.round(spell.getManaCost()) + ConsoleColors.RESET + "\n";
+            i+=1;
         }
 
         return "Spell List :\n" + spellList.trim();
@@ -57,8 +65,9 @@ public class Wizard extends Character {
 
 
 //===============================================================POTIONS=================================================================
-
-    public String getPotionsNames() {
+//TODO return an array with string and the found potion list
+    public ArrayList getPotionsNames() {
+        ArrayList stringAndFoundPot = new ArrayList<>();
         ArrayList<Potion> found = new ArrayList<>();
         ArrayList<Integer> occurence = new ArrayList<>();
         String potionlist = "";
@@ -73,9 +82,11 @@ public class Wizard extends Character {
 
         }
         for (int index = 0; index < found.size(); index++) {
-            potionlist += occurence.get(index) + "x " + String.format("%s%s%s\n", found.get(index).getColor(), found.get(index).getName(), ConsoleColors.RESET);
+            potionlist +=index+1+". " + occurence.get(index) + "x " + String.format("%s%s%s\n", found.get(index).getColor(), found.get(index).getName(), ConsoleColors.RESET);
         }
-        return "Potion List :\n" + potionlist.trim();
+        stringAndFoundPot.add("Potion List :\n" + potionlist.trim());
+        stringAndFoundPot.add(found);
+        return stringAndFoundPot;
     }
 
     public Potion stringToPotion(String PotionName) {
@@ -88,7 +99,7 @@ public class Wizard extends Character {
         return null;
     }
 
-    public static void usePotion(Potion potion, Wizard wizard) {
+    public static void usePotion(Potion potion, @NotNull Wizard wizard) {
         if (wizard.getPotions().contains(potion)) {
             wizard.removePotions(potion);
 
@@ -107,7 +118,9 @@ public class Wizard extends Character {
     public void addSpell(Spell spell) {
         this.knownSpells.add(spell);
     }
-
+    public void changeGold(int amount) {
+        this.gold+=amount;
+    }
     public void removePotions(Potion potion) {
         this.potions.remove(potion);
     }
@@ -118,13 +131,13 @@ public class Wizard extends Character {
 
 
     //===============================================================COMBAT=================================================================
-    public String getExpFrom(Enemy enemy) {
+    public String getRewardFrom(@NotNull Enemy enemy) {
         int amoutOfExpGiven = enemy.getAmoutOfExp();
         int levelGaigned = 0;
 
 
-        while (amoutOfExpGiven > (1 + level * 0.20) * 100) {
-            amoutOfExpGiven -= (1 + level * 0.20) * 100;
+        while (amoutOfExpGiven >= (1 + (level-1) * levelUpRatio) * 100) {
+            amoutOfExpGiven -= (1 + (level-1) * levelUpRatio) * 100;
             levelUp();
             levelPointToSPend += 1;
             levelGaigned += 1;
@@ -133,12 +146,12 @@ public class Wizard extends Character {
         currentExpPoints += amoutOfExpGiven;
 
 
-        return ("You gaigned " + ConsoleColors.TOORANGE(String.valueOf(enemy.getAmoutOfExp())) + "Exp points !" + ((levelGaigned > 0) ?
-                ConsoleColors.TOORANGE("Level " + (level - levelGaigned)) + " -> " + ConsoleColors.TOORANGE(String.valueOf(level)) : "")
-                + " " + ConsoleColors.TOORANGE(currentExpPoints + "/" + (1 + level * 0.20) * 100));
+        return ("\nYou gaigned " + ConsoleColors.TOORANGE(String.valueOf(enemy.getAmoutOfExp())) + " Exp points !" + ((levelGaigned > 0) ?
+                ConsoleColors.TOORANGE(" Level " + (level - levelGaigned)) + " -> " + ConsoleColors.TOORANGE("Level "+String.valueOf(level))+" | " : "")
+                + ConsoleColors.TOORANGE(currentExpPoints + "/" + Math.round((1 + (level-1) * levelUpRatio) * 100))+" Exp points");
     }
 
-    public String attack(Character character, AbstractSpell spellChoosed) {
+    public String attack(@NotNull Character character, @NotNull AbstractSpell spellChoosed) {
         String script = spellChoosed.getScript();
 
         float damageDealt;

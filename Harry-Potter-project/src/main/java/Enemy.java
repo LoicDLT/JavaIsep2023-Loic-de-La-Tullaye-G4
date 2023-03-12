@@ -13,8 +13,42 @@ public class Enemy extends Character {
 
     private int level;
     private ArrayList<EnemySpell> attackList;
-
     private int amoutOfExp;
+    private int amoutOfGold;
+
+    public static Enemy Troll(ArrayList listTrollAttacks){
+        Enemy Troll = (Enemy) builder()
+                .firstname("Troll")
+                .level(14)
+                .lastname("")
+                .amoutOfExp(300)
+                .maxHealthPoints(1200)
+                .attackList(listTrollAttacks)
+                .currentHealthPoints(1200)
+                .dodgingChancePercentage(20)
+                .maxDodgingChancePercentage(100)
+                .dead(false)
+                .build();
+        return Troll;
+    }
+    public static Enemy Trollette(ArrayList listTrollAttacks){
+        Enemy Trollette = (Enemy) builder()
+                .firstname("Trollette")
+                .level(12)
+                .lastname("")
+                .amoutOfExp(300)
+                .maxHealthPoints(1200)
+                .attackList(listTrollAttacks)
+                .currentHealthPoints(1200)
+                .dodgingChancePercentage(20)
+                .maxDodgingChancePercentage(100)
+                .dead(false)
+                .build();
+        return Trollette;
+    }
+
+
+
     public String attack(Wizard wizard) {
         EnemySpell spellChoosed=attackList.get(0);
         int weight = 0;

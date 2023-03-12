@@ -17,16 +17,6 @@ public abstract class Character {
     private float maxDodgingChancePercentage;
 
 
-
-
-    public boolean isDead() {
-        if (currentHealthPoints <= 0) {
-            dead=true;
-            return true;
-        }
-        return false;
-    }
-
     //===============================================================COMBAT=================================================================
 
 

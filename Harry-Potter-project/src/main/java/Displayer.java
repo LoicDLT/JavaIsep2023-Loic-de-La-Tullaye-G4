@@ -26,13 +26,12 @@ public class Displayer {
         System.out.println("=".repeat(100));
 
         System.out.println(characterInfos);
-        System.out.println("\n");
 
         //information on the actions
         System.out.println(whatHappend);
 
         //blank space
-        System.out.println("\n".repeat(12-numberOfLines(characterInfos+whatHappend+playerOptions)));
+        System.out.println("\n".repeat(17-numberOfLines(characterInfos+whatHappend+playerOptions)));
 
         //what the player needs to do
         System.out.println(playerOptions);
@@ -41,5 +40,19 @@ public class Displayer {
         System.out.println("=".repeat(100));
 
     }
+    public static void printWithTypewriterEffect(String input) {
+        if (input.length() == 0) {
+            return;
+        }
+        System.out.print(input.charAt(0));
+        try {
+            Thread.sleep(60);
+            System.out.flush();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        printWithTypewriterEffect(input.substring(1));
+    }
+
 
 }

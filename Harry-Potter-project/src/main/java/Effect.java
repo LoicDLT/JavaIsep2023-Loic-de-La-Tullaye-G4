@@ -5,9 +5,9 @@ public class Effect{
 
         if ((tempHealth + amountOfHeal) > tempMaxHealth) {
             character.setCurrentHealthPoints(tempMaxHealth);
-        } else if ((tempHealth + amountOfHeal) < 0){
+        } else if ((tempHealth + amountOfHeal) <= 0){
             character.setCurrentHealthPoints(0);
-
+            character.setDead(true);
         }
         else character.setCurrentHealthPoints(tempHealth + amountOfHeal);
     }

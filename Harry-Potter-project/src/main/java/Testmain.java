@@ -1,7 +1,9 @@
 import Music.MusicPlayer;
+import Music.SoundEffectPlayer;
 import SPELLS.AbstractSpell;
 import SPELLS.*;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,8 +14,16 @@ public class Testmain {
     public static ArrayList<Potion> potionsList = new ArrayList<>();
     public static String separator = ConsoleColors.PURPLE_BOLD_BRIGHT + " || " + ConsoleColors.RESET;
 
+
     public static void main(String[] args) throws InterruptedException {
-        MusicPlayer.playloop("D:\\Java projects\\Harry-Potter-project\\src\\main\\java\\Music\\Wide_Putin.wav");
+        File backgroudMusic = new File("src/main/java/Music/Wide_Putin.wav");
+        File lezgongue = new File("src/main/java/Music/Lezgongue.wav");
+
+        MusicPlayer.playloop(lezgongue.getAbsolutePath());
+        MusicPlayer.setVolume(0.1F);
+        SoundEffectPlayer.setVolume(0.1F);
+
+
         Potion Health_potion = Potion.health_Potion();
         Potion Mana_potion = Potion.mana_Potion();
         Potion Luck_potion = Potion.luck_Potion();
@@ -29,6 +39,7 @@ public class Testmain {
                 .level(1)
                 .firstname("Joe")
                 .lastname("Mama")
+                .levelUpRatio(0.20F)
                 .maxHealthPoints(500)
                 .currentHealthPoints(500)
                 .knownSpells(knownSpellList)
@@ -41,6 +52,7 @@ public class Testmain {
                 .maxStrengthPoints(300)
                 .dodgingChancePercentage(0)
                 .maxDodgingChancePercentage(100)
+                .gold(0)
                 .pet(chosenPet)
                 .wand(chosenWand)
                 .house(chosenHouse)
@@ -66,15 +78,13 @@ public class Testmain {
         ActionCharacter.displayPlayerInfos(Hero);
         Hero.getPotionsNames();
 
-        //getting proprieties of a certain potion
-        System.out.println(Potion.proprieties(Luck_potion));
-
-        //Hero.levelUp();
+        //getting proprieties of a certain
 
 
-
+        System.out.println("\uD83D\uDCB0");
         //starting Year 1
         YearsList.Year_1(Hero);
+        System.out.println("TEST SORTIE DE YEAR 1");
 
     }
 }

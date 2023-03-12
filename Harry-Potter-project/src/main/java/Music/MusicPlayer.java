@@ -5,7 +5,7 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineEvent;
 import javax.sound.sampled.LineListener;
-
+import javax.sound.sampled.FloatControl;
 
 public class MusicPlayer {
     private static Clip clip;
@@ -46,6 +46,13 @@ public class MusicPlayer {
             clip.close();
         }
     }
+    public static void setVolume(float volume) {
+        if (clip != null) {
+            FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+            float dB = (float) (Math.log(volume) / Math.log(10.0) * 20.0);
+            gainControl.setValue(dB);
+        }
+}
 }
 
 

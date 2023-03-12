@@ -1,36 +1,36 @@
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 
 import SPELLS.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 
 public interface YearsList {
 
 
-    static void mainDisplayUpdate(Displayer displayer, String whathappend, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
+    static void mainDisplayUpdate(@NotNull Displayer displayer, String whathappend, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
         displayer.setCharacterInfos(ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList));
         displayer.setWhatHappend(whathappend);
         displayer.setPlayerOptions("1. Attack\n2. Use potion\n3. Dodge" + ((error) ? "\nPlease select one of those 3 options" : ""));
         displayer.display();
     }
 
-    static void targetDisplayUpdate(Displayer displayer, String whathappend, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
+    static void targetDisplayUpdate(@NotNull Displayer displayer, String whathappend, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
         displayer.setCharacterInfos(ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList));
         displayer.setWhatHappend(whathappend);
         displayer.setPlayerOptions("Type the name of the Target to attack" + ((error) ? "\nPlease select a valid target" : ""));
         displayer.display();
     }
 
-    static void potionDisplayUpdate(Displayer displayer, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
+    static void potionDisplayUpdate(@NotNull Displayer displayer, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
         displayer.setCharacterInfos(ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList));
-        displayer.setWhatHappend(Hero.getPotionsNames());
+        displayer.setWhatHappend(Hero.getPotionsNames().get(0).toString());
         displayer.setPlayerOptions("Type the name of the Potion you want to use, type \"back\" if you want to go back" + ((error) ? "\nPlease select a valid potion name" : ""));
 
         displayer.display();
     }
 
-    static void spellDisplayUpdate(Displayer displayer, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
+    static void spellDisplayUpdate(@NotNull Displayer displayer, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
         displayer.setCharacterInfos(ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList));
         displayer.setWhatHappend(Hero.getKnownSpellsNames());
         displayer.setPlayerOptions("Type the name of the Spell you want to use, type \"back\" if you want to go back" + ((error) ? "\nPlease select a valid spell name" : ""));
@@ -38,10 +38,10 @@ public interface YearsList {
         displayer.display();
     }
 
-    static void runningDisplayUpdate(Displayer displayer, String whathappend, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
+    static void endDisplayUpdate(@NotNull Displayer displayer, String whathappend, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
         displayer.setCharacterInfos(ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList));
         displayer.setWhatHappend(whathappend);
-        displayer.setPlayerOptions("");
+        displayer.setPlayerOptions("1. Next Year\n2. Shop");
 
         displayer.display();
     }
@@ -50,18 +50,28 @@ public interface YearsList {
         while (!potion_choosed) {
 
             String Choice = Main.scanner.nextLine();
+            ArrayList<Potion> found = (ArrayList<Potion>) Hero.getPotionsNames().get(1);
+
             if (Choice.equals("back")) {
                 //MAIN SCREEN
                 mainDisplayUpdate(displayer, currentState, enemyList, Hero, false);
                 potion_choosed = true;
+            }
 
-            } else if (Hero.stringToPotion(Choice) != null) {
-                Wizard.usePotion(Hero.stringToPotion(Choice), Hero);
-                currentState = "Potion Utilisée !";
-                potion_choosed = true;
-                mainDisplayUpdate(displayer, currentState, enemyList, Hero, false);
-
-            } else {
+            try {
+                int selected = Integer.parseInt(Choice);
+                if (selected >= 1 & selected <= found.size()) {
+                    Wizard.usePotion(found.get(selected - 1), Hero);
+                    currentState = "\n\n\n" + found.get(selected - 1).getName() + " used successfully!";
+                    potion_choosed = true;
+                    System.out.println("test");
+                    mainDisplayUpdate(displayer, currentState, enemyList, Hero, false);
+                }
+                else{
+                    potionDisplayUpdate(displayer, enemyList, Hero, true);
+                }
+            }
+            catch (NumberFormatException e){
                 potionDisplayUpdate(displayer, enemyList, Hero, true);
             }
 
@@ -69,7 +79,7 @@ public interface YearsList {
 
     }
 
-    static ArrayList spellSwitchCase(Displayer displayer, ArrayList<Enemy> enemyList, Wizard Hero, boolean spell_choosed_state, String attackResult, String currentState, String Choice) {
+    static @NotNull ArrayList spellSwitchCase(Displayer displayer, ArrayList<Enemy> enemyList, Wizard Hero, boolean spell_choosed_state, String attackResult, String currentState, String Choice) {
         ArrayList spellReturn = new ArrayList();
         spellReturn.add(spell_choosed_state);
         spellReturn.add(attackResult);
@@ -81,21 +91,34 @@ public interface YearsList {
                 mainDisplayUpdate(displayer, currentState, enemyList, Hero, false);
                 break;
 
-            } else if (Hero.stringToSpell(Choice) != null) {
+            }
+            try{
 
-                AbstractSpell spell_choosed = Hero.stringToSpell(Choice);
+                int selectedSpellIndex = Integer.parseInt(Choice);
 
+            if (selectedSpellIndex>=0 & selectedSpellIndex<=Hero.getKnownSpells().size()) {
+
+                AbstractSpell spell_choosed = Hero.getKnownSpells().get(selectedSpellIndex-1);
 
                 targetDisplayUpdate(displayer, "", enemyList, Hero, false);
                 while (!spell_choosed_state) {
                     Choice = Main.scanner.nextLine();
-                    if (stringToEnemy(Choice, enemyList) == null) {
+                    try{
+
+                        int selectedTargetIndex = Integer.parseInt(Choice);
+
+
+                    if (selectedTargetIndex<0 | selectedTargetIndex>enemyList.size()) {
                         targetDisplayUpdate(displayer, "", enemyList, Hero, true);
                     } else {
-
+                        Enemy enemy = enemyList.get(selectedTargetIndex-1);
                         spell_choosed_state = true;
 
-                        attackResult = Hero.attack(stringToEnemy(Choice, enemyList), spell_choosed);
+                        attackResult = Hero.attack(enemy, spell_choosed);
+                        if (enemy.isDead()) {
+                            attackResult += Hero.getRewardFrom(enemy);
+                            enemyList.remove(enemy);
+                        }
                         spellReturn.clear();
                         spellReturn.add(spell_choosed_state);
                         spellReturn.add(attackResult);
@@ -103,18 +126,23 @@ public interface YearsList {
 
                     }
                 }
+                    catch (NumberFormatException e){
+                        targetDisplayUpdate(displayer, "", enemyList, Hero, true);
+                    }
+            }
 
 
             } else {
                 spellDisplayUpdate(displayer, enemyList, Hero, true);
-            }
+            }}
+            catch (NumberFormatException e){spellDisplayUpdate(displayer, enemyList, Hero, true);}
 
         }
 
         return spellReturn;
     }
 
-    static Enemy stringToEnemy(String enemyName, ArrayList<Enemy> enemyList) {
+    static @Nullable Enemy stringToEnemy(String enemyName, @NotNull ArrayList<Enemy> enemyList) {
         for (Enemy enemy : enemyList) {
             if (enemy.getFirstname().equalsIgnoreCase(enemyName)) {
                 return enemy;
@@ -123,10 +151,10 @@ public interface YearsList {
         return null;
     }
 
-    static void Year_1(Wizard Hero) {
+    static void Year_1(@NotNull Wizard Hero) throws InterruptedException {
 
         //initYear
-        boolean completed = false;
+
 
         Enemy target;
         String currentState = "Un Troll Vient d'arriver et il est pas content donc bagar";
@@ -141,20 +169,9 @@ public interface YearsList {
         ArrayList<Enemy> enemyList = new ArrayList<>();
 
         //building enemies
-        Enemy Troll = Enemy.builder()
-                .firstname("Troll")
-                .level(14)
-                .lastname("")
-                .amoutOfExp(100)
-                .maxHealthPoints(1200)
-                .attackList(listTrollAttacks)
-                .currentHealthPoints(1200)
-                .dodgingChancePercentage(20)
-                .maxDodgingChancePercentage(100)
-                .build();
-        enemyList.add(Troll);
 
-
+        enemyList.add(Enemy.Troll(listTrollAttacks));
+        enemyList.add(Enemy.Trollette(listTrollAttacks));
         Hero.addSpell(Spell.Wingardium_Leviosa());
 
 
@@ -165,7 +182,7 @@ public interface YearsList {
 
 
         displayer.display();
-        while (!completed) {
+        while (!enemyList.isEmpty() & !Hero.isDead()) {
 
             boolean potion_choosed = false;
             boolean dodgeOrSpell = false;
@@ -221,20 +238,36 @@ public interface YearsList {
 
             currentState = attackResult;
 
-
+            currentState += "\n\n";
             for (Enemy enemy : enemyList) {
-                currentState += "\n\n" + enemy.attack(Hero);
-
+                if (!enemy.isDead() & !Hero.isDead()) {
+                    currentState += enemy.attack(Hero) + "\n";
+                }
             }
-
-
-            mainDisplayUpdate(displayer, currentState, enemyList, Hero, false);
+            mainDisplayUpdate(displayer, currentState.stripLeading(), enemyList, Hero, false);
             //Choice = Main.scanner.nextLine();
 
 
             if (dodge_selected) {
                 Hero.setDodgingChancePercentage(oldAgility);
             }
+
+        }
+        Hero.setMaxYear(1);
+        if (Hero.isDead()){
+            Thread.sleep(5000);
+            currentState="You died <3";
+            endDisplayUpdate(displayer, currentState.stripLeading(), enemyList, Hero, false);
+        }
+        if (enemyList.isEmpty()){
+            Thread.sleep(5000);
+            currentState="You passed 1st year with honors !\n"
+                    +ConsoleColors.BLUE_BOLD+ "-------REWARDS-------"+ConsoleColors.RESET+"\n"
+                    +ConsoleColors.YELLOW+"100 \uD83D\uDCB0"+ConsoleColors.RESET+"\n"
+                    +ConsoleColors.ORANGE+"200 "+ConsoleColors.RESET+"Exp points";
+
+
+            endDisplayUpdate(displayer, currentState.stripLeading(), enemyList, Hero, false);
         }
     }
 }

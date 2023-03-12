@@ -14,17 +14,17 @@ public class Potion {
     private int amountOfStrength;
     private String color;
 
-    public static String proprieties(Potion potion) {
+    public String proprieties() {
         return String.format("%s :\n" +
                         ConsoleColors.RED_BOLD_BRIGHT + " ❤ %-4d" + separator +
                         ConsoleColors.BLUE_BOLD_BRIGHT + " \uD83C\uDF22 %-4d" + separator +
                         ConsoleColors.GREEN_BOLD_BRIGHT + " \uD83C\uDF40 %-4d" + separator +
                         ConsoleColors.YELLOW_BOLD_BRIGHT + " \uD83D\uDCAA %-4d\n" + ConsoleColors.RESET,
-                potion.getName(),
-                potion.getAmountOfHealthRegen(),
-                potion.getAmountOfManaRegen(),
-                potion.getAmountOfLuck(),
-                potion.getAmountOfStrength());
+                name,
+                amountOfHealthRegen,
+                amountOfManaRegen,
+                amountOfLuck,
+                amountOfStrength);
 
     }
 
