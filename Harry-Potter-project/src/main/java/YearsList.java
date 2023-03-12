@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 
 public interface YearsList {
 
-
+    //MAIN MENU
     static void mainDisplayUpdate(@NotNull Displayer displayer, String whathappend, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
         displayer.setCharacterInfos(ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList));
         displayer.setWhatHappend(whathappend);
@@ -15,6 +15,7 @@ public interface YearsList {
         displayer.display();
     }
 
+    //TARGET MENU
     static void targetDisplayUpdate(@NotNull Displayer displayer, String whathappend, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
         displayer.setCharacterInfos(ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList));
         displayer.setWhatHappend(whathappend);
@@ -22,6 +23,7 @@ public interface YearsList {
         displayer.display();
     }
 
+    //POTION CHOSING MENU
     static void potionDisplayUpdate(@NotNull Displayer displayer, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
         displayer.setCharacterInfos(ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList));
         displayer.setWhatHappend(Hero.getPotionsNames().get(0).toString());
@@ -30,6 +32,7 @@ public interface YearsList {
         displayer.display();
     }
 
+    //SPELL CHOOSING MENU
     static void spellDisplayUpdate(@NotNull Displayer displayer, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
         displayer.setCharacterInfos(ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList));
         displayer.setWhatHappend(Hero.getKnownSpellsNames());
@@ -38,6 +41,7 @@ public interface YearsList {
         displayer.display();
     }
 
+    //ENDGAME MENU
     static void endDisplayUpdate(@NotNull Displayer displayer, String whathappend, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
         displayer.setCharacterInfos(ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList));
         displayer.setWhatHappend(whathappend);
@@ -46,6 +50,7 @@ public interface YearsList {
         displayer.display();
     }
 
+    //POTION SWITCH CASE
     static void potionSwitchCase(Displayer displayer, ArrayList<Enemy> enemyList, Wizard Hero, boolean potion_choosed, String currentState) {
         while (!potion_choosed) {
 
@@ -66,12 +71,10 @@ public interface YearsList {
                     potion_choosed = true;
                     System.out.println("test");
                     mainDisplayUpdate(displayer, currentState, enemyList, Hero, false);
-                }
-                else{
+                } else {
                     potionDisplayUpdate(displayer, enemyList, Hero, true);
                 }
-            }
-            catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 potionDisplayUpdate(displayer, enemyList, Hero, true);
             }
 
@@ -79,6 +82,7 @@ public interface YearsList {
 
     }
 
+    //POTION SWITCH CASE
     static @NotNull ArrayList spellSwitchCase(Displayer displayer, ArrayList<Enemy> enemyList, Wizard Hero, boolean spell_choosed_state, String attackResult, String currentState, String Choice) {
         ArrayList spellReturn = new ArrayList();
         spellReturn.add(spell_choosed_state);
@@ -92,64 +96,57 @@ public interface YearsList {
                 break;
 
             }
-            try{
+            try {
 
                 int selectedSpellIndex = Integer.parseInt(Choice);
 
-            if (selectedSpellIndex>=0 & selectedSpellIndex<=Hero.getKnownSpells().size()) {
+                if (selectedSpellIndex >= 0 & selectedSpellIndex <= Hero.getKnownSpells().size()) {
 
-                AbstractSpell spell_choosed = Hero.getKnownSpells().get(selectedSpellIndex-1);
+                    AbstractSpell spell_choosed = Hero.getKnownSpells().get(selectedSpellIndex - 1);
 
-                targetDisplayUpdate(displayer, "", enemyList, Hero, false);
-                while (!spell_choosed_state) {
-                    Choice = Main.scanner.nextLine();
-                    try{
+                    targetDisplayUpdate(displayer, "", enemyList, Hero, false);
+                    while (!spell_choosed_state) {
+                        Choice = Main.scanner.nextLine();
+                        try {
 
-                        int selectedTargetIndex = Integer.parseInt(Choice);
+                            int selectedTargetIndex = Integer.parseInt(Choice);
 
 
-                    if (selectedTargetIndex<0 | selectedTargetIndex>enemyList.size()) {
-                        targetDisplayUpdate(displayer, "", enemyList, Hero, true);
-                    } else {
-                        Enemy enemy = enemyList.get(selectedTargetIndex-1);
-                        spell_choosed_state = true;
+                            if (selectedTargetIndex < 0 | selectedTargetIndex > enemyList.size()) {
+                                targetDisplayUpdate(displayer, "", enemyList, Hero, true);
+                            } else {
+                                Enemy enemy = enemyList.get(selectedTargetIndex - 1);
+                                spell_choosed_state = true;
 
-                        attackResult = Hero.attack(enemy, spell_choosed);
-                        if (enemy.isDead()) {
-                            attackResult += Hero.getRewardFrom(enemy);
-                            enemyList.remove(enemy);
+                                attackResult = Hero.attack(enemy, spell_choosed);
+                                if (enemy.isDead()) {
+                                    attackResult += Hero.getRewardFrom(enemy);
+                                    enemyList.remove(enemy);
+                                }
+                                spellReturn.clear();
+                                spellReturn.add(spell_choosed_state);
+                                spellReturn.add(attackResult);
+                                return spellReturn;
+
+                            }
+                        } catch (NumberFormatException e) {
+                            targetDisplayUpdate(displayer, "", enemyList, Hero, true);
                         }
-                        spellReturn.clear();
-                        spellReturn.add(spell_choosed_state);
-                        spellReturn.add(attackResult);
-                        return spellReturn;
-
                     }
+
+
+                } else {
+                    spellDisplayUpdate(displayer, enemyList, Hero, true);
                 }
-                    catch (NumberFormatException e){
-                        targetDisplayUpdate(displayer, "", enemyList, Hero, true);
-                    }
-            }
-
-
-            } else {
+            } catch (NumberFormatException e) {
                 spellDisplayUpdate(displayer, enemyList, Hero, true);
-            }}
-            catch (NumberFormatException e){spellDisplayUpdate(displayer, enemyList, Hero, true);}
+            }
 
         }
 
         return spellReturn;
     }
 
-    static @Nullable Enemy stringToEnemy(String enemyName, @NotNull ArrayList<Enemy> enemyList) {
-        for (Enemy enemy : enemyList) {
-            if (enemy.getFirstname().equalsIgnoreCase(enemyName)) {
-                return enemy;
-            }
-        }
-        return null;
-    }
 
     static void Year_1(@NotNull Wizard Hero) throws InterruptedException {
 
@@ -254,20 +251,21 @@ public interface YearsList {
 
         }
         Hero.setMaxYear(1);
-        if (Hero.isDead()){
+        if (Hero.isDead()) {
             Thread.sleep(5000);
-            currentState="You died <3";
+            currentState = "You died <3";
             endDisplayUpdate(displayer, currentState.stripLeading(), enemyList, Hero, false);
         }
-        if (enemyList.isEmpty()){
+        if (enemyList.isEmpty()) {
             Thread.sleep(5000);
-            currentState="You passed 1st year with honors !\n"
-                    +ConsoleColors.BLUE_BOLD+ "-------REWARDS-------"+ConsoleColors.RESET+"\n"
-                    +ConsoleColors.YELLOW+"100 \uD83D\uDCB0"+ConsoleColors.RESET+"\n"
-                    +ConsoleColors.ORANGE+"200 "+ConsoleColors.RESET+"Exp points";
+            currentState = "You passed 1st year with honors !\n"
+                    + ConsoleColors.BLUE_BOLD + "-------REWARDS-------" + ConsoleColors.RESET + "\n"
+                    + ConsoleColors.YELLOW + "100 \uD83D\uDCB0" + ConsoleColors.RESET + "\n"
+                    + ConsoleColors.ORANGE + "200 " + ConsoleColors.RESET + "Exp points";
 
 
             endDisplayUpdate(displayer, currentState.stripLeading(), enemyList, Hero, false);
         }
     }
+    //TODO MUSIK KAN DEGA PRI
 }

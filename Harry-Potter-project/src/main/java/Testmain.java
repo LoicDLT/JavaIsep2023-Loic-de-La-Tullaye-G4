@@ -19,8 +19,8 @@ public class Testmain {
         File backgroudMusic = new File("src/main/java/Music/Wide_Putin.wav");
         File lezgongue = new File("src/main/java/Music/Lezgongue.wav");
 
-        MusicPlayer.playloop(lezgongue.getAbsolutePath());
-        MusicPlayer.setVolume(0.1F);
+        MusicPlayer.playloop(backgroudMusic.getAbsolutePath());
+        MusicPlayer.setVolume(0.05F);
         SoundEffectPlayer.setVolume(0.1F);
 
 
