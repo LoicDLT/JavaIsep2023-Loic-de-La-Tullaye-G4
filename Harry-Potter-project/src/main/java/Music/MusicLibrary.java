@@ -9,4 +9,5 @@ public class MusicLibrary {
     public static String minecraftHit = new File("src/main/java/Music/minecraftDamage.wav").getAbsolutePath();
     public static String dodgeLoutre = new File("src/main/java/Music/EsquiveLoutre.wav").getAbsolutePath();
     public static String potionSlurpFortnite = new File("src/main/java/Music/PotionSlurpFortnite.wav").getAbsolutePath();
+    public static String wingardiumLeviosa = new File("src/main/java/Music/Wingardium_Leviosa.wav").getAbsolutePath();
 }

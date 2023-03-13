@@ -13,7 +13,7 @@ public class EnemySpell extends AbstractSpell{
                         .name("Troll Throw")
                         .chanceOfSuccess(100)
                         .script("The Troll throws at you some rubble he found on the ground")
-                        .damage(50)
+                        .damage(500)
                         .spellWeight(70)
                         .didNotWork("Thanks to your skills (or the lack of his) you dodge his attack !")
                         .build();

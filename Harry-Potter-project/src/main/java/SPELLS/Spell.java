@@ -1,5 +1,6 @@
 package SPELLS;
 
+import Music.MusicLibrary;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -18,6 +19,7 @@ public class Spell extends AbstractSpell{
                         .script("You make objects fly above your enemy before releasing them all on him")
                         .damage(50)
                         .didNotWork("Unfortunatly it missed")
+                        .soundEffect(MusicLibrary.wingardiumLeviosa)
                         .build();
         return Wingardium_Leviosa;
     }

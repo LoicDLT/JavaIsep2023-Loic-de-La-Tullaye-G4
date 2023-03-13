@@ -14,5 +14,6 @@ public abstract class AbstractSpell {
     private float chanceOfSuccess;
     private int damage;
     private String didNotWork;
+    private String soundEffect;
 
 }

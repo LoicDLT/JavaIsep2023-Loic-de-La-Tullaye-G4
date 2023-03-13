@@ -68,7 +68,7 @@ public class Wizard extends Character {
 
 
 //===============================================================POTIONS=================================================================
-//TODO return an array with string and the found potion list
+
     public ArrayList getPotionsNames() {
         ArrayList stringAndFoundPot = new ArrayList<>();
         ArrayList<Potion> found = new ArrayList<>();
@@ -163,7 +163,10 @@ public class Wizard extends Character {
         if (!Hit) {
             script += "\n" + spellChoosed.getDidNotWork();
         } else {
-            SoundEffectPlayer.play(MusicLibrary.minecraftHit);
+            if (Testmain.musicEnabled) {
+                SoundEffectPlayer.play(MusicLibrary.minecraftHit);
+                SoundEffectPlayer.play(MusicLibrary.minecraftHit);
+            }
             boolean Crit = Probability.YesOrNo(currentLuckPoints);
             damageDealt = spellChoosed.getDamage();
             if (Crit) {

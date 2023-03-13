@@ -5,17 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="569d6665-a5cd-4b28-90d9-602f4760a4f0" name="Changes" comment="attacks model changed to index">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Music/EsquiveLoutre.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Music/MusicLibrary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Music/PotionSlurpFortnite.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Music/minecraftDamage.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ideas for project" beforeDir="false" afterPath="$PROJECT_DIR$/Ideas for project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Music/Wingardium_Leviosa.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Music/MusicLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Music/MusicLibrary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Music/MusicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Music/MusicPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SPELLS/AbstractSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SPELLS/AbstractSpell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SPELLS/EnemySpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SPELLS/EnemySpell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SPELLS/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SPELLS/Spell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Testmain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testmain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Wizard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/YearsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YearsList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Music/MusicLibrary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Music/MusicLibrary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SPELLS/AbstractSpell$AbstractSpellBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SPELLS/AbstractSpell$AbstractSpellBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SPELLS/AbstractSpell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SPELLS/AbstractSpell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SPELLS/Spell$SpellBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SPELLS/Spell$SpellBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SPELLS/Spell$SpellBuilderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SPELLS/Spell$SpellBuilderImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SPELLS/Spell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SPELLS/Spell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Testmain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Testmain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Wizard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Wizard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/YearsList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YearsList.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,22 +64,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/142lo/OneDrive/Bureau/JAVA-ISEP-GITLINKED/JavaIsep2023-Loic-de-La-Tullaye-G4/Harry-Potter-project/src/main/java/Music",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/142lo/OneDrive/Bureau/JAVA-ISEP-GITLINKED/JavaIsep2023-Loic-de-La-Tullaye-G4/Harry-Potter-project/src/main/java/Music&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\142lo\OneDrive\Bureau\JAVA-ISEP-GITLINKED\JavaIsep2023-Loic-de-La-Tullaye-G4\Harry-Potter-project\src\main\java\Music" />
@@ -104,6 +112,10 @@
       <workItem from="1678619871309" duration="14814000" />
       <workItem from="1678660674303" duration="535000" />
       <workItem from="1678661223965" duration="1941000" />
+      <workItem from="1678664588552" duration="100000" />
+      <workItem from="1678664702433" duration="137000" />
+      <workItem from="1678665602655" duration="229000" />
+      <workItem from="1678703704311" duration="5298000" />
     </task>
     <task id="LOCAL-00001" summary="attacks model changed to index">
       <created>1678581923519</created>
@@ -119,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678627411024</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="attacks model changed to index">
+      <created>1678664671619</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678664671619</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

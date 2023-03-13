@@ -8,15 +8,40 @@ import java.util.ArrayList;
 
 
 public class Testmain {
+    public static boolean musicEnabled = true;
     public static ArrayList<AbstractSpell> knownSpellList = new ArrayList<>();
     public static ArrayList<Potion> potionsList = new ArrayList<>();
     public static String separator = ConsoleColors.PURPLE_BOLD_BRIGHT + " || " + ConsoleColors.RESET;
-
+    public static float musicVolume = 0.01F;
     public static void main(String[] args) throws InterruptedException {
 
-        MusicPlayer.playloop(MusicLibrary.backgroudMusic);
-        MusicPlayer.setVolume(0.05F);
-        SoundEffectPlayer.setVolume(0.1F);
+        boolean repeat=true;
+        while(repeat) {
+            System.out.println("1. With Music\n2. Without Music\n3. Meme Version");
+            String Choice = Main.scanner.nextLine();
+        switch (Choice){
+            case "1":
+                musicEnabled = true;
+                repeat = false;
+                break;
+            case "2":
+                musicEnabled = false;
+                repeat = false;
+                break;
+            case "3":
+                //TODO MEME VERSION
+            default:
+                System.out.println("please choose a valid option");
+                repeat = true;
+
+        }
+        }
+
+
+if (musicEnabled) {
+    MusicPlayer.playloop(MusicLibrary.backgroudMusic);
+    MusicPlayer.setVolume(musicVolume);
+}
 
 
         Potion Health_potion = Potion.health_Potion();
