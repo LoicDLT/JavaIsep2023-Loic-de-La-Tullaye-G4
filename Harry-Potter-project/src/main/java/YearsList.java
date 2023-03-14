@@ -11,47 +11,6 @@ import org.jetbrains.annotations.Nullable;
 public interface YearsList {
 
     //MAIN MENU
-    static void mainDisplayUpdate(@NotNull Displayer displayer, String whathappend, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
-        displayer.setCharacterInfos(ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList));
-        displayer.setWhatHappend(whathappend);
-        displayer.setPlayerOptions("1. Attack\n2. Use potion\n3. Dodge" + ((error) ? "\nPlease select one of those 3 options" : ""));
-        displayer.display();
-    }
-
-    //TARGET MENU
-    static void targetDisplayUpdate(@NotNull Displayer displayer, String whathappend, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
-        displayer.setCharacterInfos(ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList));
-        displayer.setWhatHappend(whathappend);
-        displayer.setPlayerOptions("Type the name of the Target to attack" + ((error) ? "\nPlease select a valid target" : ""));
-        displayer.display();
-    }
-
-    //POTION CHOSING MENU
-    static void potionDisplayUpdate(@NotNull Displayer displayer, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
-        displayer.setCharacterInfos(ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList));
-        displayer.setWhatHappend(Hero.getPotionsNames().get(0).toString());
-        displayer.setPlayerOptions("Type the name of the Potion you want to use, type \"back\" if you want to go back" + ((error) ? "\nPlease select a valid potion name" : ""));
-
-        displayer.display();
-    }
-
-    //SPELL CHOOSING MENU
-    static void spellDisplayUpdate(@NotNull Displayer displayer, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
-        displayer.setCharacterInfos(ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList));
-        displayer.setWhatHappend(Hero.getKnownSpellsNames());
-        displayer.setPlayerOptions("Type the name of the Spell you want to use, type \"back\" if you want to go back" + ((error) ? "\nPlease select a valid spell name" : ""));
-
-        displayer.display();
-    }
-
-    //ENDGAME MENU
-    static void endDisplayUpdate(@NotNull Displayer displayer, String whathappend, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
-        displayer.setCharacterInfos(ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList));
-        displayer.setWhatHappend(whathappend);
-        displayer.setPlayerOptions("1. Next Year\n2. Shop");
-
-        displayer.display();
-    }
 
     //POTION SWITCH CASE
     static void potionSwitchCase(Displayer displayer, ArrayList<Enemy> enemyList, Wizard Hero, boolean potion_choosed, String currentState) {
@@ -62,7 +21,7 @@ public interface YearsList {
 
             if (Choice.equals("back")) {
                 //MAIN SCREEN
-                mainDisplayUpdate(displayer, currentState, enemyList, Hero, false);
+                Displayer.mainDisplayUpdate(displayer, currentState, enemyList, Hero, false);
                 potion_choosed = true;
             }
 
@@ -72,23 +31,24 @@ public interface YearsList {
                     Wizard.usePotion(found.get(selected - 1), Hero);
                     if (Testmain.musicEnabled) {
                         SoundEffectPlayer.play(MusicLibrary.potionSlurpFortnite);
+                        SoundEffectPlayer.setVolume(0.1F);
                     }
                     currentState = "\n\n\n" + found.get(selected - 1).getName() + " used successfully!";
                     potion_choosed = true;
                     System.out.println("test");
-                    mainDisplayUpdate(displayer, currentState, enemyList, Hero, false);
+                    Displayer.mainDisplayUpdate(displayer, currentState, enemyList, Hero, false);
                 } else {
-                    potionDisplayUpdate(displayer, enemyList, Hero, true);
+                    Displayer.potionDisplayUpdate(displayer, enemyList, Hero, true);
                 }
             } catch (NumberFormatException e) {
-                potionDisplayUpdate(displayer, enemyList, Hero, true);
+                Displayer.potionDisplayUpdate(displayer, enemyList, Hero, true);
             }
 
         }
 
     }
 
-    //POTION SWITCH CASE
+    //SPELL SWITCH CASE
     static @NotNull ArrayList spellSwitchCase(Displayer displayer, ArrayList<Enemy> enemyList, Wizard Hero, boolean spell_choosed_state, String attackResult, String currentState, String Choice) {
         ArrayList spellReturn = new ArrayList();
         spellReturn.add(spell_choosed_state);
@@ -98,7 +58,7 @@ public interface YearsList {
             Choice = Main.scanner.nextLine();
             if (Choice.equals("back")) {
                 //BACK TO MAIN SCREEN
-                mainDisplayUpdate(displayer, currentState, enemyList, Hero, false);
+                Displayer.mainDisplayUpdate(displayer, currentState, enemyList, Hero, false);
                 break;
 
             }
@@ -113,7 +73,7 @@ public interface YearsList {
                         SoundEffectPlayer.play(spell_choosed.getSoundEffect());
                         SoundEffectPlayer.setVolume(0.2F);
                     }
-                    targetDisplayUpdate(displayer, "", enemyList, Hero, false);
+                    Displayer.targetDisplayUpdate(displayer, "", enemyList, Hero, false);
                     while (!spell_choosed_state) {
                         Choice = Main.scanner.nextLine();
                         try {
@@ -122,7 +82,7 @@ public interface YearsList {
 
 
                             if (selectedTargetIndex < 0 | selectedTargetIndex > enemyList.size()) {
-                                targetDisplayUpdate(displayer, "", enemyList, Hero, true);
+                                Displayer.targetDisplayUpdate(displayer, "", enemyList, Hero, true);
                             } else {
                                 Enemy enemy = enemyList.get(selectedTargetIndex - 1);
                                 spell_choosed_state = true;
@@ -139,16 +99,16 @@ public interface YearsList {
 
                             }
                         } catch (NumberFormatException e) {
-                            targetDisplayUpdate(displayer, "", enemyList, Hero, true);
+                            Displayer.targetDisplayUpdate(displayer, "", enemyList, Hero, true);
                         }
                     }
 
 
                 } else {
-                    spellDisplayUpdate(displayer, enemyList, Hero, true);
+                    Displayer.spellDisplayUpdate(displayer, enemyList, Hero, true);
                 }
             } catch (NumberFormatException e) {
-                spellDisplayUpdate(displayer, enemyList, Hero, true);
+                Displayer.spellDisplayUpdate(displayer, enemyList, Hero, true);
             }
 
         }
@@ -156,6 +116,7 @@ public interface YearsList {
         return spellReturn;
     }
 
+//=========================================================================YEARLIST=============================================================
 
     static void Year_1(@NotNull Wizard Hero) throws InterruptedException {
 
@@ -206,7 +167,7 @@ public interface YearsList {
 //==========================SPELL========================
                     case "1":
                         //SPELL SCREEN
-                        spellDisplayUpdate(displayer, enemyList, Hero, false);
+                        Displayer.spellDisplayUpdate(displayer, enemyList, Hero, false);
 
                         ArrayList spellResult = spellSwitchCase(displayer, enemyList, Hero, spell_choosed_state, attackResult, currentState, Choice);
                         spell_choosed_state = (boolean) spellResult.get(0);
@@ -216,7 +177,7 @@ public interface YearsList {
 //==========================POTION========================
                     case "2":
                         //POTION SCREEN
-                        potionDisplayUpdate(displayer, enemyList, Hero, false);
+                        Displayer.potionDisplayUpdate(displayer, enemyList, Hero, false);
                         potionSwitchCase(displayer, enemyList, Hero, potion_choosed, currentState);
                         break;
 
@@ -239,7 +200,7 @@ public interface YearsList {
 
 
                     default:
-                        mainDisplayUpdate(displayer, currentState, enemyList, Hero, true);
+                        Displayer.mainDisplayUpdate(displayer, currentState, enemyList, Hero, true);
                         break;
                 }
 
@@ -253,7 +214,7 @@ public interface YearsList {
                     currentState += enemy.attack(Hero) + "\n";
                 }
             }
-            mainDisplayUpdate(displayer, currentState.stripLeading(), enemyList, Hero, false);
+            Displayer.mainDisplayUpdate(displayer, currentState.stripLeading(), enemyList, Hero, false);
             //Choice = Main.scanner.nextLine();
 
 
@@ -266,7 +227,7 @@ public interface YearsList {
         if (Hero.isDead()) {
             Thread.sleep(5000);
             currentState = "You died <3";
-            endDisplayUpdate(displayer, currentState.stripLeading(), enemyList, Hero, false);
+            Displayer.endDisplayUpdate(displayer, currentState.stripLeading(), enemyList, Hero, false);
             if (Testmain.musicEnabled) {
                 MusicPlayer.stopMusic();
                 MusicPlayer.play(MusicLibrary.deathMusicAstronomia);
@@ -283,10 +244,81 @@ public interface YearsList {
                     + ConsoleColors.ORANGE + "200 " + ConsoleColors.RESET + "Exp points";
 
 
-            endDisplayUpdate(displayer, currentState.stripLeading(), enemyList, Hero, false);
+            Displayer.endDisplayUpdate(displayer, currentState.stripLeading(), enemyList, Hero, false);
         }
     }
-    //TODO MUSIK KAN DEGA PRI
-    //TODO FADE IN MUSIC
-    //TODO REGLER ESPACEMENT ATTAQUES ENEMIES
+
+    static void ShopTime(@NotNull Wizard Hero, @NotNull Shop shop) {
+        Displayer displayershop = new Displayer(
+                ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41),
+                shop.displayShop(),
+                "type the number of the item you want to buy  \ntype \"next\" to go to the next year");
+        displayershop.display();
+        String Choice = "";
+        while (!Choice.equals("next")) {
+            Choice = Main.scanner.nextLine();
+            try {
+                int choice = Integer.parseInt(Choice);
+
+                if (choice > 0 & choice <= (shop.getAvaliablePotionMap().size()+shop.getAvaliableEquipementMap().size())) {
+                    if (choice <= shop.getAvaliablePotionMap().size()) {
+                        if (Hero.getGold() >= shop.getAvaliablePotionMap().values().toArray(new Integer[0])[choice - 1]) {
+                            //ADDING POTION TO INVENTORY
+                            Hero.addPotions(shop.getAvaliablePotionMap().keySet().toArray(new Potion[0])[choice - 1]);
+                            //REMOVING GOLD
+                            Hero.changeGold(-shop.getAvaliablePotionMap().values().toArray(new Integer[0])[choice - 1]);
+
+                            String currentState = "\nYou bought " + shop.getAvaliablePotionMap()
+                                    .keySet()
+                                    .toArray(new Potion[0])[choice - 1]
+                                    .getName() + " for " + shop
+                                    .getAvaliablePotionMap()
+                                    .values()
+                                    .toArray(new Integer[0])[choice - 1] + " gold";
+                            Displayer.shopDisplayUpdate(displayershop, currentState, shop, Hero, false);
+                        } else {
+                            String currentState = "\nYou don't have enough gold";
+                            Displayer.shopDisplayUpdate(displayershop, currentState, shop, Hero, false);
+                        }
+
+                    } else {
+                        if  (Hero.getGold() >= shop.getAvaliableEquipementMap().values().toArray(new Integer[0])[choice - 1 - shop.getAvaliablePotionMap().size()]) {
+                            Hero.addEquipement(shop.getAvaliableEquipementMap()
+                                    .keySet()
+                                    .toArray(new Equipement[0])[choice - 1 - shop.getAvaliablePotionMap().size()]);
+                            Hero.changeGold(-shop.getAvaliableEquipementMap().values().toArray(new Integer[0])[choice - 1 - shop.getAvaliablePotionMap().size()]);
+                            String currentState = "\nYou bought " + shop.getAvaliableEquipementMap()
+                                    .keySet()
+                                    .toArray(new Equipement[0])[choice - 1 - shop.getAvaliablePotionMap().size()].getName() + " for " + shop.getAvaliableEquipementMap()
+                                    .values()
+                                    .toArray(new Integer[0])[choice - 1 - shop.getAvaliablePotionMap().size()] + " gold";
+                            Displayer.shopDisplayUpdate(displayershop, currentState, shop, Hero, false);
+                        } else {
+                            String currentState = "\nYou don't have enough gold";
+                            Displayer.shopDisplayUpdate(displayershop, currentState, shop, Hero, false);
+                        }
+
+                    }
+                }
+                else {
+                    String currentState = "\nPlease enter a valid number";
+                    Displayer.shopDisplayUpdate(displayershop, currentState, shop, Hero, false);
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a number");
+            }
+
+        }
+        System.out.println("test sortie");
+
+    }
+
+
 }
+
+
+//TODO MUSIK KAN DEGA PRI
+//TODO FADE IN MUSIC
+//TODO FADE OUT MUSIC
+//TODO REGLER ESPACEMENT ATTAQUES ENEMIES
+

@@ -1,9 +1,8 @@
 import Music.MusicLibrary;
 import Music.MusicPlayer;
-import Music.SoundEffectPlayer;
 import SPELLS.AbstractSpell;
+import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.util.ArrayList;
 
 
@@ -11,8 +10,9 @@ public class Testmain {
     public static boolean musicEnabled = true;
     public static ArrayList<AbstractSpell> knownSpellList = new ArrayList<>();
     public static ArrayList<Potion> potionsList = new ArrayList<>();
+    public static ArrayList<Equipement> equipements = new ArrayList<>();
     public static String separator = ConsoleColors.PURPLE_BOLD_BRIGHT + " || " + ConsoleColors.RESET;
-    public static float musicVolume = 0.01F;
+    public static float musicVolume = 0.03F;
     public static void main(String[] args) throws InterruptedException {
 
         boolean repeat=true;
@@ -39,8 +39,8 @@ public class Testmain {
 
 
 if (musicEnabled) {
-    MusicPlayer.playloop(MusicLibrary.backgroudMusic);
-    MusicPlayer.setVolume(musicVolume);
+    MusicPlayer.playloop(MusicLibrary.lezgongue);
+    MusicPlayer.setVolume(0.1F);
 }
 
 
@@ -64,6 +64,7 @@ if (musicEnabled) {
                 .currentHealthPoints(500)
                 .knownSpells(knownSpellList)
                 .potions(potionsList)
+                .equipements(equipements)
                 .maxManaPoints(600)
                 .currentManaPoints(300)
                 .currentLuckPoints(100)
@@ -72,7 +73,7 @@ if (musicEnabled) {
                 .maxStrengthPoints(300)
                 .dodgingChancePercentage(0)
                 .maxDodgingChancePercentage(100)
-                .gold(0)
+                .gold(300)
                 .pet(chosenPet)
                 .wand(chosenWand)
                 .house(chosenHouse)
@@ -103,8 +104,11 @@ if (musicEnabled) {
 
         System.out.println("\uD83D\uDCB0");
         //starting Year 1
+        YearsList.ShopTime(Hero,Shop.year1Shop());
         YearsList.Year_1(Hero);
+
         String Choice = Main.scanner.nextLine();
+
         System.out.println("TEST SORTIE DE YEAR 1");
 
     }

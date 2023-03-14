@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 public class Wizard extends Character {
     public static String separator = ConsoleColors.PURPLE_BOLD_BRIGHT + " || " + ConsoleColors.RESET;
+
     private int level;
     private int gold;
     private float levelUpRatio;
@@ -24,6 +25,7 @@ public class Wizard extends Character {
     private int maxYear;
     private ArrayList<AbstractSpell> knownSpells;
     private ArrayList<Potion> potions;
+    private ArrayList<Equipement> equipements;
     private float maxManaPoints;
     private float currentManaPoints;
     private float maxLuckPoints;
@@ -36,26 +38,33 @@ public class Wizard extends Character {
 
 
 
-    public String levelUp() {
-        String levelannoucement = "you just gained a level ! " + ConsoleColors.TOORANGE(String.valueOf(this.level)) + " -> ";
-        this.level += 1;
-        return levelannoucement += ConsoleColors.TOORANGE(String.valueOf(this.level));
-    }
+    //=============================================================EQUIPEMENT==================================================================
+    public String getEquipement(){
+        String equipementList = "";
+        int i = 1;
+        for (Equipement equipement : equipements) {
+            equipementList +="("+i+") "+ equipement.getName() + ConsoleColors.RESET + "\n";
+            i+=1;
+        }
 
+        return "Equipement List :\n" + equipementList.trim();
+    }
+    public void addEquipement(Equipement equipement){
+        this.equipements.add(equipement);
+    }
 
     //===============================================================SPELLS==================================================================
     public String getKnownSpellsNames() {
         String spellList = "";
         int i = 1;
         for (AbstractSpell spell : knownSpells) {
-            spellList +=i+". "+ spell.getName() + ConsoleColors.BLUE_BOLD_BRIGHT + " \uD83C\uDF22 " + Math.round(spell.getManaCost()) + ConsoleColors.RESET + "\n";
+            spellList +="("+i+") "+ spell.getName() + ConsoleColors.BLUE_BOLD_BRIGHT + " \uD83C\uDF22 " + Math.round(spell.getManaCost()) + ConsoleColors.RESET + "\n";
             i+=1;
         }
 
         return "Spell List :\n" + spellList.trim();
 
     }
-
     public AbstractSpell stringToSpell(String spellName) {
 
         for (AbstractSpell spell : knownSpells) {
@@ -65,7 +74,9 @@ public class Wizard extends Character {
         }
         return null;
     }
-
+    public void addSpell(Spell spell) {
+        this.knownSpells.add(spell);
+    }
 
 //===============================================================POTIONS=================================================================
 
@@ -85,7 +96,7 @@ public class Wizard extends Character {
 
         }
         for (int index = 0; index < found.size(); index++) {
-            potionlist +=index+1+". " + occurence.get(index) + "x " + String.format("%s%s%s\n", found.get(index).getColor(), found.get(index).getName(), ConsoleColors.RESET);
+            potionlist +="("+(index+1)+") " + occurence.get(index) + "x " + String.format("%s%s%s\n", found.get(index).getColor(), found.get(index).getName(), ConsoleColors.RESET);
         }
         stringAndFoundPot.add("Potion List :\n" + potionlist.trim());
         stringAndFoundPot.add(found);
@@ -118,12 +129,8 @@ public class Wizard extends Character {
         this.potions.add(potion);
     }
 
-    public void addSpell(Spell spell) {
-        this.knownSpells.add(spell);
-    }
-    public void changeGold(int amount) {
-        this.gold+=amount;
-    }
+
+
     public void removePotions(Potion potion) {
         this.potions.remove(potion);
     }
@@ -194,7 +201,12 @@ public class Wizard extends Character {
         return script;
     }
 
-
-    public void defend() {
+    public String levelUp() {
+        String levelannoucement = "you just gained a level ! " + ConsoleColors.TOORANGE(String.valueOf(this.level)) + " -> ";
+        this.level += 1;
+        return levelannoucement += ConsoleColors.TOORANGE(String.valueOf(this.level));
+    }
+    public void changeGold(int amount) {
+        this.gold+=amount;
     }
 }

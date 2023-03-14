@@ -58,7 +58,16 @@ public class MusicPlayer{
             float dB = (float) (Math.log(volume) / Math.log(10.0) * 20.0);
             gainControl.setValue(dB);
         }
-    }}
+    }
+    public static void raiseVolume(float volume) {
+        if (clip != null) {
+            FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+            float dB = (float) (Math.log(volume) / Math.log(10.0) * 20.0);
+            gainControl.setValue(dB);
+        }
+    }
+
+}
 
 
 
