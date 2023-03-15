@@ -5,18 +5,18 @@ import Music.SoundEffectPlayer;
 import SPELLS.AbstractSpell;
 import SPELLS.Spell;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @SuperBuilder
-
 public class Wizard extends Character {
     public static String separator = ConsoleColors.PURPLE_BOLD_BRIGHT + " || " + ConsoleColors.RESET;
-
     private int level;
     private int gold;
     private float levelUpRatio;
@@ -200,7 +200,6 @@ public class Wizard extends Character {
         }
         return script;
     }
-
     public String levelUp() {
         String levelannoucement = "you just gained a level ! " + ConsoleColors.TOORANGE(String.valueOf(this.level)) + " -> ";
         this.level += 1;

@@ -5,7 +5,6 @@ import lombok.experimental.SuperBuilder;
 
 
 @Data
-@AllArgsConstructor
 @SuperBuilder(toBuilder = true)
 public abstract class Character {
     private boolean dead;
@@ -15,10 +14,4 @@ public abstract class Character {
     private float currentHealthPoints;
     private float dodgingChancePercentage;
     private float maxDodgingChancePercentage;
-
-
-    //===============================================================COMBAT=================================================================
-
-
-
 }

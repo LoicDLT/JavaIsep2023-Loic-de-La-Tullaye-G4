@@ -33,6 +33,8 @@ public class Main {
                 .build();
 
         ActionCharacter.displayPlayerInfos(Hero);
+
+
     }
 }
 

@@ -78,7 +78,7 @@ public class Enemy extends Character {
 
             boolean Hit = Probability.YesOrNo((spellChoosed.getChanceOfSuccess() * (100 - wizard.getDodgingChancePercentage())) / 100);
             if (!Hit) {
-                script += "\n" + spellChoosed.getDidNotWork();
+                script += spellChoosed.getDidNotWork();
             } else {
 
                 damageDealt = spellChoosed.getDamage();
@@ -100,11 +100,11 @@ public class Enemy extends Character {
                         Math.round(wizard.getCurrentHealthPoints()) + "/" + Math.round(wizard.getMaxHealthPoints()) +
                         ConsoleColors.RESET + " (" + ConsoleColors.RED_BOLD_BRIGHT + " ❤ -" + Math.round(damageDealt) + ConsoleColors.RESET + " )";
                 if (wizard.isDead()) {
-                    script += "\n\n" + wizard.getFirstname() + " is defeated !";
+                    script += "    " + wizard.getFirstname() + " is defeated !";
 
                 }
             }
-            return script;
+            return script+"\n";
 
 
     }

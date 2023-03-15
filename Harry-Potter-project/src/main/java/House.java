@@ -4,10 +4,13 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 enum House {
-    GRYPHONDOR,
-    HUFFLEPUFF,
-    RAVENCLAW,
-    SLYTHERIN;
+    GRYPHONDOR(1),
+    HUFFLEPUFF(1.20F),
+    RAVENCLAW(1),
+    SLYTHERIN(1);
+
+    private float PotionBuff;
+
 
     public static House ChooseHouse() {
         System.out.println("HELLO THERE !\nPLEASE CHOOSE A HOUSE BETWEEN THOSE ONES :\n" +

@@ -10,8 +10,8 @@ public class Playgame {
             if (shopOrNot) {
                 YearsList.ShopTime(Hero, Shop.year1Shop());
             }
-            else {
-                //YearsList.Year_2(Hero);
+            else{
+                YearsList.Year_2(Hero);
             }
 
 

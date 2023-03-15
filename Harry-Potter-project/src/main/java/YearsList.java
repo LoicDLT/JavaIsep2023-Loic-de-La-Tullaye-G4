@@ -116,7 +116,7 @@ public interface YearsList {
         return spellReturn;
     }
 
-//=========================================================================YEARLIST=============================================================
+//=========================================================================YEARLIST===================================================================================
 
     static boolean Year_1(@NotNull Wizard Hero) throws InterruptedException {
 
@@ -138,7 +138,7 @@ public interface YearsList {
         //building enemies
 
         enemyList.add(Enemy.Troll(listTrollAttacks));
-        //enemyList.add(Enemy.Trollette(listTrollAttacks));
+        enemyList.add(Enemy.Trollette(listTrollAttacks));
         Hero.addSpell(Spell.Wingardium_Leviosa());
 
 
@@ -262,6 +262,70 @@ public interface YearsList {
     }
 
 
+    static void Year_2(Wizard Hero) {
+        //initYear
+
+
+        Enemy target;
+        String currentState = "Un Troll Vient d'arriver et il est pas content donc bagar";
+        AbstractSpell spell_choosed;
+
+
+        ArrayList<EnemySpell> listTrollAttacks = new ArrayList<EnemySpell>();
+        listTrollAttacks.add(EnemySpell.Troll_Hit());
+        listTrollAttacks.add(EnemySpell.Troll_Throw());
+
+
+        ArrayList<Enemy> enemyList = new ArrayList<>();
+
+        //building enemies
+
+        enemyList.add(Enemy.Troll(listTrollAttacks));
+        enemyList.add(Enemy.Trollette(listTrollAttacks));
+        Hero.addSpell(Spell.Wingardium_Leviosa());
+
+
+        Displayer displayer = new Displayer(
+                ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList),
+                currentState,
+                "1. Attack\n2. Use potion\n3. Dodge");
+
+
+        displayer.display();
+        while (!enemyList.isEmpty() & !Hero.isDead()) {
+
+            boolean potion_choosed = false;
+            boolean dodgeOrSpell = false;
+            boolean spell_choosed_state = false;
+            boolean dodge_selected = false;
+            float oldAgility = 0;
+            String attackResult = "";
+
+        }
+    }
+
+
+    static void Year_3(Wizard hero) {
+        //TODO
+    }
+
+    static void Year_4(Wizard hero) {
+        //TODO
+    }
+
+    static void Year_5(Wizard hero) {
+        //TODO
+    }
+
+    static void Year_6(Wizard hero) {
+        //TODO
+    }
+
+    static void Year_7(Wizard hero) {
+        //TODO
+    }
+
+
     static void ShopTime(@NotNull Wizard Hero, @NotNull Shop shop) {
         Displayer displayershop = new Displayer(
                 ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41),
@@ -274,7 +338,7 @@ public interface YearsList {
             try {
                 int choice = Integer.parseInt(Choice);
 
-                if (choice > 0 & choice <= (shop.getAvaliablePotionMap().size()+shop.getAvaliableEquipementMap().size())) {
+                if (choice > 0 & choice <= (shop.getAvaliablePotionMap().size() + shop.getAvaliableEquipementMap().size())) {
                     if (choice <= shop.getAvaliablePotionMap().size()) {
                         if (Hero.getGold() >= shop.getAvaliablePotionMap().values().toArray(new Integer[0])[choice - 1]) {
                             //ADDING POTION TO INVENTORY
@@ -285,36 +349,35 @@ public interface YearsList {
                             String currentState = "\nYou bought " + shop.getAvaliablePotionMap()
                                     .keySet()
                                     .toArray(new Potion[0])[choice - 1]
-                                    .getName() + " for " + shop
+                                    .getName() + " for " + ConsoleColors.YELLOW_BOLD + shop
                                     .getAvaliablePotionMap()
                                     .values()
-                                    .toArray(new Integer[0])[choice - 1] + " \uD83D\uDCB0";
+                                    .toArray(new Integer[0])[choice - 1] + ConsoleColors.RESET + " \uD83D\uDCB0";
                             Displayer.shopDisplayUpdate(displayershop, currentState, shop, Hero, false);
                         } else {
-                            String currentState = "\nYou don't have enough "+ConsoleColors.YELLOW_BOLD+"gold"+ConsoleColors.RESET+" to buy this potion";
+                            String currentState = "\nYou don't have enough " + ConsoleColors.YELLOW_BOLD + "gold" + ConsoleColors.RESET + " to buy this potion";
                             Displayer.shopDisplayUpdate(displayershop, currentState, shop, Hero, false);
                         }
 
                     } else {
-                        if  (Hero.getGold() >= shop.getAvaliableEquipementMap().values().toArray(new Integer[0])[choice - 1 - shop.getAvaliablePotionMap().size()]) {
+                        if (Hero.getGold() >= shop.getAvaliableEquipementMap().values().toArray(new Integer[0])[choice - 1 - shop.getAvaliablePotionMap().size()]) {
                             Hero.addEquipement(shop.getAvaliableEquipementMap()
                                     .keySet()
                                     .toArray(new Equipement[0])[choice - 1 - shop.getAvaliablePotionMap().size()]);
                             Hero.changeGold(-shop.getAvaliableEquipementMap().values().toArray(new Integer[0])[choice - 1 - shop.getAvaliablePotionMap().size()]);
                             String currentState = "\nYou bought " + shop.getAvaliableEquipementMap()
                                     .keySet()
-                                    .toArray(new Equipement[0])[choice - 1 - shop.getAvaliablePotionMap().size()].getName() + " for " + shop.getAvaliableEquipementMap()
+                                    .toArray(new Equipement[0])[choice - 1 - shop.getAvaliablePotionMap().size()].getName() + " for " + ConsoleColors.YELLOW_BOLD + shop.getAvaliableEquipementMap()
                                     .values()
-                                    .toArray(new Integer[0])[choice - 1 - shop.getAvaliablePotionMap().size()] + " \uD83D\uDCB0";
+                                    .toArray(new Integer[0])[choice - 1 - shop.getAvaliablePotionMap().size()] + ConsoleColors.RESET + " \uD83D\uDCB0";
                             Displayer.shopDisplayUpdate(displayershop, currentState, shop, Hero, false);
                         } else {
-                            String currentState = "\nYou don't have enough "+ConsoleColors.YELLOW_BOLD+"gold"+ConsoleColors.RESET+" to buy this item";
+                            String currentState = "\nYou don't have enough " + ConsoleColors.YELLOW_BOLD + "gold" + ConsoleColors.RESET + " to buy this item";
                             Displayer.shopDisplayUpdate(displayershop, currentState, shop, Hero, false);
                         }
 
                     }
-                }
-                else {
+                } else {
                     String currentState = "\nPlease enter a valid number";
                     Displayer.shopDisplayUpdate(displayershop, currentState, shop, Hero, false);
                 }
@@ -326,12 +389,7 @@ public interface YearsList {
         System.out.println("test sortie");
 
     }
-
-
 }
-
-
-//TODO MUSIK KAN DEGA PRI
 //TODO FADE IN MUSIC
 //TODO FADE OUT MUSIC
 //TODO REGLER ESPACEMENT ATTAQUES ENEMIES

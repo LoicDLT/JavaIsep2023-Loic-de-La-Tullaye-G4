@@ -12,7 +12,7 @@ public class Displayer {
     private String characterInfos;
     private String whatHappend;
     private String playerOptions;
-    private final String barrehaute = "=".repeat(50);
+    private final String barrehaute = "=".repeat(120);
 
     public static void shopDisplayUpdate(Displayer displayer, String displayShop, Wizard hero) {
     }
@@ -82,7 +82,7 @@ public class Displayer {
     public static void endDisplayUpdate(@NotNull Displayer displayer, String whathappend, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
         displayer.setCharacterInfos(ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList));
         displayer.setWhatHappend(whathappend);
-        displayer.setPlayerOptions("Please Enter a valid Option \n\n1. Next Year\n2. Shop");
+        displayer.setPlayerOptions(((error) ?"Please Enter a valid Option\n\n":"")+"1. Next Year\n2. Shop");
 
         displayer.display();
     }
