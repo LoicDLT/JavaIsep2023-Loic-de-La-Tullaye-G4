@@ -101,15 +101,10 @@ if (musicEnabled) {
 
         //getting proprieties of a certain
 
-
-        System.out.println("\uD83D\uDCB0");
         //starting Year 1
-        YearsList.ShopTime(Hero,Shop.year1Shop());
-        YearsList.Year_1(Hero);
+        Playgame.playgame(Hero);
 
-        String Choice = Main.scanner.nextLine();
-
-        System.out.println("TEST SORTIE DE YEAR 1");
+        System.out.println("TEST SORTIE PLAYGAME");
 
     }
 }

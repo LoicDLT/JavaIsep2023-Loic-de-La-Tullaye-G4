@@ -4,25 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="569d6665-a5cd-4b28-90d9-602f4760a4f0" name="Changes" comment="Musik Added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Equipement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Shop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Z_TESTFONCTIONS.java" afterDir="false" />
+    <list default="true" id="569d6665-a5cd-4b28-90d9-602f4760a4f0" name="Changes" comment="shopify">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Playgame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ActionCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ActionCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Displayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Displayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Music/MusicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Music/MusicPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Potion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Potion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SPELLS/EnemySpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SPELLS/EnemySpell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SPELLS/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SPELLS/Spell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Shop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Testmain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Testmain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Wizard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/YearsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/YearsList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ActionCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ActionCharacter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Displayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Displayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Music/MusicPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Music/MusicPlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Potion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Potion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Testmain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Testmain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Wizard$WizardBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Wizard$WizardBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Wizard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Wizard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/YearsList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/YearsList.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,6 +132,7 @@
       <workItem from="1678822104991" duration="1082000" />
       <workItem from="1678823200256" duration="11087000" />
       <workItem from="1678835697275" duration="564000" />
+      <workItem from="1678885643003" duration="3405000" />
     </task>
     <task id="LOCAL-00001" summary="attacks model changed to index">
       <created>1678581923519</created>
@@ -197,6 +190,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="attacks model changed to index" />
     <MESSAGE value="Musik Added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Musik Added" />
+    <MESSAGE value="shopify" />
+    <option name="LAST_COMMIT_MESSAGE" value="shopify" />
   </component>
 </project>

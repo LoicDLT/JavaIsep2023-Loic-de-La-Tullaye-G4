@@ -118,7 +118,7 @@ public interface YearsList {
 
 //=========================================================================YEARLIST=============================================================
 
-    static void Year_1(@NotNull Wizard Hero) throws InterruptedException {
+    static boolean Year_1(@NotNull Wizard Hero) throws InterruptedException {
 
         //initYear
 
@@ -246,7 +246,21 @@ public interface YearsList {
 
             Displayer.endDisplayUpdate(displayer, currentState.stripLeading(), enemyList, Hero, false);
         }
+        while (true) { //Choice for shop or not
+
+            String Choice = Main.scanner.nextLine();
+            switch (Choice) {
+                case "1":
+                    return false;
+                case "2":
+                    return true;
+                default:
+                    Displayer.endDisplayUpdate(displayer, currentState.stripLeading(), enemyList, Hero, true);
+            }
+
+        }
     }
+
 
     static void ShopTime(@NotNull Wizard Hero, @NotNull Shop shop) {
         Displayer displayershop = new Displayer(
@@ -274,10 +288,10 @@ public interface YearsList {
                                     .getName() + " for " + shop
                                     .getAvaliablePotionMap()
                                     .values()
-                                    .toArray(new Integer[0])[choice - 1] + " gold";
+                                    .toArray(new Integer[0])[choice - 1] + " \uD83D\uDCB0";
                             Displayer.shopDisplayUpdate(displayershop, currentState, shop, Hero, false);
                         } else {
-                            String currentState = "\nYou don't have enough gold";
+                            String currentState = "\nYou don't have enough "+ConsoleColors.YELLOW_BOLD+"gold"+ConsoleColors.RESET+" to buy this potion";
                             Displayer.shopDisplayUpdate(displayershop, currentState, shop, Hero, false);
                         }
 
@@ -291,10 +305,10 @@ public interface YearsList {
                                     .keySet()
                                     .toArray(new Equipement[0])[choice - 1 - shop.getAvaliablePotionMap().size()].getName() + " for " + shop.getAvaliableEquipementMap()
                                     .values()
-                                    .toArray(new Integer[0])[choice - 1 - shop.getAvaliablePotionMap().size()] + " gold";
+                                    .toArray(new Integer[0])[choice - 1 - shop.getAvaliablePotionMap().size()] + " \uD83D\uDCB0";
                             Displayer.shopDisplayUpdate(displayershop, currentState, shop, Hero, false);
                         } else {
-                            String currentState = "\nYou don't have enough gold";
+                            String currentState = "\nYou don't have enough "+ConsoleColors.YELLOW_BOLD+"gold"+ConsoleColors.RESET+" to buy this item";
                             Displayer.shopDisplayUpdate(displayershop, currentState, shop, Hero, false);
                         }
 

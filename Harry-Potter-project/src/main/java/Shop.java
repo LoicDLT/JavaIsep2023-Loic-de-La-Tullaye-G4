@@ -18,7 +18,7 @@ public class Shop {
         if (avaliableEquipementMap.size() > 0) {
             shopDisplay += "Here is the list of the potions available :\n";
             for (Potion potion : avaliablePotionMap.keySet()) {
-                shopDisplay += "(" + index + ") " + potion.getColor() + potion.getName() + ConsoleColors.RESET + " : " + ConsoleColors.YELLOW_BOLD + avaliablePotionMap.get(potion) + " gold" + ConsoleColors.RESET + "\n";
+                shopDisplay += "(" + index + ") " + potion.getColor() + potion.getName() + ConsoleColors.RESET + " : " + ConsoleColors.YELLOW_BOLD + avaliablePotionMap.get(potion) + " \uD83D\uDCB0" + ConsoleColors.RESET + "\n";
                 index += 1;
             }
         }
@@ -27,7 +27,7 @@ public class Shop {
 
             shopDisplay += "\nHere is the list of the equipements available :\n";
             for (Equipement equipement : avaliableEquipementMap.keySet()) {
-                shopDisplay += "(" + index + ") " + equipement.getName() + " : " + ConsoleColors.YELLOW_BOLD + avaliableEquipementMap.get(equipement) + " gold" + ConsoleColors.RESET + "\n";
+                shopDisplay += "(" + index + ") " + equipement.getName() + " : " + ConsoleColors.YELLOW_BOLD + avaliableEquipementMap.get(equipement) + "\uD83D\uDCB0" + ConsoleColors.RESET + "\n";
             }
         }
         return shopDisplay;
@@ -36,7 +36,7 @@ public class Shop {
     public static @NotNull Shop year1Shop() {
         LinkedHashMap<Potion, Integer> potionMap = new LinkedHashMap<>();
         LinkedHashMap<Equipement, Integer> equipementMap = new LinkedHashMap<>();
-        //potionMap.put(Potion.health_Potion(), 30);
+        potionMap.put(Potion.health_Potion(), 30);
         potionMap.put(Potion.mana_Potion(), 30);
         potionMap.put(Potion.luck_Potion(), 50);
         potionMap.put(Potion.strength_Potion(), 50);

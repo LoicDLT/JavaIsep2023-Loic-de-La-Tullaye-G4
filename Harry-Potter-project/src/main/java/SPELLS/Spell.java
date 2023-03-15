@@ -17,7 +17,7 @@ public class Spell extends AbstractSpell{
                         .manaCost(50)
                         .chanceOfSuccess(80)
                         .script("You make objects fly above your enemy before releasing them all on him")
-                        .damage(50)
+                        .damage(500)
                         .didNotWork("Unfortunatly it missed")
                         .soundEffect(MusicLibrary.wingardiumLeviosa)
                         .build();

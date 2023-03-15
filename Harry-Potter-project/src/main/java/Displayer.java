@@ -82,12 +82,12 @@ public class Displayer {
     public static void endDisplayUpdate(@NotNull Displayer displayer, String whathappend, ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
         displayer.setCharacterInfos(ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList));
         displayer.setWhatHappend(whathappend);
-        displayer.setPlayerOptions("1. Next Year\n2. Shop");
+        displayer.setPlayerOptions("Please Enter a valid Option \n\n1. Next Year\n2. Shop");
 
         displayer.display();
     }
 
-    public static void shopDisplayUpdate(@NotNull Displayer displayer,String whatHappend, Shop shop, Wizard Hero, boolean error) {
+    public static void shopDisplayUpdate(@NotNull Displayer displayer, String whatHappend, @NotNull Shop shop, Wizard Hero, boolean error) {
         displayer.setCharacterInfos(ActionCharacter.displayPlayerInfos(Hero));
         displayer.setWhatHappend(shop.displayShop()+"\n"+whatHappend);
         displayer.setPlayerOptions("type the number of the item you want to buy  \ntype \"next\" to go to the next year");
