@@ -4,92 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="569d6665-a5cd-4b28-90d9-602f4760a4f0" name="Changes" comment="shopify">
-      <change afterPath="$PROJECT_DIR$/projet.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Curse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Music/MusicLibrary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/SortingHat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Year.java" afterDir="false" />
+    <list default="true" id="569d6665-a5cd-4b28-90d9-602f4760a4f0" name="Changes" comment="CURSED UPDATE (still working on it)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ActionCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/ActionCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BattleEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/BattleEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConsoleColors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/ConsoleColors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Core.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Displayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Displayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Effect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Effect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Equipement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Equipement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Music/Astronomia.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Music/Astronomia.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Music/EsquiveLoutre.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Music/EsquiveLoutre.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Music/Lezgongue.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Music/Lezgongue.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Music/MusicLibrary.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Music/MusicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Music/MusicPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Music/PotionSlurpFortnite.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Music/PotionSlurpFortnite.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Music/SoundEffectPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Music/SoundEffectPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Music/Wide_Putin.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Music/Wide_Putin.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Music/Wide_Putin.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Music/Wide_Putin.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Music/Wingardium_Leviosa.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Music/Wingardium_Leviosa.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Music/minecraftDamage.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Music/minecraftDamage.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Pet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Playgame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Playgame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Potion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Potion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Probability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Probability.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Rewards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Rewards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SPELLS/AbstractSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/SPELLS/AbstractSpell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SPELLS/EnemySpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/SPELLS/EnemySpell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SPELLS/ForbiddenSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/SPELLS/ForbiddenSpell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SPELLS/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/SPELLS/Spell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Shop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Testmain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Testmain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Wand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Wand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Wizard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/YearsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/YearsList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Z_TESTFONCTIONS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Z_TESTFONCTIONS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ActionCharacter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BattleEngine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Character$CharacterBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Character.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ConsoleColors.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Core.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Displayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Effect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Enemy$EnemyBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Enemy$EnemyBuilderImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Enemy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Equipement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/House.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Music/MusicLibrary.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Music/MusicPlayer$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Music/MusicPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Music/SoundEffectPlayer$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Music/SoundEffectPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Pet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Potion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Probability.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Rewards.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SPELLS/AbstractSpell$AbstractSpellBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SPELLS/AbstractSpell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SPELLS/EnemySpell$EnemySpellBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SPELLS/EnemySpell$EnemySpellBuilderImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SPELLS/EnemySpell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SPELLS/ForbiddenSpell$ForbiddenSpellBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SPELLS/ForbiddenSpell$ForbiddenSpellBuilderImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SPELLS/ForbiddenSpell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SPELLS/Spell$SpellBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SPELLS/Spell$SpellBuilderImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SPELLS/Spell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Shop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Testmain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Wand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Wizard$WizardBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Wizard$WizardBuilderImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Wizard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/YearsList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Z_TESTFONCTIONS.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +138,8 @@
       <workItem from="1678912698702" duration="51000" />
       <workItem from="1678912761565" duration="4226000" />
       <workItem from="1678961620279" duration="11413000" />
-      <workItem from="1678998416704" duration="6946000" />
+      <workItem from="1678998416704" duration="7637000" />
+      <workItem from="1679054907152" duration="2398000" />
     </task>
     <task id="LOCAL-00001" summary="attacks model changed to index">
       <created>1678581923519</created>
@@ -266,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678894530330</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="CURSED UPDATE (still working on it)">
+      <created>1679006732853</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679006732853</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,6 +212,7 @@
     <MESSAGE value="attacks model changed to index" />
     <MESSAGE value="Musik Added" />
     <MESSAGE value="shopify" />
-    <option name="LAST_COMMIT_MESSAGE" value="shopify" />
+    <MESSAGE value="CURSED UPDATE (still working on it)" />
+    <option name="LAST_COMMIT_MESSAGE" value="CURSED UPDATE (still working on it)" />
   </component>
 </project>
