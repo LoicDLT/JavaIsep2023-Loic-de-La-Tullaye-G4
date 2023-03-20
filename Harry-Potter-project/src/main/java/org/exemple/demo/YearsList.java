@@ -22,7 +22,7 @@ public interface YearsList {
 
             if (Choice.equals("back")) {
                 //MAIN SCREEN
-                Displayer.mainDisplayUpdate(displayer, currentState, enemyList, Hero, false);
+                Displayer.mainDisplayUpdate(displayer, currentState, enemyList, Hero, false,false);
                 potion_choosed = true;
             }
 
@@ -37,7 +37,7 @@ public interface YearsList {
                     currentState = "\n\n\n" + found.get(selected - 1).getName() + " used successfully!";
                     potion_choosed = true;
                     System.out.println("test");
-                    Displayer.mainDisplayUpdate(displayer, currentState, enemyList, Hero, false);
+                    Displayer.mainDisplayUpdate(displayer, currentState, enemyList, Hero, false,false);
                 } else {
                     Displayer.potionDisplayUpdate(displayer, enemyList, Hero, true);
                 }
@@ -59,7 +59,7 @@ public interface YearsList {
             Choice = Main.scanner.nextLine();
             if (Choice.equals("back")) {
                 //BACK TO MAIN SCREEN
-                Displayer.mainDisplayUpdate(displayer, currentState, enemyList, Hero, false);
+                Displayer.mainDisplayUpdate(displayer, currentState, enemyList, Hero, false,false);
                 break;
 
             }
@@ -129,7 +129,7 @@ public interface YearsList {
         Year year1 = Year.year1Constructor();
         Hero.addSpell(Spell.Wingardium_Leviosa());
         Displayer displayer = new Displayer(
-                ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(year1.getEnemyList()),
+                ActionCharacter.displayPlayerInfos(Hero,false) + "-".repeat(45) + "\n" + ActionCharacter.displayEnemyInfos(year1.getEnemyList(),false),
                 year1.getCurrentState(),
                 "1. Attack\n2. Use potion\n3. Dodge");
 
@@ -178,7 +178,7 @@ public interface YearsList {
                         }
                         attackResult = "You are not attacking this turn, you restore " + ConsoleColors.RED_BOLD_BRIGHT + "❤ 30" + ConsoleColors.RESET + " and " +
                                 ConsoleColors.BLUE_BOLD_BRIGHT + "\uD83C\uDF22 40 " + ConsoleColors.RESET + "\nYou also gain" + ConsoleColors.AGYLITYCOLOR_BOLD + " 💨 35%" + ConsoleColors.RESET + " more temporary Agility";
-                        Effect.healthRegen(30, Hero);
+                        Hero.healthRegen(30);
                         Effect.manaRegen(40, Hero);
                         Effect.AgilityIncrease(35, Hero);
 
@@ -186,7 +186,7 @@ public interface YearsList {
 
 
                     default:
-                        Displayer.mainDisplayUpdate(displayer, year1.getCurrentState(), year1.getEnemyList(), Hero, true);
+                        Displayer.mainDisplayUpdate(displayer, year1.getCurrentState(), year1.getEnemyList(), Hero, true,false);
                         break;
                 }
 
@@ -207,8 +207,7 @@ public interface YearsList {
                     year1.setCurrentState(year1.getCurrentState() + enemy.attack(Hero) + "\n");
                 }
             }
-            Displayer.mainDisplayUpdate(displayer, year1.getCurrentState().stripLeading(), year1.getEnemyList(), Hero, false);
-            //Choice = Main.scanner.nextLine();
+            Displayer.mainDisplayUpdate(displayer, year1.getCurrentState().stripLeading(), year1.getEnemyList(), Hero, false,true);
 
 
             if (dodge_selected) {
@@ -279,7 +278,7 @@ public interface YearsList {
 
 
         Displayer displayer = new Displayer(
-                ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList),
+                ActionCharacter.displayPlayerInfos(Hero,false) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList,false),
                 currentState,
                 "1. Attack\n2. Use potion\n3. Dodge");
 
@@ -321,7 +320,7 @@ public interface YearsList {
 
     static void ShopTime(@NotNull Wizard Hero, @NotNull Shop shop) {
         Displayer displayershop = new Displayer(
-                ActionCharacter.displayPlayerInfos(Hero) + "-".repeat(41),
+                ActionCharacter.displayPlayerInfos(Hero,false) + "-".repeat(45),
                 shop.displayShop(),
                 "type the number of the item you want to buy  \ntype \"next\" to go to the next year");
         displayershop.display();

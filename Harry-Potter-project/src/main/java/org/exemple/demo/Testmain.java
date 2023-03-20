@@ -123,7 +123,7 @@ if (musicEnabled) {
         Wizard.usePotion(Mana_potion,Hero);
 
         //displaying Players infos and potions list
-        ActionCharacter.displayPlayerInfos(Hero);
+        ActionCharacter.displayPlayerInfos(Hero,false);
         Hero.getPotionsNames();
 
         //getting proprieties of a certain

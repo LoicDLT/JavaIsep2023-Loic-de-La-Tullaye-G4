@@ -1,18 +1,7 @@
 package org.exemple.demo;
 
 public class Effect{
-    static void healthRegen(float amountOfHeal,  Character character) {
-        float tempHealth = character.getCurrentHealthPoints();
-        float tempMaxHealth = character.getMaxHealthPoints();
 
-        if ((tempHealth + amountOfHeal) > tempMaxHealth) {
-            character.setCurrentHealthPoints(tempMaxHealth);
-        } else if ((tempHealth + amountOfHeal) <= 0){
-            character.setCurrentHealthPoints(0);
-            character.setDead(true);
-        }
-        else character.setCurrentHealthPoints(tempHealth + amountOfHeal);
-    }
 
     static void manaRegen(float amountOfMana,Wizard wizard ) {
         float tempMana = wizard.getCurrentManaPoints();

@@ -34,7 +34,7 @@ public class Main {
                 .house(chosenHouse)
                 .build();
 
-        ActionCharacter.displayPlayerInfos(Hero);
+        ActionCharacter.displayPlayerInfos(Hero,false);
 
 
     }

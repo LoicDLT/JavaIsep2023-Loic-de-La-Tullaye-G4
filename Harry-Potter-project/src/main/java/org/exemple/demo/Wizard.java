@@ -122,7 +122,7 @@ public class Wizard extends Character {
         if (wizard.getPotions().contains(potion)) {
             wizard.removePotions(potion);
 
-            Effect.healthRegen(potion.getAmountOfHealthRegen(), wizard);
+            wizard.healthRegen(potion.getAmountOfHealthRegen());
             Effect.manaRegen(potion.getAmountOfManaRegen(), wizard);
             Effect.LuckIncrease(potion.getAmountOfLuck(), wizard);
             Effect.StrengthIncrease(potion.getAmountOfStrength(), wizard);
@@ -203,7 +203,7 @@ public class Wizard extends Character {
                     ConsoleColors.RESET + " -> ";
 
 
-            Effect.healthRegen(-damageDealt, character);
+            character.healthRegen(-damageDealt);
             currentManaPoints += -spellChoosed.getManaCost();
 
 

@@ -7,7 +7,7 @@ import java.lang.Math;
 public interface ActionCharacter {
     public static String separator = ConsoleColors.PURPLE_BOLD_BRIGHT + " || " + ConsoleColors.RESET;
     //TODO DISPLAY THE EMOJI OF THE CHOSEN HOUSE
-    static String displayPlayerInfos(@NotNull Wizard wizard) {
+    static String displayPlayerInfos(@NotNull Wizard wizard ,boolean applyCurseDamage) {
 
         return String.format(ConsoleColors.CYAN_BOLD + "%-14s " + separator +
                         ConsoleColors.ORANGE_BOLD + "%-8s" + separator +
@@ -17,7 +17,7 @@ public interface ActionCharacter {
                         ConsoleColors.YELLOW_BOLD_BRIGHT + " \uD83D\uDCAA %.0f %% " + separator +
                         ConsoleColors.AGYLITYCOLOR_BOLD + " \uD83D\uDCA8 %.0f %% " + separator +
                         ConsoleColors.YELLOW_BOLD + "\uD83D\uDCB0 %d "+ConsoleColors.RESET+
-                        ((wizard.getCurseList().keySet().isEmpty())? "\n": separator + wizard.getCursesNames() + "\n"),
+                        ((wizard.getCurseList().keySet().isEmpty())? "": separator + wizard.getCursesNames(applyCurseDamage))+"\n",
 
                 "\uD83E\uDDD9 "+wizard.getFirstname() + " " + wizard.getLastname(),
                 "Level "+wizard.getLevel(),
@@ -32,7 +32,7 @@ public interface ActionCharacter {
 
     }
 
-    static String displayEnemyInfos(@NotNull ArrayList<Enemy> enemyList) {
+    static String displayEnemyInfos(@NotNull ArrayList<Enemy> enemyList,boolean applyCurseDamage) {
         String string = "";
         int i=1;
         for (Enemy enemy : enemyList) {
@@ -42,7 +42,8 @@ public interface ActionCharacter {
                      "("+i+") ",enemy.getFirstname() + " " + enemy.getLastname(),
                     "Level " + enemy.getLevel(),
                      Math.round(enemy.getCurrentHealthPoints())
-                            + "/" + Math.round(enemy.getMaxHealthPoints()));
+                             + "/" + Math.round(enemy.getMaxHealthPoints()) +
+                             ((enemy.getCurseList().keySet().isEmpty())? "":  enemy.getCursesNames(applyCurseDamage)));
              i++;
         }
         return string.stripTrailing();

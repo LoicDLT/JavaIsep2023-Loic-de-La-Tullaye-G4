@@ -132,7 +132,7 @@ public class Enemy extends Character {
                         ConsoleColors.RESET + " -> ";
 
 
-                Effect.healthRegen(-Math.round(damageDealt), wizard);
+                wizard.healthRegen(-Math.round(damageDealt));
 
                 script += ConsoleColors.RED_BOLD_BRIGHT + "❤ " +
                         Math.round(wizard.getCurrentHealthPoints()) + "/" + Math.round(wizard.getMaxHealthPoints()) +
