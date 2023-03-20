@@ -24,7 +24,7 @@ public interface YearsList {
 
             if (Choice.equals("back")) {
                 //MAIN SCREEN
-                displayer.mainDisplayUpdate( currentState, enemyList, Hero, false, false);
+                displayer.mainDisplayUpdate(currentState, enemyList, Hero, false, false);
                 potion_choosed = true;
             }
 
@@ -38,17 +38,66 @@ public interface YearsList {
                     }
                     currentState = "\n\n\n" + found.get(selected - 1).getName() + " used successfully!";
                     potion_choosed = true;
-                    System.out.println("test");
-                    displayer.mainDisplayUpdate( currentState, enemyList, Hero, false, false);
+
+                    displayer.mainDisplayUpdate(currentState, enemyList, Hero, false, false);
                 } else {
-                    displayer.potionDisplayUpdate( enemyList, Hero, true);
+                    displayer.potionDisplayUpdate(enemyList, Hero, true);
                 }
             } catch (NumberFormatException e) {
-                displayer.potionDisplayUpdate( enemyList, Hero, true);
+                displayer.potionDisplayUpdate(enemyList, Hero, true);
             }
 
         }
 
+    }
+
+    static boolean equipementSwitchCase(Displayer displayer,Year year, ArrayList<Enemy> enemyList, Wizard Hero,boolean equipement_chosed, String currentState) {
+
+        if (Hero.getEquipements().isEmpty()) {
+            year.setCurrentState("\n\nYou don't have any equipement ");
+            displayer.mainDisplayUpdate(year.getCurrentState(), year.getEnemyList(), Hero, false, false);
+            return equipement_chosed;
+        }
+        else if (equipement_chosed) {
+            year.setCurrentState("\n\nYou have already used equipement this turn ");
+            displayer.mainDisplayUpdate(year.getCurrentState(), year.getEnemyList(), Hero, false, false);
+            return equipement_chosed;
+        }
+        else{
+            displayer.equipementDisplayUpdate(year.getEnemyList(), Hero, false);
+
+
+
+
+
+
+        while (true) {
+
+            String Choice = Main.scanner.nextLine();
+
+            if (Choice.equals("back")) {
+                //MAIN SCREEN
+                displayer.mainDisplayUpdate(currentState, enemyList, Hero, false, false);
+
+                return false;
+            }
+
+            try {
+                int selected = Integer.parseInt(Choice);
+                if (selected >= 1 & selected <= Hero.getEquipements().size()) {
+                    Hero.useEquipement(Hero.getEquipements().get(selected - 1));
+                    currentState = "\n\n\n" + Hero.getEquipements().get(selected - 1).getName() + " used successfully!";
+                    displayer.mainDisplayUpdate(currentState, enemyList, Hero, false, false);
+                    return true;
+                } else {
+                    displayer.potionDisplayUpdate(enemyList, Hero, true);
+                }
+            } catch (NumberFormatException e) {
+                displayer.potionDisplayUpdate(enemyList, Hero, true);
+            }
+
+        }
+        }
     }
 
     //SPELL SWITCH CASE
@@ -61,7 +110,7 @@ public interface YearsList {
             Choice = Main.scanner.nextLine();
             if (Choice.equals("back")) {
                 //BACK TO MAIN SCREEN
-                displayer.mainDisplayUpdate( currentState, enemyList, Hero, false, false);
+                displayer.mainDisplayUpdate(currentState, enemyList, Hero, false, false);
                 break;
 
             }
@@ -76,7 +125,7 @@ public interface YearsList {
                         SoundEffectPlayer.play(spell_choosed.getSoundEffect());
                         SoundEffectPlayer.setVolume(0.2F);
                     }
-                    displayer.targetDisplayUpdate( "", enemyList, Hero, false);
+                    displayer.targetDisplayUpdate("", enemyList, Hero, false);
                     while (!spell_choosed_state) {
                         Choice = Main.scanner.nextLine();
                         try {
@@ -85,7 +134,7 @@ public interface YearsList {
 
 
                             if (selectedTargetIndex < 0 | selectedTargetIndex > enemyList.size()) {
-                                displayer.targetDisplayUpdate( "", enemyList, Hero, true);
+                                displayer.targetDisplayUpdate("", enemyList, Hero, true);
                             } else {
                                 Enemy enemy = enemyList.get(selectedTargetIndex - 1);
                                 spell_choosed_state = true;
@@ -102,16 +151,16 @@ public interface YearsList {
 
                             }
                         } catch (NumberFormatException e) {
-                            displayer.targetDisplayUpdate( "", enemyList, Hero, true);
+                            displayer.targetDisplayUpdate("", enemyList, Hero, true);
                         }
                     }
 
 
                 } else {
-                    displayer.spellDisplayUpdate( enemyList, Hero, true);
+                    displayer.spellDisplayUpdate(enemyList, Hero, true);
                 }
             } catch (NumberFormatException e) {
-                displayer.spellDisplayUpdate( enemyList, Hero, true);
+                displayer.spellDisplayUpdate(enemyList, Hero, true);
             }
 
         }
@@ -133,7 +182,7 @@ public interface YearsList {
         Displayer displayer = new Displayer(
                 ActionCharacter.displayPlayerInfos(Hero, false) + "-".repeat(45) + "\n" + ActionCharacter.displayEnemyInfos(year1.getEnemyList(), false),
                 year1.getCurrentState(),
-                "1. Attack\n2. Use potion\n3. Dodge");
+                "1. Attack\n2. Use potion\n3. Equipements\n4. Dodge");
 
 
         System.out.println(year1.getEnemyList().get(0).getCurseList().keySet());
@@ -141,6 +190,8 @@ public interface YearsList {
         while (!year1.getEnemyList().isEmpty() & !Hero.isDead()) {
 
             boolean potion_choosed;
+            boolean equipement_chosed = false;
+
             boolean spell_choosed_state = false;
             boolean dodge_selected = false;
             float oldAgility = 0;
@@ -155,7 +206,7 @@ public interface YearsList {
 //==========================SPELL========================
                     case "1":
                         //SPELL SCREEN
-                        displayer.spellDisplayUpdate( year1.getEnemyList(), Hero, false);
+                        displayer.spellDisplayUpdate(year1.getEnemyList(), Hero, false);
 
                         ArrayList spellResult = spellSwitchCase(displayer, year1.getEnemyList(), Hero, spell_choosed_state, attackResult, year1.getCurrentState(), Choice);
                         spell_choosed_state = (boolean) spellResult.get(0);
@@ -165,13 +216,18 @@ public interface YearsList {
 //==========================POTION========================
                     case "2":
                         //POTION SCREEN
-                        displayer.potionDisplayUpdate( year1.getEnemyList(), Hero, false);
+                        displayer.potionDisplayUpdate(year1.getEnemyList(), Hero, false);
                         potionSwitchCase(displayer, year1.getEnemyList(), Hero, potion_choosed, year1.getCurrentState());
                         break;
 
+//==========================EQUIPEMENT========================
+                    case "3":
+
+                            equipement_chosed=equipementSwitchCase(displayer,year1, year1.getEnemyList(), Hero,equipement_chosed, year1.getCurrentState());
+                            break;
 
 //==========================DODGE========================
-                    case "3":
+                    case "4":
                         dodge_selected = true;
                         oldAgility = Hero.getDodgingChancePercentage();
                         if (Testmain.musicEnabled) {
@@ -185,6 +241,10 @@ public interface YearsList {
                         Hero.AgilityIncrease(35);
 
                         break;
+
+
+
+
 
 
                     default:
@@ -221,7 +281,7 @@ public interface YearsList {
         if (Hero.isDead()) {
             Thread.sleep(5000);
             year1.setCurrentState("You died <3");
-            displayer.endDisplayUpdate( year1.getCurrentState().stripLeading(), year1.getEnemyList(), Hero, false);
+            displayer.endDisplayUpdate(year1.getCurrentState().stripLeading(), year1.getEnemyList(), Hero, false);
             if (Testmain.musicEnabled) {
                 MusicPlayer.stopMusic();
                 MusicPlayer.play(MusicLibrary.deathMusicAstronomia);
@@ -238,7 +298,7 @@ public interface YearsList {
                     + ConsoleColors.ORANGE + "200 " + ConsoleColors.RESET + "Exp points");
 
 
-            displayer.endDisplayUpdate( year1.getCurrentState().stripLeading(), year1.getEnemyList(), Hero, false);
+            displayer.endDisplayUpdate(year1.getCurrentState().stripLeading(), year1.getEnemyList(), Hero, false);
         }
         while (true) { //Choice for shop or not
 
@@ -249,51 +309,145 @@ public interface YearsList {
                 case "2":
                     return true;
                 default:
-                    displayer.endDisplayUpdate( year1.getCurrentState().stripLeading(), year1.getEnemyList(), Hero, true);
+                    displayer.endDisplayUpdate(year1.getCurrentState().stripLeading(), year1.getEnemyList(), Hero, true);
             }
 
         }
     }
 
 
-    static void Year_2(Wizard Hero) {
+    static boolean Year_2(Wizard Hero) throws InterruptedException {
         //initYear
 
 
-        Enemy target;
-        String currentState = "Un Troll Vient d'arriver et il est pas content donc bagar";
-        AbstractSpell spell_choosed;
-
-
-        ArrayList<EnemySpell> listTrollAttacks = new ArrayList<EnemySpell>();
-        listTrollAttacks.add(EnemySpell.Troll_Hit());
-        listTrollAttacks.add(EnemySpell.Troll_Throw());
-
-
-        ArrayList<Enemy> enemyList = new ArrayList<>();
-
-        //building enemies
-
-        enemyList.add(Enemy.Troll(listTrollAttacks));
-        enemyList.add(Enemy.Trollette(listTrollAttacks));
+        Year year2 = Year.year2Constructor();
         Hero.addSpell(Spell.Wingardium_Leviosa());
-
-
         Displayer displayer = new Displayer(
-                ActionCharacter.displayPlayerInfos(Hero, false) + "-".repeat(41) + "\n" + ActionCharacter.displayEnemyInfos(enemyList, false),
-                currentState,
-                "1. Attack\n2. Use potion\n3. Dodge");
+                ActionCharacter.displayPlayerInfos(Hero, false) + "-".repeat(45) + "\n" + ActionCharacter.displayEnemyInfos(year2.getEnemyList(), false),
+                year2.getCurrentState(),
+                "1. Attack\n2. Use potion\n3. Equipements\n4. Dodge");
 
 
         displayer.display();
-        while (!enemyList.isEmpty() & !Hero.isDead()) {
+        while (!year2.getEnemyList().isEmpty() & !Hero.isDead()) {
 
             boolean potion_choosed = false;
+            boolean equipement_chosed = false;
             boolean dodgeOrSpell = false;
             boolean spell_choosed_state = false;
             boolean dodge_selected = false;
             float oldAgility = 0;
             String attackResult = "";
+            do {
+                String Choice = Main.scanner.nextLine();
+                potion_choosed = false;
+                switch (Choice) {
+
+
+//==========================SPELL========================
+                    case "1":
+                        //SPELL SCREEN
+                        displayer.spellDisplayUpdate(year2.getEnemyList(), Hero, false);
+
+                        ArrayList spellResult = spellSwitchCase(displayer, year2.getEnemyList(), Hero, spell_choosed_state, attackResult, year2.getCurrentState(), Choice);
+                        spell_choosed_state = (boolean) spellResult.get(0);
+                        attackResult = (String) spellResult.get(1);
+                        break;
+
+//==========================POTION========================
+                    case "2":
+                        //POTION SCREEN
+                        displayer.potionDisplayUpdate(year2.getEnemyList(), Hero, false);
+                        potionSwitchCase(displayer, year2.getEnemyList(), Hero, potion_choosed, year2.getCurrentState());
+                        break;
+
+
+//==========================EQUIPEMENT========================
+                    case "3":
+
+                            equipement_chosed=equipementSwitchCase(displayer,year2, year2.getEnemyList(), Hero,equipement_chosed, year2.getCurrentState());
+                            break;
+
+//==========================DODGE========================
+                    case "4":
+                        dodge_selected = true;
+                        oldAgility = Hero.getDodgingChancePercentage();
+                        if (Testmain.musicEnabled) {
+                            SoundEffectPlayer.play(MusicLibrary.dodgeLoutre);
+                            SoundEffectPlayer.setVolume(0.1F);
+                        }
+                        attackResult = "You are not attacking this turn, you restore " + ConsoleColors.RED_BOLD_BRIGHT + "❤ 30" + ConsoleColors.RESET + " and " +
+                                ConsoleColors.BLUE_BOLD_BRIGHT + "\uD83C\uDF22 40 " + ConsoleColors.RESET + "\nYou also gain" + ConsoleColors.AGYLITYCOLOR_BOLD + " 💨 35%" + ConsoleColors.RESET + " more temporary Agility";
+                        Hero.healthRegen(30);
+                        Hero.manaRegen(40);
+                        Hero.AgilityIncrease(35);
+
+                        break;
+                    default:
+                        System.out.println("Wrong input");
+                        displayer.mainDisplayUpdate(year2.getCurrentState(), year2.getEnemyList(), Hero, true, false);
+                        break;
+                }
+
+            } while (!dodge_selected & !spell_choosed_state);
+
+            //RESULT SCREEN FOR THE TURN (ATTACK OR DODGE)
+            for (Enemy enemy : year2.getEnemyList()) {
+                if (!enemy.isDead()) {
+                    enemy.reduceAllCursetime();
+                }
+            }
+            Hero.reduceAllCursetime();
+            year2.setCurrentState(attackResult + "\n\n");
+
+
+            for (Enemy enemy : year2.getEnemyList()) {
+                if (!enemy.isDead() & !Hero.isDead()) {
+                    year2.appendToCurrentState(enemy.attack(Hero) + "\n");
+                }
+            }
+            displayer.mainDisplayUpdate(year2.getCurrentState().stripLeading(), year2.getEnemyList(), Hero, false, true);
+
+
+            if (dodge_selected) {
+                Hero.setDodgingChancePercentage(oldAgility);
+            }
+
+        }
+        Hero.setMaxYear(2);
+        if (Hero.isDead()) {
+            Thread.sleep(5000);
+            year2.setCurrentState("You died <3");
+            displayer.endDisplayUpdate(year2.getCurrentState().stripLeading(), year2.getEnemyList(), Hero, false);
+            if (Testmain.musicEnabled) {
+                MusicPlayer.stopMusic();
+                MusicPlayer.play(MusicLibrary.deathMusicAstronomia);
+                MusicPlayer.setVolume(Testmain.musicVolume);
+
+            }
+
+        }
+        if (year2.getEnemyList().isEmpty()) {
+            Thread.sleep(5000);
+            year2.setCurrentState("You passed 1st year with honors !\n"
+                    + ConsoleColors.BLUE_BOLD + "-------REWARDS-------" + ConsoleColors.RESET + "\n"
+                    + ConsoleColors.YELLOW + "100 \uD83D\uDCB0" + ConsoleColors.RESET + "\n"
+                    + ConsoleColors.ORANGE + "200 " + ConsoleColors.RESET + "Exp points");
+
+
+            displayer.endDisplayUpdate(year2.getCurrentState().stripLeading(), year2.getEnemyList(), Hero, false);
+        }
+        while (true) { //Choice for shop or not
+
+            String Choice = Main.scanner.nextLine();
+            switch (Choice) {
+                case "1":
+                    return false;
+                case "2":
+                    return true;
+                default:
+                    displayer.endDisplayUpdate(year2.getCurrentState().stripLeading(), year2.getEnemyList(), Hero, true);
+            }
 
         }
     }
@@ -354,7 +508,14 @@ public interface YearsList {
                         }
 
                     } else {
-                        if (Hero.getGold() >= shop.getAvaliableEquipementMap().values().toArray(new Integer[0])[choice - 1 - shop.getAvaliablePotionMap().size()]) {
+                        //TESTING IF THE PLAYER ALREADY HAVE THE EQUIPEMENT
+                        if (Hero.getEquipements().contains(shop.getAvaliableEquipementMap()
+                                .keySet()
+                                .toArray(new Equipement[0])[choice - 1 - shop.getAvaliablePotionMap().size()])) {
+                            String currentState = "\nYou already have this item";
+                            displayershop.shopDisplayUpdate(currentState, shop, Hero, false);
+
+                        } else if (Hero.getGold() >= shop.getAvaliableEquipementMap().values().toArray(new Integer[0])[choice - 1 - shop.getAvaliablePotionMap().size()]) {
                             Hero.addEquipement(shop.getAvaliableEquipementMap()
                                     .keySet()
                                     .toArray(new Equipement[0])[choice - 1 - shop.getAvaliablePotionMap().size()]);
@@ -376,10 +537,12 @@ public interface YearsList {
                     displayershop.shopDisplayUpdate(currentState, shop, Hero, false);
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Please enter a number");
+                String currentState = "\nPlease enter a number";
+                displayershop.shopDisplayUpdate(currentState, shop, Hero, false);
             }
 
         }
+
         System.out.println("test sortie");
 
     }

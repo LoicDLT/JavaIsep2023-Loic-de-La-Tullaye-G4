@@ -28,6 +28,7 @@ public class Enemy extends Character {
                 .lastname("")
                 .level(3)
                 .amoutOfExp(300)
+                .amoutOfGold(100)
                 .attackList(listTrollAttacks)
                 .curseList(new HashMap<Curse, Integer>())
                 .currentHealthPoints(1000)
@@ -55,25 +56,23 @@ public class Enemy extends Character {
                 .build();
         return Trollette;
     }
-
     public static Enemy Basilisk(ArrayList<EnemySpell> listBasiliskAttacks){
         Enemy Basilisk = (Enemy) builder()
                 .firstname("Basilisk")
                 .level(12)
                 .lastname("")
                 .amoutOfExp(500)
-                .amoutOfGold(100)
+                .amoutOfGold(250)
                 .maxHealthPoints(1200)
                 .curseList(new HashMap<Curse, Integer>())
                 .attackList(listBasiliskAttacks)
                 .currentHealthPoints(1200)
-                .dodgingChancePercentage(20)
-                .maxDodgingChancePercentage(5)
+                .dodgingChancePercentage(80)
+                .maxDodgingChancePercentage(100)
                 .dead(false)
                 .build();
         return Basilisk;
     }
-
 
     public String attack(Wizard wizard) {
         EnemySpell spellChoosed=attackList.get(0);

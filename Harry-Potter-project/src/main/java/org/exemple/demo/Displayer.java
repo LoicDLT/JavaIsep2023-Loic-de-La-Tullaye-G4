@@ -53,7 +53,7 @@ public class Displayer {
                 + "\n" + ActionCharacter.displayEnemyInfos(enemyList,applyCurseDamage));
 
         this.whatHappend=(whatHappend);
-        this.playerOptions=("1. Attack\n2. Use potion\n3. Dodge" + ((error) ? "\nPlease select one of those 3 options" : ""));
+        this.playerOptions=("1. Attack\n2. Use potion\n3. Equipements\n4. Dodge" + ((error) ? "\nPlease select one of those 3 options" : ""));
         display();
     }
 
@@ -69,6 +69,13 @@ public class Displayer {
     public void potionDisplayUpdate( ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
         this.characterInfos=(ActionCharacter.displayPlayerInfos(Hero,false) + barreEnemy + "\n" + ActionCharacter.displayEnemyInfos(enemyList,false));
         this.whatHappend=(Hero.getPotionsNames().get(0).toString());
+        this.playerOptions=("Type the name of the Potion you want to use, type \"back\" if you want to go back" + ((error) ? "\nPlease select a valid potion name" : ""));
+
+        display();
+    }
+    public void equipementDisplayUpdate( ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
+        this.characterInfos=(ActionCharacter.displayPlayerInfos(Hero,false) + barreEnemy + "\n" + ActionCharacter.displayEnemyInfos(enemyList,false));
+        this.whatHappend=(Hero.getEquipementNames());
         this.playerOptions=("Type the name of the Potion you want to use, type \"back\" if you want to go back" + ((error) ? "\nPlease select a valid potion name" : ""));
 
         display();

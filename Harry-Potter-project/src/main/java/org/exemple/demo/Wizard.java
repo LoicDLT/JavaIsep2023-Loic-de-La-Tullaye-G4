@@ -11,7 +11,6 @@ import lombok.experimental.SuperBuilder;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 
 @EqualsAndHashCode(callSuper = true)
@@ -41,7 +40,7 @@ public class Wizard extends Character {
 
 
     //=============================================================EQUIPEMENT==================================================================
-    public String getEquipement(){
+    public String getEquipementShop(){
         String equipementList = "";
         int i = 1;
         for (Equipement equipement : equipements) {
@@ -53,6 +52,22 @@ public class Wizard extends Character {
     }
     public void addEquipement(Equipement equipement){
         this.equipements.add(equipement);
+    }
+    public String getEquipementNames() {
+        String potionlist = "";
+        int i=1;
+        for (Equipement equipement : equipements) {
+
+            potionlist +="("+(i)+") " + String.format("%s%s%s\n", equipement.getColor(), equipement.getName(), ConsoleColors.RESET);
+            i++;
+        }
+
+
+        return "Equipement List :\n" + potionlist.trim();
+    }
+    public void useEquipement(Equipement equipement){
+        if (equipement.isDisapearAfterUse()) this.equipements.remove(equipement);
+
     }
 
     //===============================================================SPELLS==================================================================
@@ -139,8 +154,6 @@ public class Wizard extends Character {
     public void removePotions(Potion potion) {
         this.potions.remove(potion);
     }
-
-
 
 
     //===============================================================COMBAT=================================================================

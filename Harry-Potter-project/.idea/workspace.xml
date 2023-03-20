@@ -4,62 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="569d6665-a5cd-4b28-90d9-602f4760a4f0" name="Changes" comment="CURSED UPDATE (still working on it)">
+    <list default="true" id="544e7d4b-7ca8-41e2-ac7b-9e56d755bb7a" name="Changes" comment="CURSED UPDATE (basilik part left)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ideas for project" beforeDir="false" afterPath="$PROJECT_DIR$/Ideas for project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/ActionCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/ActionCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/ConsoleColors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/ConsoleColors.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Displayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Displayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Effect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Effect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Effect.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Testmain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Testmain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Equipement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Equipement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Playgame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Playgame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/SPELLS/EnemySpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/SPELLS/EnemySpell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Wizard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Year.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/YearsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/YearsList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Z_TESTFONCTIONS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Z_TESTFONCTIONS.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="bad65024-3f54-4dc4-b03b-a9ae543a266c" />
-        <option name="url" value="https://github.com/LoicDLT/JavaIsep2023-Loic-de-La-Tullaye-G4.git" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectId" id="2MparQ77XcvLGY5ScljPqJ8uD7C" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -67,54 +35,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/142lo/OneDrive/Bureau/JAVA-ISEP-GITLINKED/JavaIsep2023-Loic-de-La-Tullaye-G4/Harry-Potter-project/src&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\142lo\OneDrive\Bureau\JAVA-ISEP-GITLINKED\JavaIsep2023-Loic-de-La-Tullaye-G4\Harry-Potter-project\src" />
-      <recent name="C:\Users\142lo\OneDrive\Bureau\JAVA-ISEP-GITLINKED\JavaIsep2023-Loic-de-La-Tullaye-G4\Harry-Potter-project\src\main\java\Music" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\142lo\OneDrive\Bureau\JAVA-ISEP-GITLINKED\JavaIsep2023-Loic-de-La-Tullaye-G4\Harry-Potter-project" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.Testmain">
+}]]></component>
+  <component name="RunManager">
     <configuration name="Testmain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.exemple.demo.Testmain" />
       <module name="Harry-Potter-project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Z_TESTFONCTIONS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.exemple.demo.Z_TESTFONCTIONS" />
-      <module name="Harry-Potter-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.exemple.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -122,125 +60,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Testmain" />
-        <item itemvalue="Application.Z_TESTFONCTIONS" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="569d6665-a5cd-4b28-90d9-602f4760a4f0" name="Changes" comment="" />
-      <created>1678467176036</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1678467176036</updated>
-      <workItem from="1678467177285" duration="6171000" />
-      <workItem from="1678548951314" duration="20300000" />
-      <workItem from="1678619871309" duration="14814000" />
-      <workItem from="1678660674303" duration="535000" />
-      <workItem from="1678661223965" duration="1941000" />
-      <workItem from="1678664588552" duration="100000" />
-      <workItem from="1678664702433" duration="137000" />
-      <workItem from="1678665602655" duration="229000" />
-      <workItem from="1678703704311" duration="6134000" />
-      <workItem from="1678728553793" duration="474000" />
-      <workItem from="1678731537856" duration="1837000" />
-      <workItem from="1678818626957" duration="2548000" />
-      <workItem from="1678821548532" duration="542000" />
-      <workItem from="1678822104991" duration="1082000" />
-      <workItem from="1678823200256" duration="11087000" />
-      <workItem from="1678835697275" duration="564000" />
-      <workItem from="1678885643003" duration="6800000" />
-      <workItem from="1678912357158" duration="328000" />
-      <workItem from="1678912698702" duration="51000" />
-      <workItem from="1678912761565" duration="4226000" />
-      <workItem from="1678961620279" duration="11413000" />
-      <workItem from="1678998416704" duration="7637000" />
-      <workItem from="1679054907152" duration="2398000" />
-      <workItem from="1679246716945" duration="6794000" />
-      <workItem from="1679306525243" duration="4551000" />
-      <workItem from="1679330174372" duration="221000" />
-      <workItem from="1679332719652" duration="547000" />
-    </task>
-    <task id="LOCAL-00001" summary="attacks model changed to index">
-      <created>1678581923519</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1678581923519</updated>
-    </task>
-    <task id="LOCAL-00002" summary="attacks model changed to index">
-      <created>1678627411024</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1678627411024</updated>
-    </task>
-    <task id="LOCAL-00003" summary="attacks model changed to index">
-      <created>1678664671619</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1678664671619</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Musik Added">
-      <created>1678709549266</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1678709549266</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Musik Added">
-      <created>1678710134787</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1678710134787</updated>
-    </task>
-    <task id="LOCAL-00006" summary="shopify">
-      <created>1678894530330</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1678894530330</updated>
-    </task>
-    <task id="LOCAL-00007" summary="CURSED UPDATE (still working on it)">
-      <created>1679006732853</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1679006732853</updated>
-    </task>
-    <task id="LOCAL-00008" summary="CURSED UPDATE (still working on it)">
-      <created>1679246993909</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1679246993909</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="attacks model changed to index" />
-    <MESSAGE value="Musik Added" />
-    <MESSAGE value="shopify" />
-    <MESSAGE value="CURSED UPDATE (still working on it)" />
-    <option name="LAST_COMMIT_MESSAGE" value="CURSED UPDATE (still working on it)" />
   </component>
 </project>

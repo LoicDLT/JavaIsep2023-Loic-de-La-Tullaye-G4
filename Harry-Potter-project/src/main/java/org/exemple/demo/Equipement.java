@@ -8,9 +8,11 @@ import lombok.Data;
  class Equipement {
     private String name;
     private int price;
+    private String color;
+    private boolean disapearAfterUse = false;
 
     public static Equipement sword(){
-        Equipement sword = new Equipement("Sword", 100);
+        Equipement sword = new Equipement("Sword", 100, ConsoleColors.GREEN, false);
         return sword;
     }
 }

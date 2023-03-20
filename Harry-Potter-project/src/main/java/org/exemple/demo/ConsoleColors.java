@@ -9,6 +9,7 @@ public class ConsoleColors {
 
     public static final String ORANGE = "\033[38;5;208m";   // ORANGE
     public static final String BLACK = "\033[0;30m";   // BLACK
+
     public static final String RED = "\033[0;31m";     // RED
     public static final String GREEN = "\033[0;32m";   // GREEN
     public static final String YELLOW = "\033[0;33m";  // YELLOW
