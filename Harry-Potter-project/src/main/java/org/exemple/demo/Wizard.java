@@ -118,14 +118,14 @@ public class Wizard extends Character {
         return null;
     }
 
-    public static void usePotion(Potion potion, @NotNull Wizard wizard) {
-        if (wizard.getPotions().contains(potion)) {
-            wizard.removePotions(potion);
+    public void usePotion(Potion potion) {
+        if (potions.contains(potion)) {
+            removePotions(potion);
 
-            wizard.healthRegen(potion.getAmountOfHealthRegen());
-            Effect.manaRegen(potion.getAmountOfManaRegen(), wizard);
-            Effect.LuckIncrease(potion.getAmountOfLuck(), wizard);
-            Effect.StrengthIncrease(potion.getAmountOfStrength(), wizard);
+            healthRegen(potion.getAmountOfHealthRegen());
+            manaRegen(potion.getAmountOfManaRegen());
+            LuckIncrease(potion.getAmountOfLuck());
+            StrengthIncrease(potion.getAmountOfStrength());
 
         }
     }
@@ -149,17 +149,17 @@ public class Wizard extends Character {
         int levelGaigned = 0;
 
 
-        while (amoutOfExpGiven >= (1 + (level-1) * levelUpRatio) * 100) {
-            amoutOfExpGiven -= (1 + (level-1) * levelUpRatio) * 100;
+        while (amoutOfExpGiven >= (1 + (this.level-1) * this.levelUpRatio) * 100) {
+            amoutOfExpGiven -= (1 + (this.level-1) * this.levelUpRatio) * 100;
             levelUp();
-            levelPointToSPend += 1;
+            this.levelPointToSPend += 1;
             levelGaigned += 1;
-            currentExpPoints = 0;
+            this.currentExpPoints = 0;
         }
-        currentExpPoints += amoutOfExpGiven;
+        this.currentExpPoints += amoutOfExpGiven;
+        this.gold += enemy.getAmoutOfGold();
 
-
-        return ("\nYou gaigned " + ConsoleColors.TOORANGE(String.valueOf(enemy.getAmoutOfExp())) + " Exp points !" + ((levelGaigned > 0) ?
+        return ("\nYou gaigned " +ConsoleColors.YELLOW_BOLD+enemy.getAmoutOfGold()+" \uD83D\uDCB0"+ConsoleColors.RESET+" and "+ ConsoleColors.TOORANGE(String.valueOf(enemy.getAmoutOfExp())) + " Exp points !" + ((levelGaigned > 0) ?
                 ConsoleColors.TOORANGE(" Level " + (level - levelGaigned)) + " -> " + ConsoleColors.TOORANGE("Level "+String.valueOf(level))+" | " : "")
                 + ConsoleColors.TOORANGE(currentExpPoints + "/" + Math.round((1 + (level-1) * levelUpRatio) * 100))+" Exp points");
     }
@@ -220,10 +220,46 @@ public class Wizard extends Character {
     public String levelUp() {
         String levelannoucement = "you just gained a level ! " + ConsoleColors.TOORANGE(String.valueOf(this.level)) + " -> ";
         this.level += 1;
-        return levelannoucement += ConsoleColors.TOORANGE(String.valueOf(this.level));
+        return levelannoucement + ConsoleColors.TOORANGE(String.valueOf(this.level));
     }
     public void changeGold(int amount) {
         this.gold+=amount;
     }
+
+    public void manaRegen(float amountOfMana) {
+        float tempMana = currentManaPoints;
+        float tempMaxMana = maxManaPoints;
+
+        if ((tempMana + amountOfMana) > tempMaxMana) {
+            currentManaPoints =tempMaxMana;
+        } else {
+            currentManaPoints = tempMana + amountOfMana;
+        }
+    }
+
+
+    public void LuckIncrease(float amountOfLuck) {
+        float tempLuck =currentLuckPoints;
+        float tempMaxLuck = maxLuckPoints;
+
+        if ((tempLuck + amountOfLuck) > tempMaxLuck) {
+            currentLuckPoints=tempMaxLuck;
+        } else {
+            currentLuckPoints=tempLuck + amountOfLuck;
+        }
+    }
+    public void StrengthIncrease(float amountOfStrength) {
+        float tempStrength = currentStrengthPoints;
+        float tempMaxStength = maxStrengthPoints;
+
+        if ((tempStrength + amountOfStrength) > tempMaxStength) {
+            currentStrengthPoints=(tempMaxStength);
+        } else {
+            currentStrengthPoints=(tempStrength + amountOfStrength);
+        }
+    }
+
+
+
 
 }

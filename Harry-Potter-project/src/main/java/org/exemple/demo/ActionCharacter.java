@@ -48,4 +48,5 @@ public interface ActionCharacter {
         }
         return string.stripTrailing();
     }
+
 }

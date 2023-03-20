@@ -2,9 +2,10 @@ package org.exemple.demo;
 
 public class Z_TESTFONCTIONS {
     public static void main(String[] args) {
-        Shop shop = Shop.year1Shop();
 
-        System.out.println(shop.displayShop());
+        System.out.println(String.format("| %-30s |", "pupupute"));
+        System.out.println(String.format("| %-30s |", "500/69420"));
+        System.out.println(String.format("| %-30s |", "wow le troll t'encule a sec"));
 
     }
 }

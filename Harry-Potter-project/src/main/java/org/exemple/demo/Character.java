@@ -30,6 +30,16 @@ public abstract class Character {
         else currentHealthPoints=(tempHealth + amountOfHeal);
     }
 
+    public void AgilityIncrease(float amountOfAbility ) {
+        float tempAbility = dodgingChancePercentage;
+        float tempMaxAbility = maxDodgingChancePercentage;
+
+        if ((tempAbility + amountOfAbility) > tempMaxAbility) {
+            dodgingChancePercentage=(tempMaxAbility);
+        } else {
+            dodgingChancePercentage=(tempAbility + amountOfAbility);
+        }
+    }
 
 
 

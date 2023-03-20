@@ -1,48 +1,5 @@
 package org.exemple.demo;
+//TODO deplacer dans wizard et enemy
+public class Effect {
 
-public class Effect{
-
-
-    static void manaRegen(float amountOfMana,Wizard wizard ) {
-        float tempMana = wizard.getCurrentManaPoints();
-        float tempMaxMana = wizard.getMaxManaPoints();
-
-        if ((tempMana + amountOfMana) > tempMaxMana) {
-            wizard.setCurrentManaPoints(tempMaxMana);
-        } else {
-            wizard.setCurrentManaPoints(tempMana + amountOfMana);
-        }
-    }
-
-
-    static void LuckIncrease(float amountOfLuck,Wizard wizard ) {
-        float tempLuck = wizard.getCurrentLuckPoints();
-        float tempMaxLuck = wizard.getMaxLuckPoints();
-
-        if ((tempLuck + amountOfLuck) > tempMaxLuck) {
-            wizard.setCurrentLuckPoints(tempMaxLuck);
-        } else {
-            wizard.setCurrentLuckPoints(tempLuck + amountOfLuck);
-        }
-    }
-    static void StrengthIncrease(float amountOfStrength,Wizard wizard ) {
-        float tempStrength = wizard.getCurrentStrengthPoints();
-        float tempMaxStength = wizard.getMaxStrengthPoints();
-
-        if ((tempStrength + amountOfStrength) > tempMaxStength) {
-            wizard.setCurrentStrengthPoints(tempMaxStength);
-        } else {
-            wizard.setCurrentStrengthPoints(tempStrength + amountOfStrength);
-        }
-    }
-    static void AgilityIncrease(float amountOfAbility,Wizard wizard ) {
-        float tempAbility = wizard.getDodgingChancePercentage();
-        float tempMaxAbility = wizard.getMaxDodgingChancePercentage();
-
-        if ((tempAbility + amountOfAbility) > tempMaxAbility) {
-            wizard.setDodgingChancePercentage(tempMaxAbility);
-        } else {
-            wizard.setDodgingChancePercentage(tempAbility + amountOfAbility);
-        }
-    }
 }

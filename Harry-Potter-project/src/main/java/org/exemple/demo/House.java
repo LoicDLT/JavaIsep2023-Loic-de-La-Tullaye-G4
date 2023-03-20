@@ -12,7 +12,6 @@ enum House {
     SLYTHERIN(1);
     private float PotionBuff;
 
-
     public static House ChooseHouse() {
         System.out.println("HELLO THERE !\nPLEASE CHOOSE A HOUSE BETWEEN THOSE ONES :\n" +
                 "GRYPHONDOR\n" +

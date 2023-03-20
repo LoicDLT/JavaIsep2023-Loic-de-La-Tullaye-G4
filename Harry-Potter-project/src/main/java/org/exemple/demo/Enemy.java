@@ -44,6 +44,7 @@ public class Enemy extends Character {
                 .level(12)
                 .lastname("")
                 .amoutOfExp(300)
+                .amoutOfGold(100)
                 .curseList(new HashMap<Curse, Integer>())
                 .maxHealthPoints(1200)
                 .attackList(listTrollAttacks)
@@ -61,6 +62,7 @@ public class Enemy extends Character {
                 .level(12)
                 .lastname("")
                 .amoutOfExp(500)
+                .amoutOfGold(100)
                 .maxHealthPoints(1200)
                 .curseList(new HashMap<Curse, Integer>())
                 .attackList(listBasiliskAttacks)
@@ -146,6 +148,4 @@ public class Enemy extends Character {
 
 
     }
-
-
 }

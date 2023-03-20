@@ -42,7 +42,7 @@ public class Testmain {
 
 
 if (musicEnabled) {
-    MusicPlayer.playloop(MusicLibrary.backgroudMusic);
+    MusicPlayer.playloop(MusicLibrary.lezgongue);
     MusicPlayer.setVolume(0.1F);
 }
 
@@ -91,21 +91,6 @@ if (musicEnabled) {
                 .house(chosenHouse)
                 .build();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         Hero.ApplyCurse(Curse.CurseOfBlindness, true);
         //test adding potions
         Hero.addPotions(Health_potion);
@@ -119,8 +104,6 @@ if (musicEnabled) {
         Hero.getPotionsNames();
 
         //using potions
-        Wizard.usePotion(Health_potion,Hero);
-        Wizard.usePotion(Mana_potion,Hero);
 
         //displaying Players infos and potions list
         ActionCharacter.displayPlayerInfos(Hero,false);
