@@ -99,9 +99,9 @@ public class Displayer {
         display();
     }
 
-    public void shopDisplayUpdate(String whatHappend, @NotNull Shop shop, Wizard Hero, boolean error) {
+    public void shopDisplayUpdate(String whatHappend, String displayShop, Wizard Hero, boolean error) {
         this.characterInfos=(ActionCharacter.displayPlayerInfos(Hero,false));
-        this.whatHappend= shop.displayShop()+"\n"+ whatHappend ;
+        this.whatHappend= displayShop+"\n"+ whatHappend ;
         this.playerOptions=("type the number of the item you want to buy  \ntype \"next\" to go to the next year");
         display();
     }

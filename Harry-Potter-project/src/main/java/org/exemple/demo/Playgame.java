@@ -10,7 +10,7 @@ public class Playgame {
                 return;
             }
             if (shopOrNot) {
-                YearsList.ShopTime(Hero, Shop.year1Shop());
+                Shop.year1Shop().ShopTime(Hero);
                 YearsList.Year_2(Hero);
             }
             else{
