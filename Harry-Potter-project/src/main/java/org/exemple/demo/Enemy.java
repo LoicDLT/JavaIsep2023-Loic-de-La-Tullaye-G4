@@ -16,7 +16,6 @@ import java.util.*;
 @ToString
 @SuperBuilder(toBuilder = true)
 public class Enemy extends Character {
-
     private int level;
     private ArrayList<EnemySpell> attackList;
     private int amoutOfExp;
@@ -24,6 +23,7 @@ public class Enemy extends Character {
 
     public static Enemy Troll(ArrayList<EnemySpell> listTrollAttacks){
         Enemy Troll = (Enemy) builder()
+                .id(1)
                 .firstname("Troll")
                 .lastname("")
                 .level(3)
@@ -41,6 +41,7 @@ public class Enemy extends Character {
     }
     public static Enemy Trollette(ArrayList<EnemySpell> listTrollAttacks){
         Enemy Trollette = (Enemy) builder()
+                .id(2)
                 .firstname("Trollette")
                 .level(12)
                 .lastname("")
@@ -58,6 +59,7 @@ public class Enemy extends Character {
     }
     public static Enemy Basilisk(ArrayList<EnemySpell> listBasiliskAttacks){
         Enemy Basilisk = (Enemy) builder()
+                .id(3)
                 .firstname("Basilisk")
                 .level(12)
                 .lastname("")
@@ -67,7 +69,7 @@ public class Enemy extends Character {
                 .curseList(new HashMap<Curse, Integer>())
                 .attackList(listBasiliskAttacks)
                 .currentHealthPoints(1200)
-                .dodgingChancePercentage(80)
+                .dodgingChancePercentage(30)
                 .maxDodgingChancePercentage(100)
                 .dead(false)
                 .build();
@@ -127,6 +129,11 @@ public class Enemy extends Character {
                     script += "\n" + "The spell is very effective and dealt extra damage ! ";
                     damageDealt = Math.round(damageDealt * (1 + (getCurrentStrengthPoints() / 100)));
                 }*/
+                if (!(spellChoosed.getCurse() == null)){
+
+                    script+= "\n" +wizard.applyCurse(spellChoosed.getCurse(),true);
+
+                }
                 script += ConsoleColors.CYAN_BOLD + wizard.getFirstname() + " " + wizard.getLastname() + " : " +
                         ConsoleColors.RED_BOLD_BRIGHT + "❤ " +
                         Math.round(wizard.getCurrentHealthPoints()) + "/" + Math.round(wizard.getMaxHealthPoints()) +

@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum Curse {
-    CurseOfBlindness("The Curse Of Blindness","Blinded", 3, 30,1,0.6f );
+    CurseOfBlindness("The Curse Of Blindness","Blinded", 4, 30,1,0.6f );
 
     private String curseName;
     private String adjective;

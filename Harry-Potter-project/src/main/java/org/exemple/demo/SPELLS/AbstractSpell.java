@@ -8,6 +8,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @SuperBuilder(toBuilder=true)
 public abstract class AbstractSpell {
+    private int id;
     private String name;
     private String script;
     private int manaCost;

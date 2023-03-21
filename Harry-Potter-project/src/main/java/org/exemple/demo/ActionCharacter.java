@@ -5,9 +5,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.lang.Math;
 public interface ActionCharacter {
+
+
     public static String separator = ConsoleColors.PURPLE_BOLD_BRIGHT + " || " + ConsoleColors.RESET;
     //TODO DISPLAY THE EMOJI OF THE CHOSEN HOUSE
     static String displayPlayerInfos(@NotNull Wizard wizard ,boolean applyCurseDamage) {
+        String test = String.format("%-18s test","anniv");
 
         return String.format(ConsoleColors.CYAN_BOLD + "%-14s " + separator +
                         ConsoleColors.ORANGE_BOLD + "%-8s" + separator +
@@ -38,12 +41,12 @@ public interface ActionCharacter {
         for (Enemy enemy : enemyList) {
              string+=String.format("%s[38;5;160m%-11s" + separator +
                             ConsoleColors.ORANGE_BOLD + "%-8s" + separator +
-                            ConsoleColors.RED_BOLD_BRIGHT + "❤ %-9s" + separator +"\n"+ ConsoleColors.RESET,
+                            ConsoleColors.RED_BOLD_BRIGHT + "❤ %-9s"  +"\n"+ ConsoleColors.RESET,
                      "("+i+") ",enemy.getFirstname() + " " + enemy.getLastname(),
                     "Level " + enemy.getLevel(),
                      Math.round(enemy.getCurrentHealthPoints())
                              + "/" + Math.round(enemy.getMaxHealthPoints()) +
-                             ((enemy.getCurseList().keySet().isEmpty())? "":  enemy.getCursesNames(applyCurseDamage)));
+                             ((enemy.getCurseList().keySet().isEmpty())? separator : separator + enemy.getCursesNames(applyCurseDamage)));
              i++;
         }
         return string.stripTrailing();

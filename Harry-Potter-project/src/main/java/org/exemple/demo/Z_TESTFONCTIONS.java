@@ -5,7 +5,7 @@ public class Z_TESTFONCTIONS {
 
         System.out.println(String.format("| %-30s |", "pupupute"));
         System.out.println(String.format("| %-30s |", "500/69420"));
-        System.out.println(String.format("| %-30s |", "wow le troll t'encule a sec"));
+        System.out.println(String.format("| %s", "wow le troll t'encule a sec"));
 
     }
 }

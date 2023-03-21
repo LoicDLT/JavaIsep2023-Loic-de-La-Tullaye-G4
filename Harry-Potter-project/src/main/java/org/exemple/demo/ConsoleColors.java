@@ -6,7 +6,6 @@ public class ConsoleColors {
 
     // Regular Colors
     public static final String AGYLITYCOLOR = "\033[38;5;159m";   // bright cyan
-
     public static final String ORANGE = "\033[38;5;208m";   // ORANGE
     public static final String BLACK = "\033[0;30m";   // BLACK
 

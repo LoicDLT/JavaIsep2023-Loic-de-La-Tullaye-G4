@@ -91,7 +91,7 @@ if (musicEnabled) {
                 .house(chosenHouse)
                 .build();
 
-        Hero.ApplyCurse(Curse.CurseOfBlindness, true);
+
         //test adding potions
         Hero.addPotions(Health_potion);
         Hero.addPotions(Health_potion);
@@ -106,7 +106,7 @@ if (musicEnabled) {
         //using potions
 
         //displaying Players infos and potions list
-        ActionCharacter.displayPlayerInfos(Hero,false);
+
         Hero.getPotionsNames();
 
         //getting proprieties of a certain

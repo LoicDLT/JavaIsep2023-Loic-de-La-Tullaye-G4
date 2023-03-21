@@ -4,7 +4,6 @@ import org.exemple.demo.Music.MusicLibrary;
 import org.exemple.demo.Music.MusicPlayer;
 import org.exemple.demo.Music.SoundEffectPlayer;
 import org.exemple.demo.SPELLS.AbstractSpell;
-import org.exemple.demo.SPELLS.EnemySpell;
 import org.exemple.demo.SPELLS.Spell;
 import org.jetbrains.annotations.NotNull;
 
@@ -15,6 +14,12 @@ public interface YearsList {
 
     //MAIN MENU
 
+    static void CurseCooldown(ArrayList<Enemy> enemyList, Wizard Hero) {
+        for (Enemy enemy : enemyList) {
+            enemy.reduceAllCurseTime();
+        }
+        Hero.reduceAllCurseTime();
+    }
     //POTION SWITCH CASE
     static void potionSwitchCase(Displayer displayer, ArrayList<Enemy> enemyList, Wizard Hero, boolean potion_choosed, String currentState) {
         while (!potion_choosed) {
@@ -136,8 +141,11 @@ public interface YearsList {
                             if (selectedTargetIndex < 0 | selectedTargetIndex > enemyList.size()) {
                                 displayer.targetDisplayUpdate("", enemyList, Hero, true);
                             } else {
+                                //get target
                                 Enemy enemy = enemyList.get(selectedTargetIndex - 1);
                                 spell_choosed_state = true;
+                                //reduce all curse cooldowns
+                                CurseCooldown( enemyList,  Hero);
 
                                 attackResult = Hero.attack(enemy, spell_choosed);
                                 if (enemy.isDead()) {
@@ -169,11 +177,7 @@ public interface YearsList {
     }
 
     //=========================================================================YEARLIST===================================================================================
-//TODO FINIR CURSES
-    //TODO CURSE TIMER DIMINUE A CHAQUE TOUR ✅
-    //TODO CURSE MULTIPLIER WORKS ✅
-    //TODO CURSE BLINDNESS REALY BLINDS ✅&❌ (just did the dodging part)
-    //TODO CURSE POISON WORKS AND DISPLAYS NEXT TO TIMER ✅
+
     static boolean Year_1(@NotNull Wizard Hero) throws InterruptedException {
 
         //initYear
@@ -239,7 +243,7 @@ public interface YearsList {
                         Hero.healthRegen(30);
                         Hero.manaRegen(40);
                         Hero.AgilityIncrease(35);
-
+                        CurseCooldown( year1.getEnemyList(),  Hero);
                         break;
 
 
@@ -255,12 +259,7 @@ public interface YearsList {
             } while (!dodge_selected & !spell_choosed_state);
 
             //RESULT SCREEN FOR THE TURN (ATTACK OR DODGE)
-            for (Enemy enemy : year1.getEnemyList()) {
-                if (!enemy.isDead()) {
-                    enemy.reduceAllCursetime();
-                }
-            }
-            Hero.reduceAllCursetime();
+
             year1.setCurrentState(attackResult + "\n\n");
 
 
@@ -321,7 +320,7 @@ public interface YearsList {
 
 
         Year year2 = Year.year2Constructor();
-        Hero.addSpell(Spell.Wingardium_Leviosa());
+        Hero.addSpell(Spell.Obscuro());
         Displayer displayer = new Displayer(
                 ActionCharacter.displayPlayerInfos(Hero, false) + "-".repeat(45) + "\n" + ActionCharacter.displayEnemyInfos(year2.getEnemyList(), false),
                 year2.getCurrentState(),
@@ -381,7 +380,7 @@ public interface YearsList {
                         Hero.healthRegen(30);
                         Hero.manaRegen(40);
                         Hero.AgilityIncrease(35);
-
+                        CurseCooldown( year2.getEnemyList(),  Hero);
                         break;
                     default:
                         System.out.println("Wrong input");
@@ -392,12 +391,6 @@ public interface YearsList {
             } while (!dodge_selected & !spell_choosed_state);
 
             //RESULT SCREEN FOR THE TURN (ATTACK OR DODGE)
-            for (Enemy enemy : year2.getEnemyList()) {
-                if (!enemy.isDead()) {
-                    enemy.reduceAllCursetime();
-                }
-            }
-            Hero.reduceAllCursetime();
             year2.setCurrentState(attackResult + "\n\n");
 
 
@@ -429,7 +422,7 @@ public interface YearsList {
         }
         if (year2.getEnemyList().isEmpty()) {
             Thread.sleep(5000);
-            year2.setCurrentState("You passed 1st year with honors !\n"
+            year2.setCurrentState("You passed 2nd year with honors !\n"
                     + ConsoleColors.BLUE_BOLD + "-------REWARDS-------" + ConsoleColors.RESET + "\n"
                     + ConsoleColors.YELLOW + "100 \uD83D\uDCB0" + ConsoleColors.RESET + "\n"
                     + ConsoleColors.ORANGE + "200 " + ConsoleColors.RESET + "Exp points");

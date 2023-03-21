@@ -37,7 +37,7 @@ public class Displayer {
         System.out.println(whatHappend);
 
         //blank space
-        System.out.println("\n".repeat(17-numberOfLines(characterInfos+whatHappend+playerOptions)));
+        System.out.println("\n".repeat(18-numberOfLines(characterInfos+whatHappend+playerOptions)));
 
         //what the player needs to do
         System.out.println(playerOptions);
@@ -76,7 +76,7 @@ public class Displayer {
     public void equipementDisplayUpdate( ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
         this.characterInfos=(ActionCharacter.displayPlayerInfos(Hero,false) + barreEnemy + "\n" + ActionCharacter.displayEnemyInfos(enemyList,false));
         this.whatHappend=(Hero.getEquipementNames());
-        this.playerOptions=("Type the name of the Potion you want to use, type \"back\" if you want to go back" + ((error) ? "\nPlease select a valid potion name" : ""));
+        this.playerOptions=("Type the name of the item you want to use, type \"back\" if you want to go back" + ((error) ? "\nPlease select a valid item name" : ""));
 
         display();
     }

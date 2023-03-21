@@ -1,5 +1,6 @@
 package org.exemple.demo.SPELLS;
 
+import org.exemple.demo.Curse;
 import org.exemple.demo.Music.MusicLibrary;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -13,6 +14,7 @@ public class Spell extends AbstractSpell{
     public static Spell Wingardium_Leviosa(){
         Spell Wingardium_Leviosa =
                 Spell.builder()
+                        .id(1)
                         .name("Wingardium Leviosa")
                         .manaCost(50)
                         .chanceOfSuccess(90)
@@ -26,12 +28,14 @@ public class Spell extends AbstractSpell{
     public static Spell Obscuro(){
         Spell Obscuro =
                 Spell.builder()
+                        .id(2)
                         .name("Obscuro")
                         .manaCost(150)
-                        .chanceOfSuccess(80)
+                        .chanceOfSuccess(100)
                         .script("You conjure a blindfold over the eyes of your enemy")
-                        .damage(500)
+                        .damage(100)
                         .didNotWork("Unfortunatly the spell did not work")
+                        .curse(Curse.CurseOfBlindness)
                         .soundEffect(MusicLibrary.wingardiumLeviosa)
                         .build();
         return Obscuro;

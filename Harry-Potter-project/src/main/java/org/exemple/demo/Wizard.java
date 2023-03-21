@@ -1,13 +1,12 @@
 package org.exemple.demo;
 
-import org.exemple.demo.Music.MusicLibrary;
-
-import org.exemple.demo.Music.SoundEffectPlayer;
-import org.exemple.demo.SPELLS.AbstractSpell;
-import org.exemple.demo.SPELLS.Spell;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
+import org.exemple.demo.Music.MusicLibrary;
+import org.exemple.demo.Music.SoundEffectPlayer;
+import org.exemple.demo.SPELLS.AbstractSpell;
+import org.exemple.demo.SPELLS.Spell;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -38,34 +37,36 @@ public class Wizard extends Character {
     private House house;
 
 
-
     //=============================================================EQUIPEMENT==================================================================
-    public String getEquipementShop(){
+    public String getEquipementShop() {
         String equipementList = "";
         int i = 1;
         for (Equipement equipement : equipements) {
-            equipementList +="("+i+") "+ equipement.getName() + ConsoleColors.RESET + "\n";
-            i+=1;
+            equipementList += "(" + i + ") " + equipement.getName() + ConsoleColors.RESET + "\n";
+            i += 1;
         }
 
         return "Equipement List :\n" + equipementList.trim();
     }
-    public void addEquipement(Equipement equipement){
+
+    public void addEquipement(Equipement equipement) {
         this.equipements.add(equipement);
     }
+
     public String getEquipementNames() {
         String potionlist = "";
-        int i=1;
+        int i = 1;
         for (Equipement equipement : equipements) {
 
-            potionlist +="("+(i)+") " + String.format("%s%s%s\n", equipement.getColor(), equipement.getName(), ConsoleColors.RESET);
+            potionlist += "(" + (i) + ") " + String.format("%s%s%s\n", equipement.getColor(), equipement.getName(), ConsoleColors.RESET);
             i++;
         }
 
 
         return "Equipement List :\n" + potionlist.trim();
     }
-    public void useEquipement(Equipement equipement){
+
+    public void useEquipement(Equipement equipement) {
         if (equipement.isDisapearAfterUse()) this.equipements.remove(equipement);
 
     }
@@ -75,13 +76,14 @@ public class Wizard extends Character {
         String spellList = "";
         int i = 1;
         for (AbstractSpell spell : knownSpells) {
-            spellList +="("+i+") "+ spell.getName() + ConsoleColors.BLUE_BOLD_BRIGHT + " \uD83C\uDF22 " + Math.round(spell.getManaCost()) + ConsoleColors.RESET + "\n";
-            i+=1;
+            spellList += "(" + i + ") " + spell.getName() + ConsoleColors.BLUE_BOLD_BRIGHT + " \uD83C\uDF22 " + Math.round(spell.getManaCost()) + ConsoleColors.RESET + "\n";
+            i += 1;
         }
 
         return "Spell List :\n" + spellList.trim();
 
     }
+
     public AbstractSpell stringToSpell(String spellName) {
 
         for (AbstractSpell spell : knownSpells) {
@@ -91,9 +93,11 @@ public class Wizard extends Character {
         }
         return null;
     }
+
     public void addSpell(Spell spell) {
         this.knownSpells.add(spell);
     }
+
     public void removeSpell(Spell spell) {
         this.knownSpells.remove(spell);
     }
@@ -116,7 +120,7 @@ public class Wizard extends Character {
 
         }
         for (int index = 0; index < found.size(); index++) {
-            potionlist +="("+(index+1)+") " + occurence.get(index) + "x " + String.format("%s%s%s\n", found.get(index).getColor(), found.get(index).getName(), ConsoleColors.RESET);
+            potionlist += "(" + (index + 1) + ") " + occurence.get(index) + "x " + String.format("%s%s%s\n", found.get(index).getColor(), found.get(index).getName(), ConsoleColors.RESET);
         }
         stringAndFoundPot.add("Potion List :\n" + potionlist.trim());
         stringAndFoundPot.add(found);
@@ -149,8 +153,6 @@ public class Wizard extends Character {
         this.potions.add(potion);
     }
 
-
-
     public void removePotions(Potion potion) {
         this.potions.remove(potion);
     }
@@ -162,8 +164,8 @@ public class Wizard extends Character {
         int levelGaigned = 0;
 
 
-        while (amoutOfExpGiven >= (1 + (this.level-1) * this.levelUpRatio) * 100) {
-            amoutOfExpGiven -= (1 + (this.level-1) * this.levelUpRatio) * 100;
+        while (amoutOfExpGiven >= (1 + (this.level - 1) * this.levelUpRatio) * 100) {
+            amoutOfExpGiven -= (1 + (this.level - 1) * this.levelUpRatio) * 100;
             levelUp();
             this.levelPointToSPend += 1;
             levelGaigned += 1;
@@ -172,9 +174,9 @@ public class Wizard extends Character {
         this.currentExpPoints += amoutOfExpGiven;
         this.gold += enemy.getAmoutOfGold();
 
-        return ("\nYou gaigned " +ConsoleColors.YELLOW_BOLD+enemy.getAmoutOfGold()+" \uD83D\uDCB0"+ConsoleColors.RESET+" and "+ ConsoleColors.TOORANGE(String.valueOf(enemy.getAmoutOfExp())) + " Exp points !" + ((levelGaigned > 0) ?
-                ConsoleColors.TOORANGE(" Level " + (level - levelGaigned)) + " -> " + ConsoleColors.TOORANGE("Level "+String.valueOf(level))+" | " : "")
-                + ConsoleColors.TOORANGE(currentExpPoints + "/" + Math.round((1 + (level-1) * levelUpRatio) * 100))+" Exp points");
+        return ("\nYou gaigned " + ConsoleColors.YELLOW_BOLD + enemy.getAmoutOfGold() + " \uD83D\uDCB0" + ConsoleColors.RESET + " and " + ConsoleColors.TOORANGE(String.valueOf(enemy.getAmoutOfExp())) + " Exp points !" + ((levelGaigned > 0) ?
+                ConsoleColors.TOORANGE(" Level " + (level - levelGaigned)) + " -> " + ConsoleColors.TOORANGE("Level " + String.valueOf(level)) + " | " : "")
+                + ConsoleColors.TOORANGE(currentExpPoints + "/" + Math.round((1 + (level - 1) * levelUpRatio) * 100)) + " Exp points");
     }
 
     public String attack(@NotNull Character character, @NotNull AbstractSpell spellChoosed) {
@@ -183,9 +185,9 @@ public class Wizard extends Character {
         float damageDealt;
 
         float totalChanceOfSuccess = (spellChoosed.getChanceOfSuccess() * (100 - character.getDodgingChancePercentage()) / 100);
-        if (!(getCurseList()==null)) {
+        if (!(getCurseList() == null)) {
             for (Curse curse : getCurseList().keySet()) {
-                totalChanceOfSuccess = totalChanceOfSuccess*curse.getCurseDodgingMultiplier();
+                totalChanceOfSuccess = totalChanceOfSuccess * curse.getCurseDodgingMultiplier();
             }
         }
         if (totalChanceOfSuccess > 100) {
@@ -201,15 +203,27 @@ public class Wizard extends Character {
             }
             boolean Crit = Probability.YesOrNo(currentLuckPoints);
             damageDealt = spellChoosed.getDamage();
-            if (!(getCurseList()==null)) {
+
+
+            if (!(getCurseList() == null)) {
                 for (Curse curse : getCurseList().keySet()) {
-                    damageDealt = damageDealt*curse.getCurseDamageMultiplier();
+                    damageDealt = damageDealt * curse.getCurseDamageMultiplier();
                 }
             }
-            if (Crit) {
+            if (character.getId() == 3 & !character.getCurseList().containsKey(Curse.CurseOfBlindness) & spellChoosed.getId() != 2) {
+                damageDealt = damageDealt * 0.3f;
+                script += "\n" + "You can't look The Basilisk in the eyes, you deal way less damage !";
+                damageDealt = Math.round(damageDealt * 0.3f);
+            } else if (Crit) {
                 script += "\n" + "The spell is very effective and dealt extra damage ! ";
                 damageDealt = Math.round(damageDealt * (1 + (getCurrentStrengthPoints() / 100)));
             }
+            if (!(spellChoosed.getCurse() == null)) {
+
+                script += "\n" + character.applyCurse(spellChoosed.getCurse(), false);
+
+            }
+
             script += "\n\033[38;5;160m" + character.getFirstname() + " : " +
                     ConsoleColors.RED_BOLD_BRIGHT + "❤ " +
                     Math.round(character.getCurrentHealthPoints()) + "/" + Math.round(character.getMaxHealthPoints()) +
@@ -230,13 +244,15 @@ public class Wizard extends Character {
         }
         return script;
     }
+
     public String levelUp() {
         String levelannoucement = "you just gained a level ! " + ConsoleColors.TOORANGE(String.valueOf(this.level)) + " -> ";
         this.level += 1;
         return levelannoucement + ConsoleColors.TOORANGE(String.valueOf(this.level));
     }
+
     public void changeGold(int amount) {
-        this.gold+=amount;
+        this.gold += amount;
     }
 
     public void manaRegen(float amountOfMana) {
@@ -244,7 +260,7 @@ public class Wizard extends Character {
         float tempMaxMana = maxManaPoints;
 
         if ((tempMana + amountOfMana) > tempMaxMana) {
-            currentManaPoints =tempMaxMana;
+            currentManaPoints = tempMaxMana;
         } else {
             currentManaPoints = tempMana + amountOfMana;
         }
@@ -252,27 +268,26 @@ public class Wizard extends Character {
 
 
     public void LuckIncrease(float amountOfLuck) {
-        float tempLuck =currentLuckPoints;
+        float tempLuck = currentLuckPoints;
         float tempMaxLuck = maxLuckPoints;
 
         if ((tempLuck + amountOfLuck) > tempMaxLuck) {
-            currentLuckPoints=tempMaxLuck;
+            currentLuckPoints = tempMaxLuck;
         } else {
-            currentLuckPoints=tempLuck + amountOfLuck;
+            currentLuckPoints = tempLuck + amountOfLuck;
         }
     }
+
     public void StrengthIncrease(float amountOfStrength) {
         float tempStrength = currentStrengthPoints;
         float tempMaxStength = maxStrengthPoints;
 
         if ((tempStrength + amountOfStrength) > tempMaxStength) {
-            currentStrengthPoints=(tempMaxStength);
+            currentStrengthPoints = (tempMaxStength);
         } else {
-            currentStrengthPoints=(tempStrength + amountOfStrength);
+            currentStrengthPoints = (tempStrength + amountOfStrength);
         }
     }
-
-
 
 
 }
