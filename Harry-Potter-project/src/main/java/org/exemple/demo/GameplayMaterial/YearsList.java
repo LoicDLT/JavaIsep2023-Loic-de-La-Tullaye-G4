@@ -1,13 +1,8 @@
-package org.exemple.demo;
+package org.exemple.demo.GameplayMaterial;
 
-import org.exemple.demo.Music.MusicLibrary;
-import org.exemple.demo.Music.MusicPlayer;
-import org.exemple.demo.Music.SoundEffectPlayer;
-import org.exemple.demo.SPELLS.AbstractSpell;
-import org.exemple.demo.SPELLS.Spell;
+import org.exemple.demo.Characters.Wizard;
+import org.exemple.demo.Spells.Spell;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.ArrayList;
 
 
 public interface YearsList {
@@ -57,6 +52,7 @@ public interface YearsList {
     static void Year_7(Wizard hero) {
         //TODO
     }
+
 
 
 

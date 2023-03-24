@@ -1,7 +1,9 @@
-package org.exemple.demo;
+package org.exemple.demo.Characters;
 
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
+import org.exemple.demo.Tools.ConsoleColors;
+import org.exemple.demo.Spells.Curse;
 
 import java.util.HashMap;
 

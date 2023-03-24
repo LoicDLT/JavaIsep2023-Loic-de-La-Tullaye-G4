@@ -1,7 +1,9 @@
-package org.exemple.demo;
+package org.exemple.demo.WizardCreation;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.exemple.demo.Tools.ConsoleColors;
+import org.exemple.demo.Executables.Main;
 
 import java.util.InputMismatchException;
 
@@ -14,7 +16,7 @@ public class Wand {
 
     public static Wand ChooseWand() throws InterruptedException {
         System.out.println("\nNOW PLEASE CHOOSE A SIZE FOR YOUR WAND, it should be between "
-                +ConsoleColors.BLUE+"24 "+ ConsoleColors.RESET+"cm and "+ConsoleColors.BLUE+"37 "+ConsoleColors.RESET+"cm \n");
+                + ConsoleColors.BLUE+"24 "+ ConsoleColors.RESET+"cm and "+ConsoleColors.BLUE+"37 "+ConsoleColors.RESET+"cm \n");
 
         int tempwandsize = 0;
         while (true) {

@@ -1,8 +1,9 @@
-package org.exemple.demo;
+package org.exemple.demo.GameplayMaterial;
 
-import org.exemple.demo.SPELLS.AbstractSpell;
+import org.exemple.demo.Spells.AbstractSpell;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.exemple.demo.Usables.Potion;
 
 import java.util.ArrayList;
 

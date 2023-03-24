@@ -1,13 +1,14 @@
-package org.exemple.demo;
+package org.exemple.demo.WizardCreation;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
+import org.exemple.demo.Executables.Main;
 
 @AllArgsConstructor
 @ToString
 @Getter
-enum Pet {
+public enum Pet {
     OWL,
     RAT,
     CAT,

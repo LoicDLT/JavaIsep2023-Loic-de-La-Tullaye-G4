@@ -1,7 +1,12 @@
-package org.exemple.demo;
+package org.exemple.demo.GameplayMaterial;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.exemple.demo.Characters.Wizard;
+import org.exemple.demo.Tools.ConsoleColors;
+import org.exemple.demo.Executables.Main;
+import org.exemple.demo.Usables.Equipement;
+import org.exemple.demo.Usables.Potion;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedHashMap;
@@ -53,10 +58,9 @@ public class Shop {
 
     public void ShopTime(@NotNull Wizard Hero) {
         Displayer displayershop = new Displayer(
-                ActionCharacter.displayPlayerInfos(Hero, false) + "-".repeat(45),
                 displayShop(),
                 "type the number of the item you want to buy  \ntype \"next\" to go to the next year");
-        displayershop.display();
+        displayershop.shopDisplayUpdate("", displayShop(), Hero, false);
         String Choice = "";
         while (!Choice.equals("next")) {
             Choice = Main.scanner.nextLine();

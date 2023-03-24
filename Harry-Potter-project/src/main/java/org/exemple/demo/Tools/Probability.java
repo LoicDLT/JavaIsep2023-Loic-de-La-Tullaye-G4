@@ -1,4 +1,4 @@
-package org.exemple.demo;
+package org.exemple.demo.Tools;
 
 import net.andreinc.mockneat.MockNeat;
 

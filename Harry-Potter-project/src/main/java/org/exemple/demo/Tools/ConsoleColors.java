@@ -1,4 +1,4 @@
-package org.exemple.demo;
+package org.exemple.demo.Tools;
 
 public class ConsoleColors {
     // Reset

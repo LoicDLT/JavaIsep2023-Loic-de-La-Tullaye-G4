@@ -1,7 +1,8 @@
-package org.exemple.demo;
+package org.exemple.demo.Usables;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.exemple.demo.Tools.ConsoleColors;
 
 
 @Data

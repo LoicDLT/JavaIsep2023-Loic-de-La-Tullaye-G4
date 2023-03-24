@@ -1,4 +1,9 @@
-package org.exemple.demo;
+package org.exemple.demo.Executables;
+
+import org.exemple.demo.Characters.Wizard;
+import org.exemple.demo.WizardCreation.House;
+import org.exemple.demo.WizardCreation.Pet;
+import org.exemple.demo.WizardCreation.Wand;
 
 import java.util.Scanner;
 
@@ -34,7 +39,7 @@ public class Main {
                 .house(chosenHouse)
                 .build();
 
-        ActionCharacter.displayPlayerInfos(Hero,false);
+
 
 
     }

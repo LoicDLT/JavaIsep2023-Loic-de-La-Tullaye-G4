@@ -4,21 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="544e7d4b-7ca8-41e2-ac7b-9e56d755bb7a" name="Changes" comment="CURSED UPDATE (basilik part left)">
+    <list default="true" id="544e7d4b-7ca8-41e2-ac7b-9e56d755bb7a" name="Changes" comment="REORGANISATION YEAR + SHOP (beaucoup plus agréable)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/ActionCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/ActionCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/ConsoleColors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/ConsoleColors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Curse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Curse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Displayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Displayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/SPELLS/AbstractSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/SPELLS/AbstractSpell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/SPELLS/EnemySpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/SPELLS/EnemySpell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/SPELLS/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/SPELLS/Spell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/ActionCharacter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/BattleEngine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/WizardCreation/Core.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Curse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/Curse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Displayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Displayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Equipement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Usables/Equipement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/WizardCreation/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/WizardCreation/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Playgame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Playgame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Potion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Usables/Potion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Rewards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Rewards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/SPELLS/AbstractSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/AbstractSpell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/SPELLS/EnemySpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/EnemySpell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/SPELLS/ForbiddenSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/ForbiddenSpell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/SPELLS/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/Spell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/SortingHat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/WizardCreation/SortingHat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Testmain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Testmain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Wizard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/YearsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/YearsList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Z_TESTFONCTIONS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Z_TESTFONCTIONS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Wand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/WizardCreation/Wand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Wizard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Year.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/YearsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/YearsList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,59 +83,38 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/142lo/OneDrive/Bureau/JAVA-ISEP-GITLINKED/JavaIsep2023-Loic-de-La-Tullaye-G4/Harry-Potter-project/src&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\142lo\OneDrive\Bureau\JAVA-ISEP-GITLINKED\JavaIsep2023-Loic-de-La-Tullaye-G4\Harry-Potter-project\src" />
-      <recent name="C:\Users\142lo\OneDrive\Bureau\JAVA-ISEP-GITLINKED\JavaIsep2023-Loic-de-La-Tullaye-G4\Harry-Potter-project\src\main\java\Music" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\142lo\OneDrive\Bureau\JAVA-ISEP-GITLINKED\JavaIsep2023-Loic-de-La-Tullaye-G4\Harry-Potter-project" />
-    </key>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn install" />
+    </option>
   </component>
-  <component name="RunManager" selected="Application.Z_TESTFONCTIONS">
+  <component name="RunManager">
     <configuration name="Testmain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.exemple.demo.Testmain" />
+      <option name="MAIN_CLASS_NAME" value="org.exemple.demo.Executables.Testmain" />
       <module name="Harry-Potter-project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Z_TESTFONCTIONS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.exemple.demo.Z_TESTFONCTIONS" />
-      <module name="Harry-Potter-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.exemple.demo.Spells.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Z_TESTFONCTIONS" />
         <item itemvalue="Application.Testmain" />
       </list>
     </recent_temporary>
@@ -137,7 +128,17 @@
       <option name="presentableId" value="Default" />
       <updated>1679412604985</updated>
       <workItem from="1679412609609" duration="1776000" />
+      <workItem from="1679563415842" duration="2004000" />
+      <workItem from="1679582575543" duration="2822000" />
     </task>
+    <task id="LOCAL-00001" summary="REORGANISATION YEAR + SHOP (beaucoup plus agréable)">
+      <created>1679436219456</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679436219456</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +161,7 @@
     <MESSAGE value="Musik Added" />
     <MESSAGE value="shopify" />
     <MESSAGE value="CURSED UPDATE (still working on it)" />
-    <option name="LAST_COMMIT_MESSAGE" value="CURSED UPDATE (still working on it)" />
+    <MESSAGE value="REORGANISATION YEAR + SHOP (beaucoup plus agréable)" />
+    <option name="LAST_COMMIT_MESSAGE" value="REORGANISATION YEAR + SHOP (beaucoup plus agréable)" />
   </component>
 </project>

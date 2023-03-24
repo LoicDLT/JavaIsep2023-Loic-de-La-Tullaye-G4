@@ -1,7 +1,6 @@
-package org.exemple.demo;
+package org.exemple.demo.Spells;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 
 @Getter

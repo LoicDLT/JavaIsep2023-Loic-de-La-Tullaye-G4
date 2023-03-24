@@ -1,4 +1,6 @@
-package org.exemple.demo;
+package org.exemple.demo.GameplayMaterial;
+
+import org.exemple.demo.Characters.Wizard;
 
 public class Playgame {
 

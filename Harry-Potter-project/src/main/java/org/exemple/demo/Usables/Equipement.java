@@ -1,11 +1,12 @@
-package org.exemple.demo;
+package org.exemple.demo.Usables;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.exemple.demo.Tools.ConsoleColors;
 
 @Data
 @AllArgsConstructor
- class Equipement {
+ public class Equipement {
     private String name;
     private int price;
     private String color;

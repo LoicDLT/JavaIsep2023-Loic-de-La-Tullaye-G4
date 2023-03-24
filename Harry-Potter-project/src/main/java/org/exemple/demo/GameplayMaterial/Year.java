@@ -1,14 +1,20 @@
-package org.exemple.demo;
+package org.exemple.demo.GameplayMaterial;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+
+import org.exemple.demo.Characters.Enemy;
+import org.exemple.demo.Characters.Wizard;
+import org.exemple.demo.Tools.ConsoleColors;
+import org.exemple.demo.Executables.Main;
 import org.exemple.demo.Music.MusicLibrary;
 import org.exemple.demo.Music.MusicPlayer;
 import org.exemple.demo.Music.SoundEffectPlayer;
-import org.exemple.demo.SPELLS.AbstractSpell;
-import org.exemple.demo.SPELLS.EnemySpell;
+import org.exemple.demo.Spells.AbstractSpell;
+import org.exemple.demo.Spells.EnemySpell;
+import org.exemple.demo.Executables.Testmain;
+import org.exemple.demo.Usables.Potion;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -251,11 +257,9 @@ public class Year {
     }
     public boolean level(Wizard Hero) throws InterruptedException {
         Displayer displayer = new Displayer(
-                ActionCharacter.displayPlayerInfos(Hero, false) + "-".repeat(45) + "\n" + ActionCharacter.displayEnemyInfos(enemyList, false),
                 currentState,
                 "1. Attack\n2. Use potion\n3. Equipements\n4. Dodge");
-        System.out.println(enemyList.get(0).getCurseList().keySet());
-        displayer.display();
+        displayer.mainDisplayUpdate(currentState, enemyList, Hero, false, false);
         whenAlive(Hero, displayer);
         Hero.setMaxYear(1);
         winOrLoose(Hero, displayer);

@@ -1,10 +1,12 @@
-package org.exemple.demo;
+package org.exemple.demo.Characters;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.exemple.demo.SPELLS.EnemySpell;
-import lombok.Data;
+import org.exemple.demo.Tools.ConsoleColors;
+import org.exemple.demo.Tools.Probability;
+import org.exemple.demo.Spells.Curse;
+import org.exemple.demo.Spells.EnemySpell;
 
 import lombok.experimental.SuperBuilder;
 

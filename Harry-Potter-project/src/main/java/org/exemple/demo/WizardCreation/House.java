@@ -1,11 +1,12 @@
-package org.exemple.demo;
+package org.exemple.demo.WizardCreation;
 
 import lombok.AllArgsConstructor;
 import lombok.ToString;
+import org.exemple.demo.Executables.Main;
 
 @ToString
 @AllArgsConstructor
-enum House {
+public enum House {
     GRYPHONDOR(1),
     HUFFLEPUFF(1.20F),
     RAVENCLAW(1),

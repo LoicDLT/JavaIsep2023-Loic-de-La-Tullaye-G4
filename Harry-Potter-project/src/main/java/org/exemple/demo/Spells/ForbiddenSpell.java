@@ -1,4 +1,4 @@
-package org.exemple.demo.SPELLS;
+package org.exemple.demo.Spells;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;

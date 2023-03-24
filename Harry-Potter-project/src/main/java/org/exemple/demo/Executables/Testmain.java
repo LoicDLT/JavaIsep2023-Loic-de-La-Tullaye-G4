@@ -1,8 +1,18 @@
-package org.exemple.demo;
+package org.exemple.demo.Executables;
 
+import org.exemple.demo.Characters.Wizard;
+import org.exemple.demo.Tools.ConsoleColors;
+import org.exemple.demo.GameplayMaterial.Playgame;
 import org.exemple.demo.Music.MusicLibrary;
 import org.exemple.demo.Music.MusicPlayer;
-import org.exemple.demo.SPELLS.AbstractSpell;
+import org.exemple.demo.Spells.AbstractSpell;
+import org.exemple.demo.Spells.Curse;
+import org.exemple.demo.Usables.Equipement;
+import org.exemple.demo.Usables.Potion;
+import org.exemple.demo.WizardCreation.Core;
+import org.exemple.demo.WizardCreation.House;
+import org.exemple.demo.WizardCreation.Pet;
+import org.exemple.demo.WizardCreation.Wand;
 
 import java.util.ArrayList;
 import java.util.HashMap;

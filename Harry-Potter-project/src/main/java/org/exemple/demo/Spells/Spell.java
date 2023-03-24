@@ -1,6 +1,5 @@
-package org.exemple.demo.SPELLS;
+package org.exemple.demo.Spells;
 
-import org.exemple.demo.Curse;
 import org.exemple.demo.Music.MusicLibrary;
 import lombok.*;
 import lombok.experimental.SuperBuilder;

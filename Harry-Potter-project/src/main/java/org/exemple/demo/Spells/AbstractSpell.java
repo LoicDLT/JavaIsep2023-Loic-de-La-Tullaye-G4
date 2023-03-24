@@ -1,5 +1,4 @@
-package org.exemple.demo.SPELLS;
-import org.exemple.demo.Curse;
+package org.exemple.demo.Spells;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;

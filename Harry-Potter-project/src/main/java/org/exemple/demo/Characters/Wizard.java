@@ -1,12 +1,21 @@
-package org.exemple.demo;
+package org.exemple.demo.Characters;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
+import org.exemple.demo.Executables.Testmain;
 import org.exemple.demo.Music.MusicLibrary;
 import org.exemple.demo.Music.SoundEffectPlayer;
-import org.exemple.demo.SPELLS.AbstractSpell;
-import org.exemple.demo.SPELLS.Spell;
+import org.exemple.demo.Spells.AbstractSpell;
+import org.exemple.demo.Spells.Curse;
+import org.exemple.demo.Spells.Spell;
+import org.exemple.demo.Tools.ConsoleColors;
+import org.exemple.demo.Tools.Probability;
+import org.exemple.demo.Usables.Equipement;
+import org.exemple.demo.Usables.Potion;
+import org.exemple.demo.WizardCreation.House;
+import org.exemple.demo.WizardCreation.Pet;
+import org.exemple.demo.WizardCreation.Wand;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -68,7 +77,6 @@ public class Wizard extends Character {
 
     public void useEquipement(Equipement equipement) {
         if (equipement.isDisapearAfterUse()) this.equipements.remove(equipement);
-
     }
 
     //===============================================================SPELLS==================================================================

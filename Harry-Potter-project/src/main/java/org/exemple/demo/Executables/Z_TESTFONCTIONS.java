@@ -1,4 +1,4 @@
-package org.exemple.demo;
+package org.exemple.demo.Executables;
 
 public class Z_TESTFONCTIONS {
     public static void main(String[] args) {
