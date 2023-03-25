@@ -87,9 +87,9 @@ public class Displayer {
     }
 
     //SPELL CHOOSING MENU
-    public void spellDisplayUpdate( ArrayList<Enemy> enemyList, Wizard Hero, boolean error) {
+    public void spellDisplayUpdate( ArrayList<Enemy> enemyList, Wizard Hero, boolean error,boolean enoughMana) {
         this.characterInfos=(displayPlayerInfos(Hero,false) + barreEnemy + "\n" + displayEnemyInfos(enemyList,false));
-        this.whatHappend=(Hero.getKnownSpellsNames());
+        this.whatHappend=(Hero.getKnownSpellsNames()+((enoughMana)?"":"\n\nYou don't have enough mana to cast this spell"));
         this.playerOptions=("Type the name of the Spell you want to use, type \"back\" if you want to go back" + ((error) ? "\nPlease select a valid spell name" : ""));
 
         display();

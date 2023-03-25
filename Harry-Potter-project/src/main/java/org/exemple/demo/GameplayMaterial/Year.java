@@ -3,17 +3,16 @@ package org.exemple.demo.GameplayMaterial;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-
 import org.exemple.demo.Characters.Enemy;
 import org.exemple.demo.Characters.Wizard;
-import org.exemple.demo.Tools.ConsoleColors;
 import org.exemple.demo.Executables.Main;
+import org.exemple.demo.Executables.Testmain;
 import org.exemple.demo.Music.MusicLibrary;
 import org.exemple.demo.Music.MusicPlayer;
 import org.exemple.demo.Music.SoundEffectPlayer;
 import org.exemple.demo.Spells.AbstractSpell;
 import org.exemple.demo.Spells.EnemySpell;
-import org.exemple.demo.Executables.Testmain;
+import org.exemple.demo.Tools.ConsoleColors;
 import org.exemple.demo.Usables.Potion;
 import org.jetbrains.annotations.NotNull;
 
@@ -47,6 +46,7 @@ public class Year {
 
         return year1;
     }
+
     public static Year year2Constructor() {
 
         ArrayList<EnemySpell> listBasilikAttacks = new ArrayList<>();
@@ -61,6 +61,7 @@ public class Year {
 
         return year2;
     }
+
     public boolean choiceForShop(Wizard Hero, Displayer displayer) {
         while (true) {
             //Choice for shop or not
@@ -77,6 +78,7 @@ public class Year {
 
         }
     }
+
     public void winOrLoose(Wizard Hero, Displayer displayer) throws InterruptedException {
         if (Hero.isDead()) {
             Thread.sleep(5000);
@@ -101,6 +103,7 @@ public class Year {
             displayer.endDisplayUpdate(currentState.stripLeading(), enemyList, Hero, false);
         }
     }
+
     public void enemyAttack(Wizard Hero, Displayer displayer) {
         for (Enemy enemy : enemyList) {
             if (!enemy.isDead() & !Hero.isDead()) {
@@ -109,12 +112,14 @@ public class Year {
         }
         displayer.mainDisplayUpdate(currentState.stripLeading(), enemyList, Hero, false, true);
     }
+
     public void CurseCooldown(Wizard Hero) {
         for (Enemy enemy : enemyList) {
             enemy.reduceAllCurseTime();
         }
         Hero.reduceAllCurseTime();
     }
+
     public void potionSwitchCase(Displayer displayer, Wizard Hero) {
         while (!potion_choosed) {
 
@@ -149,6 +154,7 @@ public class Year {
         }
 
     }
+
     public boolean equipementSwitchCase(Displayer displayer, Wizard Hero) {
 
         if (Hero.getEquipements().isEmpty()) {
@@ -191,6 +197,7 @@ public class Year {
             }
         }
     }
+
     public @NotNull void spellSwitchCase(Displayer displayer, Wizard Hero, String Choice) {
         while (!spell_choosed_state) {
 
@@ -208,53 +215,56 @@ public class Year {
                 if (selectedSpellIndex >= 0 & selectedSpellIndex <= Hero.getKnownSpells().size()) {
 
                     AbstractSpell spell_choosed = Hero.getKnownSpells().get(selectedSpellIndex - 1);
-                    if (Testmain.musicEnabled) {
-                        SoundEffectPlayer.play(spell_choosed.getSoundEffect());
-                        SoundEffectPlayer.setVolume(0.2F);
-                    }
-                    displayer.targetDisplayUpdate("", enemyList, Hero, false);
-                    while (!spell_choosed_state) {
-                        Choice = Main.scanner.nextLine();
-                        try {
+                    if (spell_choosed.getManaCost() > Hero.getCurrentManaPoints()) {
+                        displayer.spellDisplayUpdate(enemyList, Hero, true, true);
+                    } else {
 
-                            int selectedTargetIndex = Integer.parseInt(Choice);
+                        if (Testmain.musicEnabled) {
+                            SoundEffectPlayer.play(spell_choosed.getSoundEffect());
+                            SoundEffectPlayer.setVolume(0.2F);
+                        }
+                        displayer.targetDisplayUpdate("", enemyList, Hero, false);
+                        while (!spell_choosed_state) {
+                            Choice = Main.scanner.nextLine();
+                            try {
+
+                                int selectedTargetIndex = Integer.parseInt(Choice);
 
 
-                            if (selectedTargetIndex < 0 | selectedTargetIndex > enemyList.size()) {
-                                displayer.targetDisplayUpdate("", enemyList, Hero, true);
-                            } else {
-                                //get target
-                                Enemy enemy = enemyList.get(selectedTargetIndex - 1);
-                                spell_choosed_state = true;
-                                //reduce all curse cooldowns
-                                CurseCooldown(Hero);
+                                if (selectedTargetIndex < 0 | selectedTargetIndex > enemyList.size()) {
+                                    displayer.targetDisplayUpdate("", enemyList, Hero, true);
+                                } else {
+                                    //get target
+                                    Enemy enemy = enemyList.get(selectedTargetIndex - 1);
+                                    spell_choosed_state = true;
+                                    //reduce all curse cooldowns
+                                    CurseCooldown(Hero);
 
-                                attackResult = Hero.attack(enemy, spell_choosed);
-                                if (enemy.isDead()) {
-                                    attackResult += Hero.getRewardFrom(enemy);
-                                    enemyList.remove(enemy);
+                                    attackResult = Hero.attack(enemy, spell_choosed);
+                                    if (enemy.isDead()) {
+                                        attackResult += Hero.getRewardFrom(enemy);
+                                        enemyList.remove(enemy);
+                                    }
+
+
                                 }
-
-
-
+                            } catch (NumberFormatException e) {
+                                displayer.targetDisplayUpdate("", enemyList, Hero, true);
                             }
-                        } catch (NumberFormatException e) {
-                            displayer.targetDisplayUpdate("", enemyList, Hero, true);
                         }
                     }
 
-
                 } else {
-                    displayer.spellDisplayUpdate(enemyList, Hero, true);
+                    displayer.spellDisplayUpdate(enemyList, Hero, true, true);
                 }
             } catch (NumberFormatException e) {
-                displayer.spellDisplayUpdate(enemyList, Hero, true);
+                displayer.spellDisplayUpdate(enemyList, Hero, true, true);
             }
 
         }
 
-
     }
+
     public boolean level(Wizard Hero) throws InterruptedException {
         Displayer displayer = new Displayer(
                 currentState,
@@ -266,6 +276,7 @@ public class Year {
         return choiceForShop(Hero, displayer);
 
     }
+
     public void switchLevel(Wizard Hero, Displayer displayer) throws InterruptedException {
         do {
             String Choice = Main.scanner.nextLine();
@@ -278,8 +289,8 @@ public class Year {
 //==========================SPELL========================
                 case "1":
                     //SPELL SCREEN
-                    displayer.spellDisplayUpdate(enemyList, Hero, false);
-                    spellSwitchCase(displayer,Hero,Choice);
+                    displayer.spellDisplayUpdate(enemyList, Hero, false, true);
+                    spellSwitchCase(displayer, Hero, Choice);
                     break;
 
 //==========================POTION========================
@@ -317,24 +328,27 @@ public class Year {
             }
 
         } while (!dodge_selected & !spell_choosed_state);
-}
-    public void whenAlive(Wizard Hero,Displayer displayer) throws InterruptedException {
+    }
+
+    public void whenAlive(Wizard Hero, Displayer displayer) throws InterruptedException {
         while (!enemyList.isEmpty() & !Hero.isDead()) {
 
-        resetStates(); //RESET ALL STATES
-        switchLevel(Hero, displayer); //SWITCH FOR THE 4 OPTIONS
+            resetStates(); //RESET ALL STATES
+            switchLevel(Hero, displayer); //SWITCH FOR THE 4 OPTIONS
 
 
-        //RESULT SCREEN FOR THE TURN (ATTACK OR DODGE)
-        currentState = attackResult + "\n\n";
-        enemyAttack(Hero, displayer);
+            //RESULT SCREEN FOR THE TURN (ATTACK OR DODGE)
+            currentState = attackResult + "\n\n";
+            enemyAttack(Hero, displayer);
 
-        if (dodge_selected) {
-            Hero.setDodgingChancePercentage(oldAgility);
+            if (dodge_selected) {
+                Hero.setDodgingChancePercentage(oldAgility);
+            }
+
         }
+    }
 
-    }}
-    public void resetStates(){
+    public void resetStates() {
         equipement_chosed = false;
         spell_choosed_state = false;
         dodge_selected = false;
