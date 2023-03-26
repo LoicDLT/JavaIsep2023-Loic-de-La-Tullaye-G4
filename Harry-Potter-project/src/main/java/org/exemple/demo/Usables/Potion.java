@@ -47,8 +47,8 @@ public class Potion {
     }
 
     public static Potion strength_Potion() {
-        Potion potion = new Potion("Strength Potion",50, 0, 0, 0, 60,ConsoleColors.YELLOW_BOLD_BRIGHT);
-        return potion;
+        Potion strengthPotion = new Potion("Strength Potion", 50, 0, 0, 0, 60, ConsoleColors.YELLOW_BOLD_BRIGHT);
+        return strengthPotion;
     }
 
 

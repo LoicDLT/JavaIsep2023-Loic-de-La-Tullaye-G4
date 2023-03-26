@@ -9,7 +9,6 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public class Spell extends AbstractSpell{
 
-
     public static Spell Wingardium_Leviosa(){
         Spell Wingardium_Leviosa =
                 Spell.builder()

@@ -75,7 +75,8 @@ public class Wizard extends Character {
         return "Equipement List :\n" + potionlist.trim();
     }
 
-    public void useEquipement(Equipement equipement) {
+    public void useEquipement(Equipement equipement,Enemy enemy) {
+
         if (equipement.isDisapearAfterUse()) this.equipements.remove(equipement);
     }
 
@@ -203,6 +204,7 @@ public class Wizard extends Character {
         }
         boolean Hit = Probability.YesOrNo(totalChanceOfSuccess);
         if (!Hit) {
+            currentManaPoints += -spellChoosed.getManaCost();
             script += "\n" + spellChoosed.getDidNotWork();
         } else {
             if (Testmain.musicEnabled) {
@@ -296,6 +298,5 @@ public class Wizard extends Character {
             currentStrengthPoints = (tempStrength + amountOfStrength);
         }
     }
-
 
 }

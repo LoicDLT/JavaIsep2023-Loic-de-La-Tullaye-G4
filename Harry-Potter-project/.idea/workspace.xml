@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="544e7d4b-7ca8-41e2-ac7b-9e56d755bb7a" name="Changes" comment="REORGANISATION YEAR + SHOP (beaucoup plus agréable)">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Wizard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Displayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Displayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Shop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Year.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/Spell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Usables/Equipement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Usables/Equipement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Usables/Potion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Usables/Potion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +100,7 @@
       <recent name="C:\Users\142lo\OneDrive\Bureau\JAVA-ISEP-GITLINKED\JavaIsep2023-Loic-de-La-Tullaye-G4\Harry-Potter-project" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.Harry-Potter-project-1.0-SNAPSHOT.jar">
+  <component name="RunManager" selected="Application.org.exemple.demo.Executables.Testmain">
     <configuration name="Testmain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.exemple.demo.Testmain" />
       <module name="Harry-Potter-project" />
@@ -130,8 +134,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.Harry-Potter-project-1.0-SNAPSHOT.jar" />
         <item itemvalue="Application.org.exemple.demo.Executables.Testmain" />
+        <item itemvalue="JAR Application.Harry-Potter-project-1.0-SNAPSHOT.jar" />
         <item itemvalue="Application.Testmain" />
         <item itemvalue="Application.Z_TESTFONCTIONS" />
       </list>
@@ -151,6 +155,7 @@
       <workItem from="1679652104678" duration="408000" />
       <workItem from="1679652575504" duration="780000" />
       <workItem from="1679655719716" duration="2476000" />
+      <workItem from="1679863731754" duration="871000" />
     </task>
     <task id="LOCAL-00001" summary="REORGANISATION YEAR + SHOP (beaucoup plus agréable)">
       <created>1679436219456</created>

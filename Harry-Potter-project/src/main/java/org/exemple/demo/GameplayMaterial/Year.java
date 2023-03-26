@@ -13,6 +13,7 @@ import org.exemple.demo.Music.SoundEffectPlayer;
 import org.exemple.demo.Spells.AbstractSpell;
 import org.exemple.demo.Spells.EnemySpell;
 import org.exemple.demo.Tools.ConsoleColors;
+import org.exemple.demo.Usables.Equipement;
 import org.exemple.demo.Usables.Potion;
 import org.jetbrains.annotations.NotNull;
 
@@ -22,15 +23,19 @@ import java.util.ArrayList;
 @RequiredArgsConstructor()
 public class Year {
     @NonNull
+    private int yearNumber;
+    @NonNull
     private String currentState;
     @NonNull
     private ArrayList<Enemy> enemyList;
     private boolean potion_choosed = false;
-    private boolean equipement_chosed = false;
+    private boolean equipement_choosed_state = false;
     private boolean spell_choosed_state = false;
     private boolean dodge_selected = false;
     private float oldAgility = 0;
     private String attackResult = "";
+    private int turn = 0;
+    private final int mainEventTurn;
 
     public static Year year1Constructor() {
 
@@ -42,7 +47,7 @@ public class Year {
         enemyList.add(Enemy.Troll(listTrollAttacks));
         enemyList.add(Enemy.Trollette(listTrollAttacks));
 
-        Year year1 = new Year("Un Troll Vient d'arriver et il est pas content donc bagar", enemyList);
+        Year year1 = new Year(1,"Un Troll Vient d'arriver et il est pas content donc bagar", enemyList,-1);
 
         return year1;
     }
@@ -57,7 +62,7 @@ public class Year {
         enemyList.add(Enemy.Basilisk(listBasilikAttacks));
 
 
-        Year year2 = new Year("Vous vous trouvez dans l'antre du Basilic", enemyList);
+        Year year2 = new Year(2,"Vous vous trouvez dans l'antre du Basilic", enemyList,5);
 
         return year2;
     }
@@ -110,7 +115,7 @@ public class Year {
                 currentState += enemy.attack(Hero) + "\n";
             }
         }
-        displayer.mainDisplayUpdate(currentState.stripLeading(), enemyList, Hero, false, true);
+
     }
 
     public void CurseCooldown(Wizard Hero) {
@@ -155,21 +160,21 @@ public class Year {
 
     }
 
-    public boolean equipementSwitchCase(Displayer displayer, Wizard Hero) {
+    public void equipementSwitchCase(Displayer displayer, @NotNull Wizard Hero) {
 
         if (Hero.getEquipements().isEmpty()) {
             currentState = ("\n\nYou don't have any equipement ");
             displayer.mainDisplayUpdate(currentState, enemyList, Hero, false, false);
-            return equipement_chosed;
-        } else if (equipement_chosed) {
+
+        } else if (equipement_choosed_state) {
             currentState = ("\n\nYou have already used equipement this turn ");
             displayer.mainDisplayUpdate(currentState, enemyList, Hero, false, false);
-            return equipement_chosed;
+
         } else {
             displayer.equipementDisplayUpdate(enemyList, Hero, false);
 
 
-            while (true) {
+            while (!equipement_choosed_state) {
 
                 String Choice = Main.scanner.nextLine();
 
@@ -177,18 +182,48 @@ public class Year {
                     //MAIN SCREEN
                     displayer.mainDisplayUpdate(currentState, enemyList, Hero, false, false);
 
-                    return false;
+                    equipement_choosed_state = false;
                 }
 
                 try {
                     int selected = Integer.parseInt(Choice);
-                    if (selected >= 1 & selected <= Hero.getEquipements().size()) {
-                        Hero.useEquipement(Hero.getEquipements().get(selected - 1));
-                        currentState = "\n\n\n" + Hero.getEquipements().get(selected - 1).getName() + " used successfully!";
-                        displayer.mainDisplayUpdate(currentState, enemyList, Hero, false, false);
-                        return true;
+                    if (selected > 0 & selected <= Hero.getEquipements().size()) {
+                        Equipement equipement_choosed = Hero.getEquipements().get(selected - 1);
+                        displayer.targetDisplayUpdate("",enemyList, Hero,false);
+                        while (!equipement_choosed_state) {
+                            Choice = Main.scanner.nextLine();
+                            try {
+
+                                int selectedTargetIndex = Integer.parseInt(Choice);
+
+
+                                if (selectedTargetIndex < 0 | selectedTargetIndex > enemyList.size()) {
+                                    displayer.targetDisplayUpdate("", enemyList, Hero, true);
+                                } else {
+                                    //get target
+                                    Enemy enemy = enemyList.get(selectedTargetIndex - 1);
+                                    currentState = "\n\n\n" + equipement_choosed.getName() + " used successfully!";
+                                    equipement_choosed_state = true;
+                                    Hero.useEquipement(equipement_choosed,enemy);
+                                    if (enemy.isDead()) {
+                                        currentState += "\n"+Hero.getRewardFrom(enemy);
+                                        enemyList.remove(enemy);
+                                    }
+                                    displayer.mainDisplayUpdate(currentState, enemyList, Hero, false, false);
+
+                                }
+                            } catch (NumberFormatException e) {
+                                displayer.targetDisplayUpdate("", enemyList, Hero, true);
+                            }
+
+
+
+
+
+
+                        }
                     } else {
-                        displayer.potionDisplayUpdate(enemyList, Hero, true);
+                        displayer.equipementDisplayUpdate(enemyList, Hero, true);
                     }
                 } catch (NumberFormatException e) {
                     displayer.potionDisplayUpdate(enemyList, Hero, true);
@@ -212,11 +247,11 @@ public class Year {
 
                 int selectedSpellIndex = Integer.parseInt(Choice);
 
-                if (selectedSpellIndex >= 0 & selectedSpellIndex <= Hero.getKnownSpells().size()) {
+                if (selectedSpellIndex > 0 & selectedSpellIndex <= Hero.getKnownSpells().size()) {
 
                     AbstractSpell spell_choosed = Hero.getKnownSpells().get(selectedSpellIndex - 1);
                     if (spell_choosed.getManaCost() > Hero.getCurrentManaPoints()) {
-                        displayer.spellDisplayUpdate(enemyList, Hero, true, true);
+                        displayer.spellDisplayUpdate(enemyList, Hero, false, true);
                     } else {
 
                         if (Testmain.musicEnabled) {
@@ -289,7 +324,7 @@ public class Year {
 //==========================SPELL========================
                 case "1":
                     //SPELL SCREEN
-                    displayer.spellDisplayUpdate(enemyList, Hero, false, true);
+                    displayer.spellDisplayUpdate(enemyList, Hero, false, false);
                     spellSwitchCase(displayer, Hero, Choice);
                     break;
 
@@ -303,7 +338,7 @@ public class Year {
 //==========================EQUIPEMENT========================
                 case "3":
 
-                    equipement_chosed = equipementSwitchCase(displayer, Hero);
+                    equipementSwitchCase(displayer, Hero);
                     break;
 
 //==========================DODGE========================
@@ -340,19 +375,32 @@ public class Year {
             //RESULT SCREEN FOR THE TURN (ATTACK OR DODGE)
             currentState = attackResult + "\n\n";
             enemyAttack(Hero, displayer);
+            if (turn==mainEventTurn){
+                mainEvent(Hero, displayer);
+            }
+
+            displayer.mainDisplayUpdate(currentState.stripLeading(), enemyList, Hero, false, true);
 
             if (dodge_selected) {
                 Hero.setDodgingChancePercentage(oldAgility);
             }
-
+            turn++;
         }
     }
 
     public void resetStates() {
-        equipement_chosed = false;
+        equipement_choosed_state = false;
         spell_choosed_state = false;
         dodge_selected = false;
         oldAgility = 0;
         attackResult = "";
     }
+    public void mainEvent(Wizard Hero, Displayer displayer){
+        switch (yearNumber){
+            case 2:
+                displayer.eventDisplayUpdate("while fighting, you knocked off one of the basilisk's fangs. you get "+ConsoleColors.GREEN+ "basilisk fang"+ConsoleColors.RESET,"press enter to continue", Hero);
+                Hero.addEquipement(Equipement.basiliskFang());
+                Main.scanner.nextLine();
+        }
+        }
 }

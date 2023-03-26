@@ -46,7 +46,7 @@ public class Shop {
         potionMap.put(Potion.mana_Potion(), 30);
         potionMap.put(Potion.luck_Potion(), 50);
         potionMap.put(Potion.strength_Potion(), 50);
-        equipementMap.put(Equipement.sword(), 150);
+        equipementMap.put(Equipement.swordOfGryphondor(), 150);
 
         Shop shop = new Shop(potionMap, equipementMap);
 

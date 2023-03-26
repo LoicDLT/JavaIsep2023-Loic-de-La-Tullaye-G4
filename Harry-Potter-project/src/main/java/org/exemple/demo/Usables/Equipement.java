@@ -8,12 +8,15 @@ import org.exemple.demo.Tools.ConsoleColors;
 @AllArgsConstructor
  public class Equipement {
     private String name;
-    private int price;
     private String color;
     private boolean disapearAfterUse = false;
 
-    public static Equipement sword(){
-        Equipement sword = new Equipement("Sword", 100, ConsoleColors.GREEN, false);
-        return sword;
+    public static Equipement swordOfGryphondor(){
+        Equipement swordOfGryphondor = new Equipement("Sword of Gryffindor", ConsoleColors.GREEN, false);
+        return swordOfGryphondor;
+    }
+    public static Equipement basiliskFang(){
+        Equipement basiliskFang = new Equipement("Basilisk Fang", ConsoleColors.GREEN, true);
+        return basiliskFang;
     }
 }
