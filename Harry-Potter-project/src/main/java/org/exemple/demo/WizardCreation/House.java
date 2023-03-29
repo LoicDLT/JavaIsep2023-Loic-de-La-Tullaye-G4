@@ -8,7 +8,7 @@ import org.exemple.demo.Executables.Main;
 @AllArgsConstructor
 public enum House {
     GRYPHONDOR(1),
-    HUFFLEPUFF(1.20F),
+    HUFFLEPUFF(1.30F),
     RAVENCLAW(1),
     SLYTHERIN(1);
     private float PotionBuff;

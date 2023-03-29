@@ -47,7 +47,7 @@ public class Year {
         enemyList.add(Enemy.Troll(listTrollAttacks));
         enemyList.add(Enemy.Trollette(listTrollAttacks));
 
-        Year year1 = new Year(1,"Un Troll Vient d'arriver et il est pas content donc bagar", enemyList,-1);
+        Year year1 = new Year(1,"You enter the bathroom and you see, standing in front of you, a giant Troll looking at you with menacing eyes", enemyList,-1);
 
         return year1;
     }
@@ -62,7 +62,7 @@ public class Year {
         enemyList.add(Enemy.Basilisk(listBasilikAttacks));
 
 
-        Year year2 = new Year(2,"Vous vous trouvez dans l'antre du Basilic", enemyList,5);
+        Year year2 = new Year(2,"You find yourself in the basilisk lair", enemyList,5);
 
         return year2;
     }
@@ -99,7 +99,7 @@ public class Year {
         }
         if (enemyList.isEmpty()) {
             Thread.sleep(5000);
-            currentState = ("You passed 1st year with honors !\n"
+            currentState = ("You passed year "+yearNumber+" with honors !\n"
                     + ConsoleColors.BLUE_BOLD + "-------REWARDS-------" + ConsoleColors.RESET + "\n"
                     + ConsoleColors.YELLOW + "100 \uD83D\uDCB0" + ConsoleColors.RESET + "\n"
                     + ConsoleColors.ORANGE + "200 " + ConsoleColors.RESET + "Exp points");

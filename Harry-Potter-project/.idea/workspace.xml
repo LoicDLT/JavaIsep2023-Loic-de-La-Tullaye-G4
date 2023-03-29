@@ -4,26 +4,59 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="544e7d4b-7ca8-41e2-ac7b-9e56d755bb7a" name="Changes" comment="Equipement integrated">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_mifmif_generex_1_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_15.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__dk_brics_automaton_automaton_1_11_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_andreinc_aleph_0_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_andreinc_markovneat_1_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_andreinc_mockneat_0_4_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_12_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_text_1_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_24_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_26.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="544e7d4b-7ca8-41e2-ac7b-9e56d755bb7a" name="Changes" comment="REORGANISATION YEAR + SHOP (beaucoup plus agréable)">
+      <change afterPath="$PROJECT_DIR$/target/Harry-Potter-project-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Character$CharacterBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Character.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Enemy$EnemyBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Enemy$EnemyBuilderImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Enemy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Wizard$WizardBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Wizard$WizardBuilderImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Wizard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Executables/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Executables/Testmain.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Executables/Z_TESTFONCTIONS.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Displayer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Playgame.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Rewards.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Shop.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Year.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/YearsList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Music/MusicLibrary.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Music/MusicPlayer$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Music/MusicPlayer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Music/SoundEffectPlayer$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Music/SoundEffectPlayer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/AbstractSpell$AbstractSpellBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/AbstractSpell.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/Curse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/EnemySpell$EnemySpellBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/EnemySpell$EnemySpellBuilderImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/EnemySpell.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/ForbiddenSpell$ForbiddenSpellBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/ForbiddenSpell$ForbiddenSpellBuilderImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/ForbiddenSpell.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/Spell$SpellBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/Spell$SpellBuilderImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/Spell.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Tools/ConsoleColors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Tools/Probability.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Usables/Equipement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Usables/Potion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/WizardCreation/Core.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/WizardCreation/House.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/WizardCreation/Pet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/WizardCreation/SortingHat.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/WizardCreation/Wand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Harry-Potter-project.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Wizard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Executables/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Executables/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Executables/Testmain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Executables/Testmain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Year.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Usables/Equipement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Usables/Equipement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/WizardCreation/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/WizardCreation/House.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +120,7 @@
     "TODO_SCOPE": "All Places",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/142lo/OneDrive/Bureau/JAVA-ISEP-GITLINKED/JavaIsep2023-Loic-de-La-Tullaye-G4/Harry-Potter-project/src",
+    "last_opened_file_path": "C:/Users/142lo/OneDrive/Bureau/JAVAPROJET_GITLINKED/JavaIsep2023-Loic-de-La-Tullaye-G4/Harry-Potter-project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -96,7 +129,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -171,6 +204,8 @@
       <workItem from="1680012621308" duration="4081000" />
       <workItem from="1680080203540" duration="97000" />
       <workItem from="1680080744697" duration="234000" />
+      <workItem from="1680086714282" duration="86000" />
+      <workItem from="1680087032033" duration="1292000" />
     </task>
     <task id="LOCAL-00001" summary="REORGANISATION YEAR + SHOP (beaucoup plus agréable)">
       <created>1679436219456</created>
@@ -179,14 +214,7 @@
       <option name="project" value="LOCAL" />
       <updated>1679436219456</updated>
     </task>
-    <task id="LOCAL-00002" summary="Equipement integrated">
-      <created>1679865116347</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1679865116347</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +238,6 @@
     <MESSAGE value="shopify" />
     <MESSAGE value="CURSED UPDATE (still working on it)" />
     <MESSAGE value="REORGANISATION YEAR + SHOP (beaucoup plus agréable)" />
-    <MESSAGE value="Equipement integrated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Equipement integrated" />
+    <option name="LAST_COMMIT_MESSAGE" value="REORGANISATION YEAR + SHOP (beaucoup plus agréable)" />
   </component>
 </project>

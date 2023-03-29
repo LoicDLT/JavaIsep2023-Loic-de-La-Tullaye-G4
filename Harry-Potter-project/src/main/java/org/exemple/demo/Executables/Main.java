@@ -26,8 +26,8 @@ public class Main {
 
         Wizard Hero = Wizard.builder()
                 .level(1)
-                .firstname("Jo")
-                .lastname("Mama")
+                .firstname("John")
+                .lastname("Doe")
                 .maxHealthPoints(150)
                 .currentHealthPoints(150)
                 .knownSpells(null)

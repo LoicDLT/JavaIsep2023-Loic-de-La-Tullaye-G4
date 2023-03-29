@@ -30,7 +30,7 @@ public class Testmain {
 
         boolean repeat=true;
         while(repeat) {
-            System.out.println("1. With Music\n2. Without Music\n3. Meme Version");
+            System.out.println("1. With Music\n2. Without Music");
             String Choice = Main.scanner.nextLine();
         switch (Choice){
             case "1":
@@ -78,8 +78,8 @@ if (musicEnabled) {
         //build wizard
         Wizard Hero = Wizard.builder()
                 .level(1)
-                .firstname("Joe")
-                .lastname("Mama")
+                .firstname("John")
+                .lastname("Doe")
                 .levelUpRatio(0.20F)
                 .maxHealthPoints(500)
                 .currentHealthPoints(500)
