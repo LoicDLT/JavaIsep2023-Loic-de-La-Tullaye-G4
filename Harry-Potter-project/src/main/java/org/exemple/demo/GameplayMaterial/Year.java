@@ -202,9 +202,9 @@ public class Year {
                                 } else {
                                     //get target
                                     Enemy enemy = enemyList.get(selectedTargetIndex - 1);
-                                    currentState = "\n\n\n" + equipement_choosed.getName() + " used successfully!";
+                                    //currentState = "\n\n\n" + equipement_choosed.getName() + " used successfully!";
                                     equipement_choosed_state = true;
-                                    Hero.useEquipement(equipement_choosed,enemy);
+                                    currentState +=Hero.useEquipement(equipement_choosed,enemy);
                                     if (enemy.isDead()) {
                                         currentState += "\n"+Hero.getRewardFrom(enemy);
                                         enemyList.remove(enemy);

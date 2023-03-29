@@ -10,8 +10,5 @@
         <module name="Harry-Potter-project" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Harry-Potter-project" target="19" />
-    </bytecodeTargetLevel>
   </component>
 </project>

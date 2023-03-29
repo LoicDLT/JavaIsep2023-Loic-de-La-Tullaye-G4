@@ -75,9 +75,12 @@ public class Wizard extends Character {
         return "Equipement List :\n" + potionlist.trim();
     }
 
-    public void useEquipement(Equipement equipement,Enemy enemy) {
+    public String useEquipement(Equipement equipement,Enemy enemy) {
+        String script = equipement.getScript();
+
 
         if (equipement.isDisapearAfterUse()) this.equipements.remove(equipement);
+        return script;
     }
 
     //===============================================================SPELLS==================================================================
