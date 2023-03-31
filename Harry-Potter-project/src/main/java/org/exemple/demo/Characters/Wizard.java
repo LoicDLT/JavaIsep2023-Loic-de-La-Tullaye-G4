@@ -3,7 +3,7 @@ package org.exemple.demo.Characters;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
-import org.exemple.demo.Executables.Testmain;
+import org.exemple.demo.Executables.Main;
 import org.exemple.demo.Music.MusicLibrary;
 import org.exemple.demo.Music.SoundEffectPlayer;
 import org.exemple.demo.Spells.AbstractSpell;
@@ -210,7 +210,7 @@ public class Wizard extends Character {
             currentManaPoints += -spellChoosed.getManaCost();
             script += "\n" + spellChoosed.getDidNotWork();
         } else {
-            if (Testmain.musicEnabled) {
+            if (Main.musicEnabled) {
                 SoundEffectPlayer.play(MusicLibrary.minecraftHit);
             }
             boolean Crit = Probability.YesOrNo(currentLuckPoints);
@@ -262,7 +262,7 @@ public class Wizard extends Character {
         String script = equipement.getScript();
         float damageDealt = equipement.getDamage();
 
-            if (Testmain.musicEnabled) {
+            if (Main.musicEnabled) {
                 SoundEffectPlayer.play(MusicLibrary.minecraftHit);
 
             }

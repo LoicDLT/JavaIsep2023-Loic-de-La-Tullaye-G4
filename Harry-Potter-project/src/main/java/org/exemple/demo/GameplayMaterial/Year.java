@@ -6,7 +6,6 @@ import lombok.RequiredArgsConstructor;
 import org.exemple.demo.Characters.Enemy;
 import org.exemple.demo.Characters.Wizard;
 import org.exemple.demo.Executables.Main;
-import org.exemple.demo.Executables.Testmain;
 import org.exemple.demo.Music.MusicLibrary;
 import org.exemple.demo.Music.MusicPlayer;
 import org.exemple.demo.Music.SoundEffectPlayer;
@@ -153,10 +152,10 @@ public class Year {
             Thread.sleep(3000);
             currentState = ("You died <3");
             displayer.endDisplayUpdate(currentState.stripLeading(), enemyList, Hero, false);
-            if (Testmain.musicEnabled) {
+            if (Main.musicEnabled) {
                 MusicPlayer.stopMusic();
                 MusicPlayer.play(MusicLibrary.deathMusicAstronomia);
-                MusicPlayer.setVolume(Testmain.musicVolume);
+                MusicPlayer.setVolume(Main.musicVolume);
 
             }
 
@@ -204,7 +203,7 @@ public class Year {
                 int selected = Integer.parseInt(Choice);
                 if (selected >= 1 & selected <= found.size()) {
                     Hero.usePotion(found.get(selected - 1));
-                    if (Testmain.musicEnabled) {
+                    if (Main.musicEnabled) {
                         SoundEffectPlayer.play(MusicLibrary.potionSlurpFortnite);
                         SoundEffectPlayer.setVolume(0.1F);
                     }
@@ -317,7 +316,7 @@ public class Year {
                         }
 
 
-                        if (Testmain.musicEnabled) {
+                        if (Main.musicEnabled) {
                             if (spell_choosed.getSoundEffect() != null) {
                                 SoundEffectPlayer.play(spell_choosed.getSoundEffect());
                                 SoundEffectPlayer.setVolume(0.2F);
@@ -412,7 +411,7 @@ public class Year {
                 case "4":
                     dodge_selected = true;
                     oldAgility = Hero.getDodgingChancePercentage();
-                    if (Testmain.musicEnabled) {
+                    if (Main.musicEnabled) {
                         SoundEffectPlayer.play(MusicLibrary.dodgeLoutre);
                         SoundEffectPlayer.setVolume(0.1F);
                     }

@@ -2,8 +2,8 @@ package org.exemple.demo.WizardCreation;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.exemple.demo.Tools.ConsoleColors;
 import org.exemple.demo.Executables.Main;
+import org.exemple.demo.Tools.ConsoleColors;
 
 import java.util.InputMismatchException;
 
