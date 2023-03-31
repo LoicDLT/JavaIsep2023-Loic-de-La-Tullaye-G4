@@ -84,8 +84,20 @@ public class EnemySpell extends AbstractSpell {
                         .didNotWork("But you are in luck ! The spell didn't hurt you")
                         .build();
         return Voldemort_Crucio;}
-    public static EnemySpell Pettigrow_Confringo(){
-        EnemySpell Pettigrow_Confringo =
+    public static EnemySpell Dolores_suspend(){
+        EnemySpell Voldemort_Imperio =
+                EnemySpell.builder()
+                        .name("Suspention")
+                        .chanceOfSuccess(80)
+                        .script(" gives you a suspension, it gives you a lot of emotional damage")
+                        .damage(50)
+                        .spellWeight(100)
+                        .didNotWork("But you fell like you are above the rules, you are not affected by this sanction")
+                        .build();
+        return Voldemort_Imperio;}
+
+    public static EnemySpell Confringo(){
+        EnemySpell Confringo =
                 EnemySpell.builder()
                         .name("Confringo")
                         .chanceOfSuccess(50)
@@ -94,6 +106,29 @@ public class EnemySpell extends AbstractSpell {
                         .spellWeight(100)
                         .didNotWork("As expected, the spell missed you")
                         .build();
-        return Pettigrow_Confringo;}
+        return Confringo;}
+    public static EnemySpell Confringo2(){
+        EnemySpell Confringo =
+                EnemySpell.builder()
+                        .name("Confringo")
+                        .chanceOfSuccess(70)
+                        .script(" casts Confringo on you, but much more accurately than Peter Pettigrew")
+                        .damage(100)
+                        .spellWeight(100)
+                        .didNotWork("The spell missed you")
+                        .build();
+        return Confringo;}
+    public static EnemySpell Voldemort_Avadakedavra(){
+    EnemySpell Voldemort_AvadaKedavra =
+            EnemySpell.builder()
+                    .name("Crucio")
+                    .chanceOfSuccess(80)
+                    .script(" casts Avada-kedavra on you, this spell is deadly on impact")
+                    .damage(180)
+                    .spellWeight(100)
+                    .didNotWork("It was so close ! don't ever get touched by this spell.")
+                    .build();
+        return Voldemort_AvadaKedavra;
 
+    }
 }

@@ -100,7 +100,7 @@ public class Year {
         ArrayList<EnemySpell> listVoldemortAttacks = new ArrayList<>();
         ArrayList<EnemySpell> listPettigrowAttacks = new ArrayList<>();
         listVoldemortAttacks.add(EnemySpell.Voldemort_Crucio());
-        listPettigrowAttacks.add(EnemySpell.Pettigrow_Confringo());
+        listPettigrowAttacks.add(EnemySpell.Confringo());
         //building enemies
         ArrayList<Enemy> enemyList = new ArrayList<>();
         enemyList.add(Enemy.Voldemort(listVoldemortAttacks));
@@ -115,19 +115,54 @@ public class Year {
     public static Year year5Constructor() {
 
         ArrayList<EnemySpell> listDoloresAttacks = new ArrayList<>();
-
-        listDoloresAttacks.add(EnemySpell.Pettigrow_Confringo());
+        listDoloresAttacks.add(EnemySpell.Dolores_suspend());
 
         //building enemies
         ArrayList<Enemy> enemyList = new ArrayList<>();
-        enemyList.add(Enemy.Voldemort(listDoloresAttacks));
+        enemyList.add(Enemy.Dolores(listDoloresAttacks));
 
 
 
-        Year year5 = new Year(5, "You are in a cemetery facing Voldemort and Peter Pettigrew. \n" +
-                "Your only chance of escape is to get closer to the Portkey to attract it to you", enemyList, -1);
+        Year year5 = new Year(5, "Dolores Umbridge keeps a watchful eye on things."+
+                "\nYour objective is to distract her long enough for the fireworks to be ready for use.", enemyList, -1);
 
         return year5;
+    }
+    public static Year year6Constructor() {
+
+        ArrayList<EnemySpell> listAttacks = new ArrayList<>();
+        listAttacks.add(EnemySpell.Confringo2());
+
+        //building enemies
+        ArrayList<Enemy> enemyList = new ArrayList<>();
+        enemyList.add(Enemy.DeathEater(listAttacks));
+        enemyList.add(Enemy.DeathEater(listAttacks));
+
+
+
+        Year year6 = new Year(6, "Translate to English: The Death Eaters are attacking Hogwarts. " +
+                "\nAre you ready to defend yourselves? You must face them head-on.", enemyList, -1);
+
+        return year6;
+    }
+    public static Year year7Constructor() {
+
+        ArrayList<EnemySpell> listVoldemortAttacks = new ArrayList<>();
+        ArrayList<EnemySpell> listBellatrixAttacks = new ArrayList<>();
+        listVoldemortAttacks.add(EnemySpell.Voldemort_Avadakedavra());
+        listVoldemortAttacks.add(EnemySpell.Voldemort_Crucio());
+        listBellatrixAttacks.add(EnemySpell.Confringo2());
+
+        //building enemies
+        ArrayList<Enemy> enemyList = new ArrayList<>();
+        enemyList.add(Enemy.Voldemort(listVoldemortAttacks));
+        enemyList.add(Enemy.Bellatrix(listBellatrixAttacks));
+
+
+
+        Year year7 = new Year(7, "You are facing Voldemort and Bellatrix Lestrange, be very careful of their dark magic", enemyList, -1);
+
+        return year7;
     }
 
     public boolean choiceForShop(Wizard Hero, Displayer displayer) {
@@ -217,9 +252,7 @@ public class Year {
             } catch (NumberFormatException e) {
                 displayer.potionDisplayUpdate(enemyList, Hero, true);
             }
-
         }
-
     }
 
     public void equipementSwitchCase(Displayer displayer, @NotNull Wizard Hero) {
@@ -411,10 +444,10 @@ public class Year {
                 case "4":
                     dodge_selected = true;
                     oldAgility = Hero.getDodgingChancePercentage();
-                    if (Main.musicEnabled) {
+                    /*if (Main.musicEnabled) {
                         SoundEffectPlayer.play(MusicLibrary.dodgeLoutre);
                         SoundEffectPlayer.setVolume(0.1F);
-                    }
+                    }*/
                     attackResult = "You are not attacking this turn, you restore " + ConsoleColors.RED_BOLD_BRIGHT + "❤ 10" + ConsoleColors.RESET + " and " +
                             ConsoleColors.BLUE_BOLD_BRIGHT + "\uD83C\uDF22 25 " + ConsoleColors.RESET + "\nYou also gain" + ConsoleColors.AGYLITYCOLOR_BOLD + " 💨 35%" + ConsoleColors.RESET + " more temporary Agility";
                     Hero.healthRegen(10);

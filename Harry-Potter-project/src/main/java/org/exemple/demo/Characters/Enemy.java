@@ -23,7 +23,7 @@ public class Enemy extends Character {
     private int amoutOfExp;
     private int amoutOfGold;
 
-    public static Enemy Troll(ArrayList<EnemySpell> listTrollAttacks){
+    public static Enemy Troll(ArrayList<EnemySpell> listAttacks){
         Enemy Troll = (Enemy) builder()
                 .id(1)
                 .firstname("Troll")
@@ -31,7 +31,7 @@ public class Enemy extends Character {
                 .level(3)
                 .amoutOfExp(300)
                 .amoutOfGold(100)
-                .attackList(listTrollAttacks)
+                .attackList(listAttacks)
                 .curseList(new HashMap<Curse, Integer>())
                 .currentHealthPoints(1000)
                 .maxHealthPoints(1000)
@@ -41,7 +41,7 @@ public class Enemy extends Character {
                 .build();
         return Troll;
     }
-    public static Enemy Trollette(ArrayList<EnemySpell> listTrollAttacks){
+    public static Enemy Trollette(ArrayList<EnemySpell> listAttacks){
         Enemy Trollette = (Enemy) builder()
                 .id(2)
                 .firstname("Trollette")
@@ -51,7 +51,7 @@ public class Enemy extends Character {
                 .amoutOfGold(100)
                 .curseList(new HashMap<Curse, Integer>())
                 .maxHealthPoints(1200)
-                .attackList(listTrollAttacks)
+                .attackList(listAttacks)
                 .currentHealthPoints(1200)
                 .dodgingChancePercentage(20)
                 .maxDodgingChancePercentage(100)
@@ -59,7 +59,7 @@ public class Enemy extends Character {
                 .build();
         return Trollette;
     }
-    public static Enemy Basilisk(ArrayList<EnemySpell> listBasiliskAttacks){
+    public static Enemy Basilisk(ArrayList<EnemySpell> listAttacks){
         Enemy Basilisk = (Enemy) builder()
                 .id(3)
                 .firstname("Basilisk")
@@ -69,7 +69,7 @@ public class Enemy extends Character {
                 .amoutOfGold(250)
                 .maxHealthPoints(1200)
                 .curseList(new HashMap<Curse, Integer>())
-                .attackList(listBasiliskAttacks)
+                .attackList(listAttacks)
                 .currentHealthPoints(1200)
                 .dodgingChancePercentage(30)
                 .maxDodgingChancePercentage(100)
@@ -77,7 +77,7 @@ public class Enemy extends Character {
                 .build();
         return Basilisk;
     }
-    public static Enemy Dementor1(ArrayList<EnemySpell> listDementorAttacks){
+    public static Enemy Dementor1(ArrayList<EnemySpell> listAttacks){
         Enemy Dementor = (Enemy) builder()
                 .id(4)
                 .firstname("Dementor 1")
@@ -87,7 +87,7 @@ public class Enemy extends Character {
                 .amoutOfGold(75)
                 .maxHealthPoints(400)
                 .curseList(new HashMap<Curse, Integer>())
-                .attackList(listDementorAttacks)
+                .attackList(listAttacks)
                 .currentHealthPoints(400)
                 .dodgingChancePercentage(10)
                 .maxDodgingChancePercentage(100)
@@ -95,7 +95,7 @@ public class Enemy extends Character {
                 .build();
         return Dementor;
     }
-    public static Enemy Dementor2(ArrayList<EnemySpell> listDementorAttacks){
+    public static Enemy Dementor2(ArrayList<EnemySpell> listAttacks){
         Enemy Dementor = (Enemy) builder()
                 .id(4)
                 .firstname("Dementor 2")
@@ -105,7 +105,7 @@ public class Enemy extends Character {
                 .amoutOfGold(75)
                 .maxHealthPoints(400)
                 .curseList(new HashMap<Curse, Integer>())
-                .attackList(listDementorAttacks)
+                .attackList(listAttacks)
                 .currentHealthPoints(400)
                 .dodgingChancePercentage(10)
                 .maxDodgingChancePercentage(100)
@@ -113,7 +113,7 @@ public class Enemy extends Character {
                 .build();
         return Dementor;
     }
-    public static Enemy Dementor3(ArrayList<EnemySpell> listDementorAttacks){
+    public static Enemy Dementor3(ArrayList<EnemySpell> listAttacks){
         Enemy Dementor = (Enemy) builder()
                 .id(4)
                 .firstname("Dementor 3")
@@ -123,7 +123,7 @@ public class Enemy extends Character {
                 .amoutOfGold(75)
                 .maxHealthPoints(400)
                 .curseList(new HashMap<Curse, Integer>())
-                .attackList(listDementorAttacks)
+                .attackList(listAttacks)
                 .currentHealthPoints(400)
                 .dodgingChancePercentage(10)
                 .maxDodgingChancePercentage(100)
@@ -131,7 +131,7 @@ public class Enemy extends Character {
                 .build();
         return Dementor;
     }
-    public static Enemy Voldemort(ArrayList<EnemySpell> listDementorAttacks){
+    public static Enemy Voldemort(ArrayList<EnemySpell> listAttacks){
         Enemy Voldemort = (Enemy) builder()
                 .id(5)
                 .firstname("Voldemort")
@@ -141,7 +141,7 @@ public class Enemy extends Character {
                 .amoutOfGold(300)
                 .maxHealthPoints(3000)
                 .curseList(new HashMap<Curse, Integer>())
-                .attackList(listDementorAttacks)
+                .attackList(listAttacks)
                 .currentHealthPoints(3000)
                 .dodgingChancePercentage(10)
                 .maxDodgingChancePercentage(100)
@@ -149,7 +149,7 @@ public class Enemy extends Character {
                 .build();
         return Voldemort;
     }
-    public static Enemy Pettigrow(ArrayList<EnemySpell> listDementorAttacks){
+    public static Enemy Pettigrow(ArrayList<EnemySpell> listAttacks){
         Enemy Pettigrow = (Enemy) builder()
                 .id(6)
                 .firstname("Pettigrow")
@@ -159,7 +159,7 @@ public class Enemy extends Character {
                 .amoutOfGold(150)
                 .maxHealthPoints(500)
                 .curseList(new HashMap<Curse, Integer>())
-                .attackList(listDementorAttacks)
+                .attackList(listAttacks)
                 .currentHealthPoints(500)
                 .dodgingChancePercentage(5)
                 .maxDodgingChancePercentage(100)
@@ -167,6 +167,61 @@ public class Enemy extends Character {
                 .build();
         return Pettigrow;
     }
+    public static Enemy Dolores(ArrayList<EnemySpell> listAttacks){
+        Enemy Dolores = (Enemy) builder()
+                .id(6)
+                .firstname("Dolorès")
+                .level(3)
+                .lastname("")
+                .amoutOfExp(200)
+                .amoutOfGold(150)
+                .maxHealthPoints(960)
+                .curseList(new HashMap<Curse, Integer>())
+                .attackList(listAttacks)
+                .currentHealthPoints(500)
+                .dodgingChancePercentage(5)
+                .maxDodgingChancePercentage(100)
+                .dead(false)
+                .build();
+        return Dolores;
+    }
+    public static Enemy DeathEater(ArrayList<EnemySpell> listAttacks){
+        Enemy DeathEater = (Enemy) builder()
+                .id(6)
+                .firstname("DeathEater")
+                .level(3)
+                .lastname("")
+                .amoutOfExp(200)
+                .amoutOfGold(150)
+                .maxHealthPoints(960)
+                .curseList(new HashMap<Curse, Integer>())
+                .attackList(listAttacks)
+                .currentHealthPoints(500)
+                .dodgingChancePercentage(5)
+                .maxDodgingChancePercentage(100)
+                .dead(false)
+                .build();
+        return DeathEater;
+    }
+    public static Enemy Bellatrix(ArrayList<EnemySpell> listAttacks){
+        Enemy Bellatrix = (Enemy) builder()
+                .id(6)
+                .firstname("Bellatrix")
+                .level(3)
+                .lastname("")
+                .amoutOfExp(200)
+                .amoutOfGold(150)
+                .maxHealthPoints(960)
+                .curseList(new HashMap<Curse, Integer>())
+                .attackList(listAttacks)
+                .currentHealthPoints(500)
+                .dodgingChancePercentage(5)
+                .maxDodgingChancePercentage(100)
+                .dead(false)
+                .build();
+        return Bellatrix;
+    }
+
 
 
 
