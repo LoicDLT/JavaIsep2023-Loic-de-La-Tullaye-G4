@@ -22,8 +22,6 @@ public interface YearsList {
     //TODO EQUIPEMENTS
     //TODO POTION
     //TODO GOlD REWARDS AND PRICES
-//TODO SWORD AND TEETH
-//
     static boolean year_2(Wizard hero) throws InterruptedException {
         //initYear
 
@@ -47,24 +45,21 @@ public interface YearsList {
     }
 
     static boolean year_5(Wizard hero) throws InterruptedException {
-        //TODO
-        Year year4 = Year.year4Constructor();
+        Year year5 = Year.year5Constructor();
         hero.addSpell(Spell.expectoPatronum());
-        return year4.level(hero);
+        return year5.level(hero);
     }
 
     static boolean year_6(Wizard hero) throws InterruptedException {
-        //TODO
-        Year year4 = Year.year4Constructor();
+        Year year6 = Year.year4Constructor();
         hero.addSpell(Spell.expectoPatronum());
-        return year4.level(hero);
+        return year6.level(hero);
     }
 
     static boolean year_7(Wizard hero) throws InterruptedException {
-        //TODO
-        Year year4 = Year.year4Constructor();
+        Year year7 = Year.year4Constructor();
         hero.addSpell(Spell.expectoPatronum());
-        return year4.level(hero);
+        return year7.level(hero);
     }
 
 

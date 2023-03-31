@@ -48,4 +48,15 @@ import org.exemple.demo.Tools.ConsoleColors;
                 true);
         return basiliskFang;
     }
+    public static Equipement fireworks(){
+        Equipement basiliskFang = new Equipement(2,"Basilisk Fang",
+                ConsoleColors.GREEN,
+                "Fireworks are exploding everywere ! you make your enemy go insnae",
+                "Fireworks are the best way to have fun and annoy your enemy",
+                0,
+                100,
+                null,
+                true);
+        return basiliskFang;
+    }
 }

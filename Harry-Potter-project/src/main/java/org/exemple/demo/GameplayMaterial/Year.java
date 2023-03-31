@@ -507,7 +507,10 @@ public class Year {
                 displayer.eventDisplayUpdate("while fighting, you knocked off one of the basilisk's fangs. you get " + ConsoleColors.GREEN + "basilisk fang" + ConsoleColors.RESET + "\n" + Equipement.basiliskFang().getDescription(), "press enter to continue", Hero);
                 Hero.addEquipement(Equipement.basiliskFang());
                 Main.scanner.nextLine();
-
+            case 5:
+                displayer.eventDisplayUpdate("Fireworks are finally ready !!! you get" + ConsoleColors.GREEN + "Fireworks" + ConsoleColors.RESET + "\n" + Equipement.fireworks().getDescription(), "press enter to continue", Hero);
+                Hero.addEquipement(Equipement.fireworks());
+                Main.scanner.nextLine();
         }
     }
     public boolean accioCase(Wizard Hero, Displayer displayer) {
