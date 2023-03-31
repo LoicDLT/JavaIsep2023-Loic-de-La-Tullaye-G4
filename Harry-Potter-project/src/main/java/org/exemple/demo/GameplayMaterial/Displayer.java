@@ -145,12 +145,12 @@ public class Displayer {
         for (Enemy enemy : enemyList) {
             string+=String.format("%s[38;5;160m%-11s" + separator +
                             ConsoleColors.ORANGE_BOLD + "%-8s" + separator +
-                            ConsoleColors.RED_BOLD_BRIGHT + "❤ %-9s"  +"\n"+ ConsoleColors.RESET,
+                            ConsoleColors.RED_BOLD_BRIGHT + "❤ %-9s" +separator + "%s\n"+ ConsoleColors.RESET,
                     "("+i+") ",enemy.getFirstname() + " " + enemy.getLastname(),
                     "Level " + enemy.getLevel(),
                     Math.round(enemy.getCurrentHealthPoints())
-                            + "/" + Math.round(enemy.getMaxHealthPoints()) +
-                            ((enemy.getCurseList().keySet().isEmpty())? separator : separator + enemy.getCursesNames(applyCurseDamage)));
+                            + "/" + Math.round(enemy.getMaxHealthPoints()) ,
+                            ((enemy.getCurseList().keySet().isEmpty())? "" : enemy.getCursesNames(applyCurseDamage)));
             i++;
         }
         return string.stripTrailing();

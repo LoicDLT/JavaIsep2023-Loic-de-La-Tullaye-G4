@@ -18,10 +18,12 @@ public class Shop {
     private LinkedHashMap<Equipement, Integer> avaliableEquipementMap;
 
 
+
+
     public String displayShop() {
         int index = 1;
         String shopDisplay = "Welcome to Hogwarts' shop !\n";
-        if (avaliableEquipementMap.size() > 0) {
+        if (avaliablePotionMap.size() > 0) {
             shopDisplay += "Here is the list of the potions available :\n";
             for (Potion potion : avaliablePotionMap.keySet()) {
                 shopDisplay += "(" + index + ") " + potion.getColor() + potion.getName() + ConsoleColors.RESET + " : " + ConsoleColors.YELLOW_BOLD + avaliablePotionMap.get(potion) + " \uD83D\uDCB0" + ConsoleColors.RESET + "\n";
@@ -56,6 +58,62 @@ public class Shop {
 
     }
 
+    public static Shop year2Shop() {
+        LinkedHashMap<Potion, Integer> potionMap = new LinkedHashMap<>();
+        LinkedHashMap<Equipement, Integer> equipementMap = new LinkedHashMap<>();
+        potionMap.put(Potion.health_Potion(), 30);
+        potionMap.put(Potion.mana_Potion(), 30);
+        potionMap.put(Potion.luck_Potion(), 50);
+        potionMap.put(Potion.strength_Potion(), 50);
+
+        Shop shop = new Shop(potionMap, equipementMap);
+        return shop;
+    }
+    public static Shop year3Shop() {
+        LinkedHashMap<Potion, Integer> potionMap = new LinkedHashMap<>();
+        LinkedHashMap<Equipement, Integer> equipementMap = new LinkedHashMap<>();
+        potionMap.put(Potion.health_Potion(), 30);
+        potionMap.put(Potion.mana_Potion(), 30);
+        potionMap.put(Potion.luck_Potion(), 50);
+        potionMap.put(Potion.strength_Potion(), 50);
+
+        Shop shop = new Shop(potionMap, equipementMap);
+        return shop;
+    }
+    public static Shop year4Shop() {
+        LinkedHashMap<Potion, Integer> potionMap = new LinkedHashMap<>();
+        LinkedHashMap<Equipement, Integer> equipementMap = new LinkedHashMap<>();
+        potionMap.put(Potion.health_Potion(), 30);
+        potionMap.put(Potion.mana_Potion(), 30);
+        potionMap.put(Potion.luck_Potion(), 50);
+        potionMap.put(Potion.strength_Potion(), 50);
+
+        Shop shop = new Shop(potionMap, equipementMap);
+        return shop;
+    }
+    public static Shop year5Shop() {
+        LinkedHashMap<Potion, Integer> potionMap = new LinkedHashMap<>();
+        LinkedHashMap<Equipement, Integer> equipementMap = new LinkedHashMap<>();
+        potionMap.put(Potion.health_Potion(), 30);
+        potionMap.put(Potion.mana_Potion(), 30);
+        potionMap.put(Potion.luck_Potion(), 50);
+        potionMap.put(Potion.strength_Potion(), 50);
+
+        Shop shop = new Shop(potionMap, equipementMap);
+        return shop;
+    }
+    public static Shop year6Shop() {
+        LinkedHashMap<Potion, Integer> potionMap = new LinkedHashMap<>();
+        LinkedHashMap<Equipement, Integer> equipementMap = new LinkedHashMap<>();
+        potionMap.put(Potion.health_Potion(), 30);
+        potionMap.put(Potion.mana_Potion(), 30);
+        potionMap.put(Potion.luck_Potion(), 50);
+        potionMap.put(Potion.strength_Potion(), 50);
+
+        Shop shop = new Shop(potionMap, equipementMap);
+        return shop;
+    }
+    
     public void ShopTime(@NotNull Wizard Hero) {
         Displayer displayershop = new Displayer(
                 displayShop(),

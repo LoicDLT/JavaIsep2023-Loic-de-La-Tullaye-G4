@@ -16,7 +16,7 @@ public enum Core {
     public static Core ChooseCore() {
         System.out.println("\nNOW PLEASE CHOOSE A CORE BETWEEN THOSE ONES :\n" +
                 "PHOENIX_FEATHER\n" +
-                "DRAGON_HEARTSTRING\n" +
+                "DRAGON_HEARTSTRIN  G\n" +
                 "UNICORN_TAIL_HAIR");
 
         String tempcore = null;

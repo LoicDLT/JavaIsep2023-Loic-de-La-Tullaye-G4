@@ -76,7 +76,8 @@ public class Wizard extends Character {
     }
 
     public String useEquipement(Equipement equipement,Enemy enemy) {
-        String script = equipement.getScript();
+
+        String script = attack(enemy,equipement);
 
 
         if (equipement.isDisapearAfterUse()) this.equipements.remove(equipement);
@@ -190,7 +191,6 @@ public class Wizard extends Character {
                 ConsoleColors.TOORANGE(" Level " + (level - levelGaigned)) + " -> " + ConsoleColors.TOORANGE("Level " + String.valueOf(level)) + " | " : "")
                 + ConsoleColors.TOORANGE(currentExpPoints + "/" + Math.round((1 + (level - 1) * levelUpRatio) * 100)) + " Exp points");
     }
-
     public String attack(@NotNull Character character, @NotNull AbstractSpell spellChoosed) {
         String script = spellChoosed.getScript();
 
@@ -212,7 +212,6 @@ public class Wizard extends Character {
         } else {
             if (Testmain.musicEnabled) {
                 SoundEffectPlayer.play(MusicLibrary.minecraftHit);
-                SoundEffectPlayer.play(MusicLibrary.minecraftHit);
             }
             boolean Crit = Probability.YesOrNo(currentLuckPoints);
             damageDealt = spellChoosed.getDamage();
@@ -224,7 +223,6 @@ public class Wizard extends Character {
                 }
             }
             if (character.getId() == 3 & !character.getCurseList().containsKey(Curse.CurseOfBlindness) & spellChoosed.getId() != 2) {
-                damageDealt = damageDealt * 0.3f;
                 script += "\n" + "You can't look The Basilisk in the eyes, you deal way less damage !";
                 damageDealt = Math.round(damageDealt * 0.3f);
             } else if (Crit) {
@@ -236,11 +234,14 @@ public class Wizard extends Character {
                 script += "\n" + character.applyCurse(spellChoosed.getCurse(), false);
 
             }
+            if (spellChoosed.getId() == 3 & character.getId() == 4) {
+                script += "\n" + character.applyCurse(Curse.CurseOfFear, false);
+            }
 
             script += "\n\033[38;5;160m" + character.getFirstname() + " : " +
                     ConsoleColors.RED_BOLD_BRIGHT + "❤ " +
                     Math.round(character.getCurrentHealthPoints()) + "/" + Math.round(character.getMaxHealthPoints()) +
-                    ConsoleColors.RESET + " -> ";
+                           ConsoleColors.RESET + " -> ";
 
 
             character.healthRegen(-damageDealt);
@@ -251,23 +252,67 @@ public class Wizard extends Character {
                     Math.round(character.getCurrentHealthPoints()) + "/" + Math.round(character.getMaxHealthPoints()) +
                     ConsoleColors.RESET + " (" + ConsoleColors.RED_BOLD_BRIGHT + " ❤ -" + Math.round(damageDealt) + ConsoleColors.RESET + " )";
             if (character.isDead()) {
-                script += "\n\n" + character.getFirstname() + " is defeated !";
+                script += " " + character.getFirstname() + " is defeated !";
 
             }
         }
         return script;
     }
+    public String attack(@NotNull Character character, @NotNull Equipement equipement) {
+        String script = equipement.getScript();
+        float damageDealt = equipement.getDamage();
 
+            if (Testmain.musicEnabled) {
+                SoundEffectPlayer.play(MusicLibrary.minecraftHit);
+
+            }
+            if (!(getCurseList() == null)) {
+                for (Curse curse : getCurseList().keySet()) {
+                    damageDealt = damageDealt * curse.getCurseDamageMultiplier();
+                }
+            }
+            if (character.getId() == 3 & !character.getCurseList().containsKey(Curse.CurseOfBlindness)) {
+                script += "\n" + "You can't look The Basilisk in the eyes, you deal way less damage !";
+                damageDealt = Math.round(damageDealt * 0.3f);
+            }
+            if (!(equipement.getCurse() == null)) {
+                script += "\n" + character.applyCurse(equipement.getCurse(), false);
+            }
+
+            script += "\n\033[38;5;160m" + character.getFirstname() + " : " +
+                    ConsoleColors.RED_BOLD_BRIGHT + "❤ " +
+                    Math.round(character.getCurrentHealthPoints()) + "/" + Math.round(character.getMaxHealthPoints()) +
+                    ConsoleColors.RESET + " -> ";
+
+            if (character.getId()==3 & equipement.getId() == 1){
+                damageDealt *= 10;
+            }
+            else{
+                script+="\nthis equipement isn't very effective against this enemy.";
+            }
+            damageDealt+=equipement.getPercentOfLifeDamage()*character.getCurrentHealthPoints()/100;
+            character.healthRegen(-damageDealt);
+
+
+
+            script += ConsoleColors.RED_BOLD_BRIGHT + "❤ " +
+                    Math.round(character.getCurrentHealthPoints()) + "/" + Math.round(character.getMaxHealthPoints()) +
+                    ConsoleColors.RESET + " (" + ConsoleColors.RED_BOLD_BRIGHT + " ❤ -" + Math.round(damageDealt) + ConsoleColors.RESET + " )";
+            if (character.isDead()) {
+                script += " " + character.getFirstname() + " is defeated !";
+
+            }
+
+        return script;
+    }
     public String levelUp() {
         String levelannoucement = "you just gained a level ! " + ConsoleColors.TOORANGE(String.valueOf(this.level)) + " -> ";
         this.level += 1;
         return levelannoucement + ConsoleColors.TOORANGE(String.valueOf(this.level));
     }
-
     public void changeGold(int amount) {
         this.gold += amount;
-    }
-
+}
     public void manaRegen(float amountOfMana) {
         float tempMana = currentManaPoints;
         float tempMaxMana = maxManaPoints;
@@ -278,8 +323,6 @@ public class Wizard extends Character {
             currentManaPoints = tempMana + amountOfMana;
         }
     }
-
-
     public void LuckIncrease(float amountOfLuck) {
         float tempLuck = currentLuckPoints;
         float tempMaxLuck = maxLuckPoints;
@@ -290,7 +333,6 @@ public class Wizard extends Character {
             currentLuckPoints = tempLuck + amountOfLuck;
         }
     }
-
     public void StrengthIncrease(float amountOfStrength) {
         float tempStrength = currentStrengthPoints;
         float tempMaxStength = maxStrengthPoints;

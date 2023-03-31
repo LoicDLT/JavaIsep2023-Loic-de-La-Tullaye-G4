@@ -60,4 +60,40 @@ public class EnemySpell extends AbstractSpell {
         return Basilisk_Throw;
     }
 
+    public static EnemySpell Dementor_Psychological_attack() {
+        EnemySpell Dementor_Psychological_attack =
+                EnemySpell.builder()
+                        .name("Dementor's Psychological attack")
+                        .chanceOfSuccess(90)
+                        .script(" scares you to death, you slowly lose your life points")
+                        .damage(30)
+                        .spellWeight(30)
+                        .didNotWork("he failed to scare you, you are not afraid of him")
+                        .build();
+        return Dementor_Psychological_attack;
+    }
+
+    public static EnemySpell Voldemort_Crucio(){
+        EnemySpell Voldemort_Crucio =
+                EnemySpell.builder()
+                        .name("Crucio")
+                        .chanceOfSuccess(80)
+                        .script(" casts Crucio on you, this spell make you feel as if one thousand white-hot knives were boring into your skin")
+                        .damage(180)
+                        .spellWeight(100)
+                        .didNotWork("But you are in luck ! The spell didn't hurt you")
+                        .build();
+        return Voldemort_Crucio;}
+    public static EnemySpell Pettigrow_Confringo(){
+        EnemySpell Pettigrow_Confringo =
+                EnemySpell.builder()
+                        .name("Confringo")
+                        .chanceOfSuccess(50)
+                        .script(" casts Confringo on you, as he's not very talented, his spell is not very accurate")
+                        .damage(100)
+                        .spellWeight(100)
+                        .didNotWork("As expected, the spell missed you")
+                        .build();
+        return Pettigrow_Confringo;}
+
 }

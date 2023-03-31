@@ -39,4 +39,35 @@ public class Spell extends AbstractSpell{
         return Obscuro;
     }
 
+    public static Spell expectoPatronum(){
+        Spell expectoPatronum =
+                Spell.builder()
+                        .id(3)
+                        .name("Expecto Patronum")
+                        .manaCost(200)
+                        .chanceOfSuccess(100)
+                        .script("You conjure a Patronus to protect you")
+                        .damage(50)
+                        .didNotWork("Unfortunatly the spell did not work")
+                        .curse(null)
+                        .soundEffect(null)
+                        .build();
+        return expectoPatronum;
+    }
+    public static Spell Accio(){
+        Spell Accio =
+                Spell.builder()
+                        .id(4)
+                        .name("Accio")
+                        .manaCost(200)
+                        .chanceOfSuccess(100)
+                        .script("")
+                        .damage(50)
+                        .didNotWork("Unfortunatly the spell did not work")
+                        .curse(null)
+                        .soundEffect(null)
+                        .build();
+        return Accio;
+    }
+
 }
