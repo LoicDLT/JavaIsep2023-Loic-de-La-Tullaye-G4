@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="544e7d4b-7ca8-41e2-ac7b-9e56d755bb7a" name="Changes" comment="REORGANISATION YEAR + SHOP (beaucoup plus agréable)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Displayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Displayer.java" afterDir="false" />
+    <list default="true" id="544e7d4b-7ca8-41e2-ac7b-9e56d755bb7a" name="Changes" comment="pour envoi">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Wizard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Executables/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Executables/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Executables/Testmain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Shop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Year.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Year.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Year.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/WizardCreation/Wand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/WizardCreation/Wand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Displayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Displayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Playgame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Playgame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Shop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Shop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/YearsList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/YearsList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/Curse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/Curse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/EnemySpell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/EnemySpell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/Spell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/Spell.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +106,20 @@
       <recent name="C:\Users\142lo\OneDrive\Bureau\JAVA-ISEP-GITLINKED\JavaIsep2023-Loic-de-La-Tullaye-G4\Harry-Potter-project" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.org.exemple.demo.Executables.Testmain">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.exemple.demo.Executables.Main" />
+      <module name="Harry-Potter-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.exemple.demo.Executables.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Testmain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.exemple.demo.Testmain" />
       <module name="Harry-Potter-project" />
@@ -112,26 +134,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="org.exemple.demo.Executables.Testmain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.exemple.demo.Executables.Testmain" />
-      <module name="Harry-Potter-project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.exemple.demo.Executables.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Harry-Potter-project-1.0-SNAPSHOT.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/target/Harry-Potter-project-1.0-SNAPSHOT.jar" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.org.exemple.demo.Executables.Testmain" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JAR Application.Harry-Potter-project-1.0-SNAPSHOT.jar" />
         <item itemvalue="Application.Testmain" />
         <item itemvalue="Application.Z_TESTFONCTIONS" />
@@ -171,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679436219456</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="pour envoi">
+      <created>1680248368647</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680248368647</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +211,7 @@
     <MESSAGE value="shopify" />
     <MESSAGE value="CURSED UPDATE (still working on it)" />
     <MESSAGE value="REORGANISATION YEAR + SHOP (beaucoup plus agréable)" />
-    <option name="LAST_COMMIT_MESSAGE" value="REORGANISATION YEAR + SHOP (beaucoup plus agréable)" />
+    <MESSAGE value="pour envoi" />
+    <option name="LAST_COMMIT_MESSAGE" value="pour envoi" />
   </component>
 </project>

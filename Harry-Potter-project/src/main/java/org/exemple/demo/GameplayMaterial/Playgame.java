@@ -7,7 +7,7 @@ public class Playgame {
 
     public static void playgame(Wizard Hero) throws InterruptedException {
 
-        /*boolean shopOrNot = YearsList.year_1(Hero);
+        boolean shopOrNot = YearsList.year_1(Hero);
         if (Hero.isDead()) {
             return;
         }
@@ -34,8 +34,7 @@ public class Playgame {
             shopOrNot = YearsList.year_4(Hero);
         } else {
             shopOrNot = YearsList.year_4(Hero);
-        }*/
-        YearsList.year_4(Hero);
+        }
 
     }}
 
