@@ -77,6 +77,98 @@ public class Enemy extends Character {
                 .build();
         return Basilisk;
     }
+    public static Enemy Dementor1(ArrayList<EnemySpell> listDementorAttacks){
+        Enemy Dementor = (Enemy) builder()
+                .id(4)
+                .firstname("Dementor 1")
+                .level(6)
+                .lastname("")
+                .amoutOfExp(200)
+                .amoutOfGold(75)
+                .maxHealthPoints(400)
+                .curseList(new HashMap<Curse, Integer>())
+                .attackList(listDementorAttacks)
+                .currentHealthPoints(400)
+                .dodgingChancePercentage(10)
+                .maxDodgingChancePercentage(100)
+                .dead(false)
+                .build();
+        return Dementor;
+    }
+    public static Enemy Dementor2(ArrayList<EnemySpell> listDementorAttacks){
+        Enemy Dementor = (Enemy) builder()
+                .id(4)
+                .firstname("Dementor 2")
+                .level(6)
+                .lastname("")
+                .amoutOfExp(200)
+                .amoutOfGold(75)
+                .maxHealthPoints(400)
+                .curseList(new HashMap<Curse, Integer>())
+                .attackList(listDementorAttacks)
+                .currentHealthPoints(400)
+                .dodgingChancePercentage(10)
+                .maxDodgingChancePercentage(100)
+                .dead(false)
+                .build();
+        return Dementor;
+    }
+    public static Enemy Dementor3(ArrayList<EnemySpell> listDementorAttacks){
+        Enemy Dementor = (Enemy) builder()
+                .id(4)
+                .firstname("Dementor 3")
+                .level(6)
+                .lastname("")
+                .amoutOfExp(200)
+                .amoutOfGold(75)
+                .maxHealthPoints(400)
+                .curseList(new HashMap<Curse, Integer>())
+                .attackList(listDementorAttacks)
+                .currentHealthPoints(400)
+                .dodgingChancePercentage(10)
+                .maxDodgingChancePercentage(100)
+                .dead(false)
+                .build();
+        return Dementor;
+    }
+    public static Enemy Voldemort(ArrayList<EnemySpell> listDementorAttacks){
+        Enemy Voldemort = (Enemy) builder()
+                .id(5)
+                .firstname("Voldemort")
+                .level(30)
+                .lastname("")
+                .amoutOfExp(1000)
+                .amoutOfGold(300)
+                .maxHealthPoints(3000)
+                .curseList(new HashMap<Curse, Integer>())
+                .attackList(listDementorAttacks)
+                .currentHealthPoints(3000)
+                .dodgingChancePercentage(10)
+                .maxDodgingChancePercentage(100)
+                .dead(false)
+                .build();
+        return Voldemort;
+    }
+    public static Enemy Pettigrow(ArrayList<EnemySpell> listDementorAttacks){
+        Enemy Pettigrow = (Enemy) builder()
+                .id(6)
+                .firstname("Pettigrow")
+                .level(3)
+                .lastname("")
+                .amoutOfExp(200)
+                .amoutOfGold(150)
+                .maxHealthPoints(500)
+                .curseList(new HashMap<Curse, Integer>())
+                .attackList(listDementorAttacks)
+                .currentHealthPoints(500)
+                .dodgingChancePercentage(5)
+                .maxDodgingChancePercentage(100)
+                .dead(false)
+                .build();
+        return Pettigrow;
+    }
+
+
 
     public String attack(Wizard wizard) {
         EnemySpell spellChoosed=attackList.get(0);
@@ -152,7 +244,7 @@ public class Enemy extends Character {
 
                 }
             }
-            return script+"\n";
+            return script;
 
 
     }

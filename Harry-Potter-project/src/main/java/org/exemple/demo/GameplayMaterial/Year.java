@@ -11,6 +11,7 @@ import org.exemple.demo.Music.MusicLibrary;
 import org.exemple.demo.Music.MusicPlayer;
 import org.exemple.demo.Music.SoundEffectPlayer;
 import org.exemple.demo.Spells.AbstractSpell;
+import org.exemple.demo.Spells.Curse;
 import org.exemple.demo.Spells.EnemySpell;
 import org.exemple.demo.Tools.ConsoleColors;
 import org.exemple.demo.Usables.Equipement;
@@ -28,14 +29,26 @@ public class Year {
     private String currentState;
     @NonNull
     private ArrayList<Enemy> enemyList;
+
     private boolean potion_choosed = false;
+
     private boolean equipement_choosed_state = false;
+
     private boolean spell_choosed_state = false;
+
     private boolean dodge_selected = false;
+
     private float oldAgility = 0;
+
     private String attackResult = "";
+
     private int turn = 0;
+
+    private int nbaccio = 0;
+
     private final int mainEventTurn;
+
+    private boolean exitYear = false;
 
     public static Year year1Constructor() {
 
@@ -47,7 +60,7 @@ public class Year {
         enemyList.add(Enemy.Troll(listTrollAttacks));
         enemyList.add(Enemy.Trollette(listTrollAttacks));
 
-        Year year1 = new Year(1,"You enter the bathroom and you see, standing in front of you, a giant Troll looking at you with menacing eyes", enemyList,-1);
+        Year year1 = new Year(1, "You enter the bathroom and you see, standing in front of you, a giant Troll looking at you with menacing eyes", enemyList, -1);
 
         return year1;
     }
@@ -62,9 +75,43 @@ public class Year {
         enemyList.add(Enemy.Basilisk(listBasilikAttacks));
 
 
-        Year year2 = new Year(2,"You find yourself in the basilisk lair", enemyList,5);
+        Year year2 = new Year(2, "You find yourself in the basilisk lair", enemyList, 5);
 
         return year2;
+    }
+
+    public static Year year3Constructor() {
+
+        ArrayList<EnemySpell> listDementorAttacks = new ArrayList<>();
+        listDementorAttacks.add(EnemySpell.Dementor_Psychological_attack());
+
+        //building enemies
+        ArrayList<Enemy> enemyList = new ArrayList<>();
+        enemyList.add(Enemy.Dementor1(listDementorAttacks));
+        enemyList.add(Enemy.Dementor2(listDementorAttacks));
+        enemyList.add(Enemy.Dementor3(listDementorAttacks));
+
+        Year year3 = new Year(3, "you are near the lake and dementors are comming at you", enemyList, -1);
+
+        return year3;
+    }
+
+    public static Year year4Constructor() {
+
+        ArrayList<EnemySpell> listVoldemortAttacks = new ArrayList<>();
+        ArrayList<EnemySpell> listPettigrowAttacks = new ArrayList<>();
+        listVoldemortAttacks.add(EnemySpell.Voldemort_Crucio());
+        listPettigrowAttacks.add(EnemySpell.Pettigrow_Confringo());
+        //building enemies
+        ArrayList<Enemy> enemyList = new ArrayList<>();
+        enemyList.add(Enemy.Voldemort(listVoldemortAttacks));
+        enemyList.add(Enemy.Pettigrow(listPettigrowAttacks));
+
+
+        Year year4 = new Year(4, "You are in a cemetery facing Voldemort and Peter Pettigrew. \n" +
+                "Your only chance of escape is to get closer to the Portkey to attract it to you", enemyList, -1);
+
+        return year4;
     }
 
     public boolean choiceForShop(Wizard Hero, Displayer displayer) {
@@ -86,7 +133,7 @@ public class Year {
 
     public void winOrLoose(Wizard Hero, Displayer displayer) throws InterruptedException {
         if (Hero.isDead()) {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
             currentState = ("You died <3");
             displayer.endDisplayUpdate(currentState.stripLeading(), enemyList, Hero, false);
             if (Testmain.musicEnabled) {
@@ -96,10 +143,9 @@ public class Year {
 
             }
 
-        }
-        if (enemyList.isEmpty()) {
-            Thread.sleep(5000);
-            currentState = ("You passed year "+yearNumber+" with honors !\n"
+        } else {
+            Thread.sleep(3000);
+            currentState = ("You passed year " + yearNumber + " with honors !\n"
                     + ConsoleColors.BLUE_BOLD + "-------REWARDS-------" + ConsoleColors.RESET + "\n"
                     + ConsoleColors.YELLOW + "100 \uD83D\uDCB0" + ConsoleColors.RESET + "\n"
                     + ConsoleColors.ORANGE + "200 " + ConsoleColors.RESET + "Exp points");
@@ -111,7 +157,7 @@ public class Year {
 
     public void enemyAttack(Wizard Hero, Displayer displayer) {
         for (Enemy enemy : enemyList) {
-            if (!enemy.isDead() & !Hero.isDead()) {
+            if (!enemy.isDead() & !Hero.isDead() & !(enemy.getCurseList().containsKey(Curse.CurseOfFear))) {
                 currentState += enemy.attack(Hero) + "\n";
             }
         }
@@ -189,7 +235,7 @@ public class Year {
                     int selected = Integer.parseInt(Choice);
                     if (selected > 0 & selected <= Hero.getEquipements().size()) {
                         Equipement equipement_choosed = Hero.getEquipements().get(selected - 1);
-                        displayer.targetDisplayUpdate("",enemyList, Hero,false);
+                        displayer.targetDisplayUpdate("", enemyList, Hero, false);
                         while (!equipement_choosed_state) {
                             Choice = Main.scanner.nextLine();
                             try {
@@ -204,9 +250,9 @@ public class Year {
                                     Enemy enemy = enemyList.get(selectedTargetIndex - 1);
                                     //currentState = "\n\n\n" + equipement_choosed.getName() + " used successfully!";
                                     equipement_choosed_state = true;
-                                    currentState +=Hero.useEquipement(equipement_choosed,enemy);
+                                    currentState = Hero.useEquipement(equipement_choosed, enemy);
                                     if (enemy.isDead()) {
-                                        currentState += "\n"+Hero.getRewardFrom(enemy);
+                                        currentState += "\n" + Hero.getRewardFrom(enemy);
                                         enemyList.remove(enemy);
                                     }
                                     displayer.mainDisplayUpdate(currentState, enemyList, Hero, false, false);
@@ -215,10 +261,6 @@ public class Year {
                             } catch (NumberFormatException e) {
                                 displayer.targetDisplayUpdate("", enemyList, Hero, true);
                             }
-
-
-
-
 
 
                         }
@@ -253,10 +295,16 @@ public class Year {
                     if (spell_choosed.getManaCost() > Hero.getCurrentManaPoints()) {
                         displayer.spellDisplayUpdate(enemyList, Hero, false, true);
                     } else {
+                        if (spell_choosed.getId() == 4 & yearNumber == 4) {
+                            if(accioCase(Hero, displayer));break;
+                        }
+
 
                         if (Testmain.musicEnabled) {
-                            SoundEffectPlayer.play(spell_choosed.getSoundEffect());
-                            SoundEffectPlayer.setVolume(0.2F);
+                            if (spell_choosed.getSoundEffect() != null) {
+                                SoundEffectPlayer.play(spell_choosed.getSoundEffect());
+                                SoundEffectPlayer.setVolume(0.2F);
+                            }
                         }
                         displayer.targetDisplayUpdate("", enemyList, Hero, false);
                         while (!spell_choosed_state) {
@@ -268,6 +316,7 @@ public class Year {
 
                                 if (selectedTargetIndex < 0 | selectedTargetIndex > enemyList.size()) {
                                     displayer.targetDisplayUpdate("", enemyList, Hero, true);
+
                                 } else {
                                     //get target
                                     Enemy enemy = enemyList.get(selectedTargetIndex - 1);
@@ -276,6 +325,7 @@ public class Year {
                                     CurseCooldown(Hero);
 
                                     attackResult = Hero.attack(enemy, spell_choosed);
+
                                     if (enemy.isDead()) {
                                         attackResult += Hero.getRewardFrom(enemy);
                                         enemyList.remove(enemy);
@@ -374,8 +424,14 @@ public class Year {
 
             //RESULT SCREEN FOR THE TURN (ATTACK OR DODGE)
             currentState = attackResult + "\n\n";
+
+            if (exitYear) {
+                displayer.mainDisplayUpdate(currentState.stripLeading(), enemyList, Hero, false, true);
+                break;
+            }
+
             enemyAttack(Hero, displayer);
-            if (turn==mainEventTurn){
+            if (turn == mainEventTurn) {
                 mainEvent(Hero, displayer);
             }
 
@@ -395,12 +451,27 @@ public class Year {
         oldAgility = 0;
         attackResult = "";
     }
-    public void mainEvent(Wizard Hero, Displayer displayer){
-        switch (yearNumber){
+
+    public void mainEvent(Wizard Hero, Displayer displayer) {
+        switch (yearNumber) {
             case 2:
-                displayer.eventDisplayUpdate("while fighting, you knocked off one of the basilisk's fangs. you get "+ConsoleColors.GREEN+ "basilisk fang"+ConsoleColors.RESET,"press enter to continue", Hero);
+                displayer.eventDisplayUpdate("while fighting, you knocked off one of the basilisk's fangs. you get " + ConsoleColors.GREEN + "basilisk fang" + ConsoleColors.RESET + "\n" + Equipement.basiliskFang().getDescription(), "press enter to continue", Hero);
                 Hero.addEquipement(Equipement.basiliskFang());
                 Main.scanner.nextLine();
+
         }
+    }
+    public boolean accioCase(Wizard Hero, Displayer displayer) {
+
+            nbaccio += 1;
+            attackResult = "\n\nYou cast accio ! moving the Portkey closer to you";
+            spell_choosed_state = true;
+            if (nbaccio == 6) {
+                attackResult += "\n You have moved the Portkey to your location, you use it to escape";
+                spell_choosed_state = true;
+                exitYear = true;
+                return true;
+            }
+            return false;
         }
 }

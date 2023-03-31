@@ -4,59 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="544e7d4b-7ca8-41e2-ac7b-9e56d755bb7a" name="Changes" comment="REORGANISATION YEAR + SHOP (beaucoup plus agréable)">
-      <change afterPath="$PROJECT_DIR$/target/Harry-Potter-project-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Character$CharacterBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Character.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Enemy$EnemyBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Enemy$EnemyBuilderImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Enemy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Wizard$WizardBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Wizard$WizardBuilderImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Wizard.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Executables/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Executables/Testmain.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Executables/Z_TESTFONCTIONS.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Displayer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Playgame.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Rewards.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Shop.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Year.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/YearsList.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Music/MusicLibrary.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Music/MusicPlayer$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Music/MusicPlayer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Music/SoundEffectPlayer$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Music/SoundEffectPlayer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/AbstractSpell$AbstractSpellBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/AbstractSpell.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/Curse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/EnemySpell$EnemySpellBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/EnemySpell$EnemySpellBuilderImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/EnemySpell.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/ForbiddenSpell$ForbiddenSpellBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/ForbiddenSpell$ForbiddenSpellBuilderImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/ForbiddenSpell.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/Spell$SpellBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/Spell$SpellBuilderImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Spells/Spell.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Tools/ConsoleColors.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Tools/Probability.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Usables/Equipement.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Usables/Potion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/WizardCreation/Core.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/WizardCreation/House.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/WizardCreation/Pet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/WizardCreation/SortingHat.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/WizardCreation/Wand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    <list default="true" id="544e7d4b-7ca8-41e2-ac7b-9e56d755bb7a" name="Changes" comment="started working on equipement attack">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Executables/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Executables/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Executables/Testmain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Executables/Testmain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ideas for project" beforeDir="false" afterPath="$PROJECT_DIR$/Ideas for project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Wizard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Displayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Displayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Playgame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Playgame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Shop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Year.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/WizardCreation/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/WizardCreation/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/YearsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/YearsList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/Curse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/Curse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/EnemySpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/EnemySpell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/Spell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Usables/Equipement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Usables/Equipement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/WizardCreation/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/WizardCreation/Core.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Wizard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Wizard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/Usables/Equipement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Usables/Equipement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/WizardCreation/Core.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/WizardCreation/Core.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +88,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TODO_SCOPE": "All Places",
     "WebServerToolWindowFactoryState": "false",
+    "full.screen.before.presentation.mode": "false",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/142lo/OneDrive/Bureau/JAVAPROJET_GITLINKED/JavaIsep2023-Loic-de-La-Tullaye-G4/Harry-Potter-project",
     "node.js.detected.package.eslint": "true",
@@ -206,6 +176,11 @@
       <workItem from="1680080744697" duration="234000" />
       <workItem from="1680086714282" duration="86000" />
       <workItem from="1680087032033" duration="1292000" />
+      <workItem from="1680136845502" duration="1442000" />
+      <workItem from="1680180676845" duration="339000" />
+      <workItem from="1680181030859" duration="6276000" />
+      <workItem from="1680207264456" duration="320000" />
+      <workItem from="1680207600104" duration="13336000" />
     </task>
     <task id="LOCAL-00001" summary="REORGANISATION YEAR + SHOP (beaucoup plus agréable)">
       <created>1679436219456</created>

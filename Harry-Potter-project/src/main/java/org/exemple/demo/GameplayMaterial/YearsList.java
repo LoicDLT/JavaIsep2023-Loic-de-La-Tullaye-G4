@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 public interface YearsList {
     //=========================================================================YEARLIST===================================================================================
 
-    static boolean Year_1(@NotNull Wizard Hero) throws InterruptedException {
+    static boolean year_1(@NotNull Wizard Hero) throws InterruptedException {
 
         //initYear
         Year year1 = Year.year1Constructor();
@@ -24,33 +24,47 @@ public interface YearsList {
     //TODO GOlD REWARDS AND PRICES
 //TODO SWORD AND TEETH
 //
-    static boolean Year_2(Wizard Hero) throws InterruptedException {
+    static boolean year_2(Wizard hero) throws InterruptedException {
         //initYear
 
         Year year2 = Year.year2Constructor();
-        Hero.addSpell(Spell.Obscuro());
-        return year2.level(Hero);
+        hero.addSpell(Spell.Obscuro());
+        return year2.level(hero);
     }
 
 
-    static void Year_3(Wizard hero) {
-        //TODO
+    static boolean year_3(Wizard hero) throws InterruptedException {
+        Year year3 = Year.year3Constructor();
+        hero.addSpell(Spell.expectoPatronum());
+        return year3.level(hero);
+
     }
 
-    static void Year_4(Wizard hero) {
-        //TODO
+    static boolean year_4(Wizard hero) throws InterruptedException {
+        Year year4 = Year.year4Constructor();
+        hero.addSpell(Spell.Accio());
+        return year4.level(hero);
     }
 
-    static void Year_5(Wizard hero) {
+    static boolean year_5(Wizard hero) throws InterruptedException {
         //TODO
+        Year year4 = Year.year4Constructor();
+        hero.addSpell(Spell.expectoPatronum());
+        return year4.level(hero);
     }
 
-    static void Year_6(Wizard hero) {
+    static boolean year_6(Wizard hero) throws InterruptedException {
         //TODO
+        Year year4 = Year.year4Constructor();
+        hero.addSpell(Spell.expectoPatronum());
+        return year4.level(hero);
     }
 
-    static void Year_7(Wizard hero) {
+    static boolean year_7(Wizard hero) throws InterruptedException {
         //TODO
+        Year year4 = Year.year4Constructor();
+        hero.addSpell(Spell.expectoPatronum());
+        return year4.level(hero);
     }
 
 

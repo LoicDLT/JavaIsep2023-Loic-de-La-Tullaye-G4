@@ -11,21 +11,28 @@ import java.util.HashMap;
 @SuperBuilder(toBuilder = true)
 public abstract class Character {
     private int id;
+
     private boolean dead;
+
     private String firstname;
+
     private String lastname;
+
     private float maxHealthPoints;
+
     private float currentHealthPoints;
+
     private float dodgingChancePercentage;
+
     private float maxDodgingChancePercentage;
+
     private HashMap<Curse, Integer> curseList;
 
     public void healthRegen(float amountOfHeal) {
         float tempHealth = currentHealthPoints;
-        float tempMaxHealth = maxHealthPoints;
 
-        if ((tempHealth + amountOfHeal) > tempMaxHealth) {
-            currentHealthPoints = tempMaxHealth;
+        if ((tempHealth + amountOfHeal) > maxHealthPoints) {
+            currentHealthPoints = maxHealthPoints;
         } else if ((tempHealth + amountOfHeal) <= 0) {
             currentHealthPoints = 0;
             dead = true;
