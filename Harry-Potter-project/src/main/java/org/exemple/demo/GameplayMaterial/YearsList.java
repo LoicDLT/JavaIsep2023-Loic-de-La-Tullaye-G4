@@ -5,7 +5,7 @@ import org.exemple.demo.Spells.Spell;
 import org.jetbrains.annotations.NotNull;
 
 
-public interface YearsList {
+public class YearsList {
     //=========================================================================YEARLIST===================================================================================
 
     static boolean year_1(@NotNull Wizard Hero) throws InterruptedException {

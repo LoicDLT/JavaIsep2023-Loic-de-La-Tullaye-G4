@@ -23,8 +23,8 @@ public class Enemy extends Character {
     private int amoutOfExp;
     private int amoutOfGold;
 
-    public static Enemy Troll(ArrayList<EnemySpell> listAttacks){
-        Enemy Troll = (Enemy) builder()
+    public static Enemy createTroll(ArrayList<EnemySpell> listAttacks){
+        return builder()
                 .id(1)
                 .firstname("Troll")
                 .lastname("")
@@ -39,7 +39,6 @@ public class Enemy extends Character {
                 .maxDodgingChancePercentage(100)
                 .dead(false)
                 .build();
-        return Troll;
     }
     public static Enemy Trollette(ArrayList<EnemySpell> listAttacks){
         Enemy Trollette = (Enemy) builder()
