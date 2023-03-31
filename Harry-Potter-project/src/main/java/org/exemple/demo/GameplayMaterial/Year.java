@@ -113,6 +113,23 @@ public class Year {
 
         return year4;
     }
+    public static Year year5Constructor() {
+
+        ArrayList<EnemySpell> listDoloresAttacks = new ArrayList<>();
+
+        listDoloresAttacks.add(EnemySpell.Pettigrow_Confringo());
+
+        //building enemies
+        ArrayList<Enemy> enemyList = new ArrayList<>();
+        enemyList.add(Enemy.Voldemort(listDoloresAttacks));
+
+
+
+        Year year5 = new Year(5, "You are in a cemetery facing Voldemort and Peter Pettigrew. \n" +
+                "Your only chance of escape is to get closer to the Portkey to attract it to you", enemyList, -1);
+
+        return year5;
+    }
 
     public boolean choiceForShop(Wizard Hero, Displayer displayer) {
         while (true) {

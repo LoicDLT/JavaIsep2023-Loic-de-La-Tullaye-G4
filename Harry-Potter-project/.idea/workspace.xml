@@ -4,28 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="544e7d4b-7ca8-41e2-ac7b-9e56d755bb7a" name="Changes" comment="started working on equipement attack">
+    <list default="true" id="544e7d4b-7ca8-41e2-ac7b-9e56d755bb7a" name="Changes" comment="REORGANISATION YEAR + SHOP (beaucoup plus agréable)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ideas for project" beforeDir="false" afterPath="$PROJECT_DIR$/Ideas for project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Wizard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Displayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Displayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Playgame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Playgame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Shop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Year.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/YearsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/YearsList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/Curse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/Curse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/EnemySpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/EnemySpell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/Spell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Usables/Equipement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Usables/Equipement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/WizardCreation/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/WizardCreation/Core.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Character.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Wizard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Characters/Wizard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/Usables/Equipement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/Usables/Equipement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/WizardCreation/Core.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/WizardCreation/Core.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Year.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/exemple/demo/GameplayMaterial/Year.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,33 +59,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TODO_SCOPE": "All Places",
-    "WebServerToolWindowFactoryState": "false",
-    "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/142lo/OneDrive/Bureau/JAVAPROJET_GITLINKED/JavaIsep2023-Loic-de-La-Tullaye-G4/Harry-Potter-project",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/142lo/OneDrive/Bureau/JAVAPROJET_GITLINKED/JavaIsep2023-Loic-de-La-Tullaye-G4/Harry-Potter-project&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />

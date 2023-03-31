@@ -19,7 +19,7 @@ public class Displayer {
     private String whatHappend;
     @NotNull
     private String playerOptions;
-    private final String barreLimite = "=".repeat(150);
+    private final String barreLimite = "―".repeat(100);
     private final String barreEnemy = "-".repeat(45);
 
 
