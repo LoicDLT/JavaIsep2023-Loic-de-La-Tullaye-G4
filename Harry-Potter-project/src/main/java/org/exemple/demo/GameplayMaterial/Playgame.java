@@ -35,6 +35,9 @@ public class Playgame {
         } else {
             shopOrNot = YearsList.year_4(Hero);
         }
+        if (Hero.isDead()) {
+            return;
+        }
         if (shopOrNot) {
             Shop.year4Shop().ShopTime(Hero);
             shopOrNot = YearsList.year_5(Hero);
@@ -42,12 +45,18 @@ public class Playgame {
 
             shopOrNot = YearsList.year_5(Hero);
         }
+        if (Hero.isDead()) {
+            return;
+        }
 
         if (shopOrNot) {
             Shop.year5Shop().ShopTime(Hero);
             shopOrNot = YearsList.year_6(Hero);
         } else {
             shopOrNot = YearsList.year_6(Hero);
+        }
+        if (Hero.isDead()) {
+            return;
         }
         if (shopOrNot) {
             Shop.year6Shop().ShopTime(Hero);

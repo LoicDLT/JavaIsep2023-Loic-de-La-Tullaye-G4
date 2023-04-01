@@ -158,10 +158,24 @@ public class Displayer {
         }
         return string.stripTrailing();
     }
-    public void eventDisplayUpdate( String whatHappend,String playerOptions, Wizard Hero) {
-        this.characterInfos="\n".repeat(7);
+    public void freeDisplayUpdate(String whatHappend, String playerOptions, Wizard Hero) {
+        this.characterInfos=displayPlayerInfos(Hero,false)+"\n".repeat(5);
         this.whatHappend=whatHappend ;
         this.playerOptions=playerOptions;
         display();
     }
+    public void useLevelPointsUpdate( String whatHappend, Wizard Hero, boolean error) {
+        this.characterInfos=(displayPlayerInfos(Hero,false));
+        this.whatHappend=(whatHappend);
+        this.playerOptions=(((error) ?"Please Enter a valid Option\n\n":"")+"Level points to spend :\n\n"
+                + "(1)"+ConsoleColors.RED_BOLD_BRIGHT +" MaxHealth & Health +100\n" + ConsoleColors.RESET
+                + "(2)"+ConsoleColors.BLUE_BOLD_BRIGHT +" MaxMana & Mana +100\n" + ConsoleColors.RESET
+                + "(3)"+ConsoleColors.GREEN_BOLD_BRIGHT +" Luck +5% (max 100)\n" + ConsoleColors.RESET
+                + "(4)"+ConsoleColors.YELLOW_BOLD_BRIGHT +" Strength +10%\n" + ConsoleColors.RESET
+                + "(5)"+ConsoleColors.AGYLITYCOLOR_BOLD +" Agility +5% (max 100)" + ConsoleColors.RESET);
+
+        display();
+    }
+
+
 }

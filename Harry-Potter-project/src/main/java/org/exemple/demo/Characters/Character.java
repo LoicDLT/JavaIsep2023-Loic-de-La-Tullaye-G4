@@ -38,8 +38,11 @@ public abstract class Character {
             dead = true;
         } else currentHealthPoints = (tempHealth + amountOfHeal);
     }
+    public void maxHealthIncrease(float amountOfHeal) {
+        maxHealthPoints+= amountOfHeal;
+    }
 
-    public void AgilityIncrease(float amountOfAbility) {
+    public void agilityIncrease(float amountOfAbility) {
         float tempAbility = dodgingChancePercentage;
         float tempMaxAbility = maxDodgingChancePercentage;
 

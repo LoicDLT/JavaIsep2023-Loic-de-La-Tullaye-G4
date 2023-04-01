@@ -51,7 +51,7 @@ public class Main {
 
 
 if (musicEnabled) {
-    MusicPlayer.playloop(MusicLibrary.lezgongue);
+    MusicPlayer.playloop(MusicLibrary.backgroudMusic);
     MusicPlayer.setVolume(0.1F);
 }
 

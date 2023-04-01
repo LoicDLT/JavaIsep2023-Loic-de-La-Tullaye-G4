@@ -8,7 +8,6 @@ import org.exemple.demo.Music.MusicLibrary;
 import org.exemple.demo.Music.SoundEffectPlayer;
 import org.exemple.demo.Spells.AbstractSpell;
 import org.exemple.demo.Spells.Curse;
-import org.exemple.demo.Spells.Spell;
 import org.exemple.demo.Tools.ConsoleColors;
 import org.exemple.demo.Tools.Probability;
 import org.exemple.demo.Usables.Equipement;
@@ -157,7 +156,7 @@ public class Wizard extends Character {
             healthRegen(potion.getAmountOfHealthRegen());
             manaRegen(potion.getAmountOfManaRegen());
             LuckIncrease(potion.getAmountOfLuck());
-            StrengthIncrease(potion.getAmountOfStrength());
+            strengthIncrease(potion.getAmountOfStrength());
 
         }
     }
@@ -338,7 +337,7 @@ public class Wizard extends Character {
             currentLuckPoints = tempLuck + amountOfLuck;
         }
     }
-    public void StrengthIncrease(float amountOfStrength) {
+    public void strengthIncrease(float amountOfStrength) {
         float tempStrength = currentStrengthPoints;
         float tempMaxStength = maxStrengthPoints;
 
@@ -347,6 +346,15 @@ public class Wizard extends Character {
         } else {
             currentStrengthPoints = (tempStrength + amountOfStrength);
         }
+    }
+    public void maxManaIncrease(float amountOfMana) {
+        maxManaPoints+= amountOfMana;
+    }
+    public void reduceLevelPoints() {
+        levelPointToSPend -= 1;
+    }
+    public String displayPointsTospend(){
+        return "\n\n\n\n\n\nYou have " + ConsoleColors.PURPLE_BOLD_BRIGHT + levelPointToSPend + ConsoleColors.RESET + " level points to spend";
     }
 
 }

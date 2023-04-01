@@ -18,6 +18,7 @@ import org.exemple.demo.Usables.Potion;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 @Data
 @RequiredArgsConstructor()
@@ -112,6 +113,7 @@ public class Year {
 
         return year4;
     }
+
     public static Year year5Constructor() {
 
         ArrayList<EnemySpell> listDoloresAttacks = new ArrayList<>();
@@ -122,12 +124,12 @@ public class Year {
         enemyList.add(Enemy.Dolores(listDoloresAttacks));
 
 
-
-        Year year5 = new Year(5, "Dolores Umbridge keeps a watchful eye on things."+
+        Year year5 = new Year(5, "Dolores Umbridge keeps a watchful eye on things." +
                 "\nYour objective is to distract her long enough for the fireworks to be ready for use.", enemyList, 10);
 
         return year5;
     }
+
     public static Year year6Constructor() {
 
         ArrayList<EnemySpell> listAttacks = new ArrayList<>();
@@ -139,12 +141,12 @@ public class Year {
         enemyList.add(Enemy.DeathEater(listAttacks));
 
 
-
         Year year6 = new Year(6, "The Death Eaters are attacking Hogwarts. " +
                 "\nAre you ready to defend yourselves? You must face them head-on.", enemyList, -1);
 
         return year6;
     }
+
     public static Year year7Constructor() {
 
         ArrayList<EnemySpell> listVoldemortAttacks = new ArrayList<>();
@@ -157,7 +159,6 @@ public class Year {
         ArrayList<Enemy> enemyList = new ArrayList<>();
         enemyList.add(Enemy.Voldemort(listVoldemortAttacks));
         enemyList.add(Enemy.Bellatrix(listBellatrixAttacks));
-
 
 
         Year year7 = new Year(7, "You are facing Voldemort and Bellatrix Lestrange, be very careful of their dark magic", enemyList, -1);
@@ -197,13 +198,71 @@ public class Year {
         } else {
             Thread.sleep(3000);
             currentState = ("You passed year " + yearNumber + " with honors !\n"
-                    + ConsoleColors.BLUE_BOLD + "-------REWARDS-------" + ConsoleColors.RESET + "\n"
+                    + ConsoleColors.BLUE_BOLD + "-------REWARDS-------" + ConsoleColors.RESET + "\n\n"
                     + ConsoleColors.YELLOW + "100 \uD83D\uDCB0" + ConsoleColors.RESET + "\n"
                     + ConsoleColors.ORANGE + "200 " + ConsoleColors.RESET + "Exp points");
-
-
-            displayer.endDisplayUpdate(currentState.stripLeading(), enemyList, Hero, false);
+            displayer.freeDisplayUpdate(currentState.stripLeading(), "Press enter to continue", Hero);
+            Main.scanner.nextLine();
+            useLevelPoints(Hero, displayer);
+            displayer.endDisplayUpdate("choice for next year", enemyList, Hero, false);
         }
+    }
+
+    public void useLevelPoints(Wizard Hero, Displayer displayer) throws InterruptedException {
+        currentState = Hero.displayPointsTospend();
+        displayer.useLevelPointsUpdate(currentState.stripLeading(), Hero, false);
+        while (Hero.getLevelPointToSPend() > 0) {
+
+            String Choice = Main.scanner.nextLine();
+            switch (Choice) {
+                case "1":
+                    Hero.reduceLevelPoints();
+                    Hero.maxHealthIncrease(100);
+                    Hero.healthRegen(100);
+                    currentState = Hero.displayPointsTospend();
+                    currentState += ("\n\nYou increased your " + ConsoleColors.RED_BOLD_BRIGHT + "Maximum Health" + ConsoleColors.RESET + " by " + ConsoleColors.RED_BOLD_BRIGHT + "100" + ConsoleColors.RESET + " and regenerated " + ConsoleColors.RED_BOLD_BRIGHT + "100 Health Points" + ConsoleColors.RESET);
+
+                    displayer.useLevelPointsUpdate(currentState.stripLeading(), Hero, false);
+                    break;
+                case "2":
+                    Hero.reduceLevelPoints();
+                    Hero.maxManaIncrease(100);
+                    Hero.manaRegen(100);
+                    currentState = Hero.displayPointsTospend();
+                    currentState += ("\n\nYou increased your " + ConsoleColors.BLUE_BOLD_BRIGHT + "Maximum Mana" + ConsoleColors.RESET + " by " + ConsoleColors.BLUE_BOLD_BRIGHT + "100" + ConsoleColors.RESET + " and Gained " + ConsoleColors.BLUE_BOLD_BRIGHT + "100 Mana Points" + ConsoleColors.RESET);
+                    displayer.useLevelPointsUpdate(currentState.stripLeading(), Hero, false);
+                    break;
+                case "3":
+                    Hero.reduceLevelPoints();
+                    Hero.LuckIncrease(5);
+                    currentState = Hero.displayPointsTospend();
+                    currentState += ("\n\nYou increased your " + ConsoleColors.GREEN_BOLD_BRIGHT + "Luck" + ConsoleColors.RESET + " by " + ConsoleColors.GREEN_BOLD_BRIGHT + "5%" + ConsoleColors.RESET);
+                    displayer.useLevelPointsUpdate(currentState.stripLeading(), Hero, false);
+                    break;
+                case "4":
+                    Hero.reduceLevelPoints();
+                    Hero.strengthIncrease(10);
+                    currentState = Hero.displayPointsTospend();
+                    currentState += ("\n\nYou increased your " + ConsoleColors.YELLOW_BOLD_BRIGHT + "Strength" + ConsoleColors.RESET + " by " + ConsoleColors.YELLOW_BOLD_BRIGHT + "10%" + ConsoleColors.RESET);
+                    displayer.useLevelPointsUpdate(currentState.stripLeading(), Hero, false);
+                    break;
+                case "5":
+                    Hero.reduceLevelPoints();
+                    Hero.agilityIncrease(5);
+                    currentState = Hero.displayPointsTospend();
+                    currentState += ("\n\nYou increased your " + ConsoleColors.CYAN_BOLD_BRIGHT + "Agility" + ConsoleColors.RESET + " by " + ConsoleColors.CYAN_BOLD_BRIGHT + "5%" + ConsoleColors.RESET);
+                    displayer.useLevelPointsUpdate(currentState.stripLeading(), Hero, false);
+                    break;
+
+
+                default:
+                    displayer.useLevelPointsUpdate(currentState.stripLeading(), Hero, true);
+            }
+        }
+        System.out.println("sortie");
+        Thread.sleep(2000);
+
+
     }
 
     public void enemyAttack(Wizard Hero, Displayer displayer) {
@@ -345,7 +404,8 @@ public class Year {
                         displayer.spellDisplayUpdate(enemyList, Hero, false, true);
                     } else {
                         if (spell_choosed.getId() == 4 & yearNumber == 4) {
-                            if(accioCase(Hero, displayer));break;
+                            if (accioCase(Hero, displayer)) ;
+                            break;
                         }
 
 
@@ -453,7 +513,7 @@ public class Year {
                             ConsoleColors.BLUE_BOLD_BRIGHT + "\uD83C\uDF22 25 " + ConsoleColors.RESET + "\nYou also gain" + ConsoleColors.AGYLITYCOLOR_BOLD + " 💨 35%" + ConsoleColors.RESET + " more temporary Agility";
                     Hero.healthRegen(10);
                     Hero.manaRegen(25);
-                    Hero.AgilityIncrease(35);
+                    Hero.agilityIncrease(35);
                     CurseCooldown(Hero);
                     break;
 
@@ -473,7 +533,6 @@ public class Year {
             }
             resetStates(); //RESET ALL STATES
             switchLevel(Hero, displayer); //SWITCH FOR THE 4 OPTIONS
-
 
             //RESULT SCREEN FOR THE TURN (ATTACK OR DODGE)
             currentState = attackResult + "\n\n";
@@ -509,26 +568,30 @@ public class Year {
     public void mainEvent(Wizard Hero, Displayer displayer) {
         switch (yearNumber) {
             case 2:
-                displayer.eventDisplayUpdate("while fighting, you knocked off one of the basilisk's fangs. you get " + ConsoleColors.GREEN + "basilisk fang" + ConsoleColors.RESET + "\n" + Equipement.basiliskFang().getDescription(), "press enter to continue", Hero);
+                displayer.freeDisplayUpdate("while fighting, you knocked off one of the basilisk's fangs. you get " + ConsoleColors.GREEN + "basilisk fang" + ConsoleColors.RESET + "\n" + Equipement.basiliskFang().getDescription(), "press enter to continue", Hero);
                 Hero.addEquipement(Equipement.basiliskFang());
                 Main.scanner.nextLine();
+                break;
             case 5:
-                displayer.eventDisplayUpdate("Fireworks are finally ready !!! you get " + ConsoleColors.GREEN + "Fireworks" + ConsoleColors.RESET + "\n" + Equipement.fireworks().getDescription(), "press enter to continue", Hero);
+                displayer.freeDisplayUpdate("Fireworks are finally ready !!! you get " + ConsoleColors.GREEN + "Fireworks" + ConsoleColors.RESET + "\n" + Equipement.fireworks().getDescription(), "press enter to continue", Hero);
                 Hero.addEquipement(Equipement.fireworks());
                 Main.scanner.nextLine();
+                break;
         }
+
     }
+
     public boolean accioCase(Wizard Hero, Displayer displayer) {
 
-            nbaccio += 1;
-            attackResult = "\n\nYou cast accio ! moving the Portkey closer to you";
+        nbaccio += 1;
+        attackResult = "\n\nYou cast accio ! moving the Portkey closer to you";
+        spell_chosen_state = true;
+        if (nbaccio == 6) {
+            attackResult += "\nYou have moved the Portkey to your location, you use it to escape";
             spell_chosen_state = true;
-            if (nbaccio == 6) {
-                attackResult += "\nYou have moved the Portkey to your location, you use it to escape";
-                spell_chosen_state = true;
-                exitYear = true;
-                return true;
-            }
-            return false;
+            exitYear = true;
+            return true;
         }
+        return false;
+    }
 }
