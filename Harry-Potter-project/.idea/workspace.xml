@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="544e7d4b-7ca8-41e2-ac7b-9e56d755bb7a" name="Changes" comment="Year 3 &amp; 4">
+    <list default="true" id="544e7d4b-7ca8-41e2-ac7b-9e56d755bb7a" name="Changes" comment="Year 5, 6, 7">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Characters/Wizard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Executables/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Executables/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Displayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Displayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Playgame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Playgame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/Year.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/YearsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/GameplayMaterial/YearsList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/EnemySpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/EnemySpell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/ForbiddenSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/ForbiddenSpell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Spells/Spell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Usables/Equipement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/exemple/demo/Usables/Equipement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +131,7 @@
       <workItem from="1680181030859" duration="6276000" />
       <workItem from="1680207264456" duration="320000" />
       <workItem from="1680207600104" duration="13336000" />
-      <workItem from="1680303374119" duration="10185000" />
+      <workItem from="1680303374119" duration="11461000" />
     </task>
     <task id="LOCAL-00001" summary="REORGANISATION YEAR + SHOP (beaucoup plus agréable)">
       <created>1679436219456</created>
@@ -157,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680248368647</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Year 5, 6, 7">
+      <created>1680314974488</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680314974488</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +179,8 @@
     <MESSAGE value="CURSED UPDATE (still working on it)" />
     <MESSAGE value="REORGANISATION YEAR + SHOP (beaucoup plus agréable)" />
     <MESSAGE value="pour envoi" />
-    <option name="LAST_COMMIT_MESSAGE" value="pour envoi" />
+    <MESSAGE value="Year 3 &amp; 4" />
+    <MESSAGE value="Year 5, 6, 7" />
+    <option name="LAST_COMMIT_MESSAGE" value="Year 5, 6, 7" />
   </component>
 </project>

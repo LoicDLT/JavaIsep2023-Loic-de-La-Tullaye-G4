@@ -51,7 +51,7 @@ public class Main {
 
 
 if (musicEnabled) {
-    MusicPlayer.playloop(MusicLibrary.backgroudMusic);
+    MusicPlayer.playloop(MusicLibrary.lezgongue);
     MusicPlayer.setVolume(0.1F);
 }
 
@@ -73,14 +73,14 @@ if (musicEnabled) {
                 .firstname("John")
                 .lastname("Doe")
                 .levelUpRatio(0.20F)
-                .maxHealthPoints(50000)
-                .currentHealthPoints(50000)
+                .maxHealthPoints(1000)
+                .currentHealthPoints(1000)
                 .knownSpells(new ArrayList<AbstractSpell>())
                 .potions(new ArrayList<Potion>())
                 .equipements(new ArrayList<Equipement>())
                 .curseList(new HashMap<Curse, Integer>())
-                .maxManaPoints(2000)
-                .currentManaPoints(2000)
+                .maxManaPoints(1000)
+                .currentManaPoints(1000)
                 .currentLuckPoints(100)
                 .maxLuckPoints(100)
                 .currentStrengthPoints(300)

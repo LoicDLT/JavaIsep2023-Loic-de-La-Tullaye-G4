@@ -47,7 +47,6 @@ public class YearsList {
 
     static boolean year_5(Wizard hero) throws InterruptedException {
         Year year5 = Year.year5Constructor();
-        hero.addSpell(Spell.Wingardium_Leviosa());
         hero.addSpell(Spell.cheating());
         return year5.level(hero);
     }
