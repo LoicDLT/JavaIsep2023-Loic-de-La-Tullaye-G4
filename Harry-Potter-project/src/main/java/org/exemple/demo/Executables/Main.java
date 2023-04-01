@@ -21,10 +21,7 @@ import java.util.Scanner;
 
 public class Main {
     public static boolean musicEnabled = true;
-    public static ArrayList<AbstractSpell> knownSpellList = new ArrayList<>();
-    public static ArrayList<Potion> potionsList = new ArrayList<>();
-    public static ArrayList<Equipement> equipements = new ArrayList<>();
-    public static HashMap<Curse,Integer> curseList = new HashMap<>();
+
     public static String separator = ConsoleColors.PURPLE_BOLD_BRIGHT + " || " + ConsoleColors.RESET;
     public static float musicVolume = 0.03F;
     public static Scanner scanner = new Scanner(System.in);
@@ -65,13 +62,6 @@ if (musicEnabled) {
 
 
 
-
-
-
-
-
-
-
         //Parameters for player
         House chosenHouse = House.GRYPHONDOR;
         Pet chosenPet = Pet.OWL;
@@ -83,14 +73,14 @@ if (musicEnabled) {
                 .firstname("John")
                 .lastname("Doe")
                 .levelUpRatio(0.20F)
-                .maxHealthPoints(500)
-                .currentHealthPoints(500)
-                .knownSpells(knownSpellList)
-                .potions(potionsList)
-                .equipements(equipements)
-                .curseList(curseList)
-                .maxManaPoints(600)
-                .currentManaPoints(300)
+                .maxHealthPoints(50000)
+                .currentHealthPoints(50000)
+                .knownSpells(new ArrayList<AbstractSpell>())
+                .potions(new ArrayList<Potion>())
+                .equipements(new ArrayList<Equipement>())
+                .curseList(new HashMap<Curse, Integer>())
+                .maxManaPoints(2000)
+                .currentManaPoints(2000)
                 .currentLuckPoints(100)
                 .maxLuckPoints(100)
                 .currentStrengthPoints(300)
@@ -112,16 +102,6 @@ if (musicEnabled) {
         Hero.addPotions(Mana_potion);
         Hero.addPotions(Mana_potion);
         Hero.addPotions(Strength_potion);
-        //getting potions names
-        Hero.getPotionsNames();
-
-        //using potions
-
-        //displaying Players infos and potions list
-
-        Hero.getPotionsNames();
-
-        //getting proprieties of a certain
 
         //starting Year 1
         Playgame.playgame(Hero);

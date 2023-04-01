@@ -107,12 +107,12 @@ public class Wizard extends Character {
         return null;
     }
 
-    public void addSpell(Spell spell) {
+    public void addSpell(AbstractSpell spell) {
         this.knownSpells.add(spell);
     }
 
-    public void removeSpell(Spell spell) {
-        this.knownSpells.remove(spell);
+    public void removeSpell(AbstractSpell spell) {
+        this.knownSpells.removeIf(spell1 -> spell1.getName().equalsIgnoreCase(spell.getName()));
     }
 
 //===============================================================POTIONS=================================================================
@@ -260,7 +260,7 @@ public class Wizard extends Character {
     }
     public String attack(@NotNull Character character, @NotNull Equipement equipement) {
         String script = equipement.getScript();
-        float damageDealt = equipement.getDamage();
+        float damageDealt = equipement.getDamage()+equipement.getPercentOfLifeDamage()*character.getCurrentHealthPoints();
 
             if (Main.musicEnabled) {
                 SoundEffectPlayer.play(MusicLibrary.minecraftHit);
@@ -275,23 +275,28 @@ public class Wizard extends Character {
                 script += "\n" + "You can't look The Basilisk in the eyes, you deal way less damage !";
                 damageDealt = Math.round(damageDealt * 0.3f);
             }
+        if (!(character.getId() == 6) & equipement.getId() == 3){
+            script += "\n" + "this equipement isn't very effective against this enemy";
+            damageDealt = Math.round(damageDealt * 0.1f);
+        }
             if (!(equipement.getCurse() == null)) {
                 script += "\n" + character.applyCurse(equipement.getCurse(), false);
             }
-
+        if (character.getId()==3 & equipement.getId() == 1){
+            damageDealt *= 10;
+        }
+        else if (equipement.getId() == 1){
+            script+="\nthis equipement isn't very effective against this enemy.";
+        }
             script += "\n\033[38;5;160m" + character.getFirstname() + " : " +
                     ConsoleColors.RED_BOLD_BRIGHT + "❤ " +
                     Math.round(character.getCurrentHealthPoints()) + "/" + Math.round(character.getMaxHealthPoints()) +
                     ConsoleColors.RESET + " -> ";
 
-            if (character.getId()==3 & equipement.getId() == 1){
-                damageDealt *= 10;
-            }
-            else{
-                script+="\nthis equipement isn't very effective against this enemy.";
-            }
+
             damageDealt+=equipement.getPercentOfLifeDamage()*character.getCurrentHealthPoints()/100;
             character.healthRegen(-damageDealt);
+
 
 
 

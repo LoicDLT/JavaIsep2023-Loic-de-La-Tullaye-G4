@@ -20,7 +20,6 @@ public class EnemySpell extends AbstractSpell {
                         .build();
         return Troll_Throw;
     }
-
     public static EnemySpell Troll_Hit() {
         EnemySpell Troll_Hit =
                 EnemySpell.builder()
@@ -33,7 +32,6 @@ public class EnemySpell extends AbstractSpell {
                         .build();
         return Troll_Hit;
     }
-
     public static EnemySpell Basiliks_bite() {
         EnemySpell Basilisk_Throw =
                 EnemySpell.builder()
@@ -46,7 +44,6 @@ public class EnemySpell extends AbstractSpell {
                         .build();
         return Basilisk_Throw;
     }
-
     public static EnemySpell Basiliks_Tail() {
         EnemySpell Basilisk_Throw =
                 EnemySpell.builder()
@@ -59,7 +56,6 @@ public class EnemySpell extends AbstractSpell {
                         .build();
         return Basilisk_Throw;
     }
-
     public static EnemySpell Dementor_Psychological_attack() {
         EnemySpell Dementor_Psychological_attack =
                 EnemySpell.builder()
@@ -72,7 +68,6 @@ public class EnemySpell extends AbstractSpell {
                         .build();
         return Dementor_Psychological_attack;
     }
-
     public static EnemySpell Voldemort_Crucio(){
         EnemySpell Voldemort_Crucio =
                 EnemySpell.builder()
@@ -90,12 +85,11 @@ public class EnemySpell extends AbstractSpell {
                         .name("Suspention")
                         .chanceOfSuccess(80)
                         .script(" gives you a suspension, it gives you a lot of emotional damage")
-                        .damage(50)
+                        .damage(90)
                         .spellWeight(100)
-                        .didNotWork("But you fell like you are above the rules, you are not affected by this sanction")
+                        .didNotWork("But you feel like you are above the rules, you are not affected by this sanction")
                         .build();
         return Voldemort_Imperio;}
-
     public static EnemySpell Confringo(){
         EnemySpell Confringo =
                 EnemySpell.builder()
@@ -111,7 +105,7 @@ public class EnemySpell extends AbstractSpell {
         EnemySpell Confringo =
                 EnemySpell.builder()
                         .name("Confringo")
-                        .chanceOfSuccess(70)
+                        .chanceOfSuccess(80)
                         .script(" casts Confringo on you, but much more accurately than Peter Pettigrew")
                         .damage(100)
                         .spellWeight(100)

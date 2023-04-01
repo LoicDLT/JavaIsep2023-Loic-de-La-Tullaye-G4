@@ -1,6 +1,7 @@
 package org.exemple.demo.GameplayMaterial;
 
 import org.exemple.demo.Characters.Wizard;
+import org.exemple.demo.Spells.ForbiddenSpell;
 import org.exemple.demo.Spells.Spell;
 import org.jetbrains.annotations.NotNull;
 
@@ -46,19 +47,21 @@ public class YearsList {
 
     static boolean year_5(Wizard hero) throws InterruptedException {
         Year year5 = Year.year5Constructor();
-        hero.addSpell(Spell.expectoPatronum());
+        hero.addSpell(Spell.Wingardium_Leviosa());
+        hero.addSpell(Spell.cheating());
         return year5.level(hero);
     }
 
     static boolean year_6(Wizard hero) throws InterruptedException {
-        Year year6 = Year.year4Constructor();
-        hero.addSpell(Spell.expectoPatronum());
+        hero.removeSpell(Spell.cheating());
+        Year year6 = Year.year6Constructor();
+        hero.addSpell(ForbiddenSpell.sectumsempra());
         return year6.level(hero);
     }
 
     static boolean year_7(Wizard hero) throws InterruptedException {
-        Year year7 = Year.year4Constructor();
-        hero.addSpell(Spell.expectoPatronum());
+        Year year7 = Year.year7Constructor();
+        hero.addSpell(Spell.expelliarmus());
         return year7.level(hero);
     }
 

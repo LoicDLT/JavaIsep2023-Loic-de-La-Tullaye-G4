@@ -31,7 +31,7 @@ import org.exemple.demo.Tools.ConsoleColors;
                 ConsoleColors.GREEN,
                 "you swing your sword and hit your enemy",
                 "The sword of Gryphondor is higly effective against the basilik",
-                30,
+                40,
                 0,
                 null,
                 false);
@@ -49,7 +49,7 @@ import org.exemple.demo.Tools.ConsoleColors;
         return basiliskFang;
     }
     public static Equipement fireworks(){
-        Equipement basiliskFang = new Equipement(2,"Basilisk Fang",
+        Equipement basiliskFang = new Equipement(3,"Fireworks",
                 ConsoleColors.GREEN,
                 "Fireworks are exploding everywere ! you make your enemy go insnae",
                 "Fireworks are the best way to have fun and annoy your enemy",

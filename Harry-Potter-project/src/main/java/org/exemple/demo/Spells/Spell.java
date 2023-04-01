@@ -47,7 +47,7 @@ public class Spell extends AbstractSpell{
                         .manaCost(200)
                         .chanceOfSuccess(100)
                         .script("You conjure a Patronus to protect you")
-                        .damage(50)
+                        .damage(20)
                         .didNotWork("Unfortunatly the spell did not work")
                         .curse(null)
                         .soundEffect(null)
@@ -69,5 +69,36 @@ public class Spell extends AbstractSpell{
                         .build();
         return Accio;
     }
+    public static Spell cheating(){
+        Spell cheating =
+                Spell.builder()
+                        .id(4)
+                        .name("Cheating")
+                        .manaCost(200)
+                        .chanceOfSuccess(60)
+                        .script("You cheat for your exams")
+                        .damage(200)
+                        .didNotWork("Unfortunatly you got caught")
+                        .curse(null)
+                        .soundEffect(null)
+                        .build();
+        return cheating;
+    }
+    public static Spell expelliarmus(){
+        Spell expelliarmus =
+                Spell.builder()
+                        .id(4)
+                        .name("Expelliarmus")
+                        .manaCost(200)
+                        .chanceOfSuccess(100)
+                        .script("You cast a spell that disarms your enemy")
+                        .damage(50)
+                        .didNotWork("Unfortunatly the spell did not work")
+                        .curse(null)
+                        .soundEffect(null)
+                        .build();
+        return expelliarmus;
+    }
+
 
 }

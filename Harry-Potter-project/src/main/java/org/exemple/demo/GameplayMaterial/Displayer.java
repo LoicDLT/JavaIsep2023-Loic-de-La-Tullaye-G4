@@ -143,15 +143,18 @@ public class Displayer {
         String string = "";
         int i=1;
         for (Enemy enemy : enemyList) {
-            string+=String.format("%s[38;5;160m%-11s" + separator +
-                            ConsoleColors.ORANGE_BOLD + "%-8s" + separator +
-                            ConsoleColors.RED_BOLD_BRIGHT + "❤ %-9s" +separator + "%s\n"+ ConsoleColors.RESET,
-                    "("+i+") ",enemy.getFirstname() + " " + enemy.getLastname(),
-                    "Level " + enemy.getLevel(),
-                    Math.round(enemy.getCurrentHealthPoints())
-                            + "/" + Math.round(enemy.getMaxHealthPoints()) ,
-                            ((enemy.getCurseList().keySet().isEmpty())? "" : enemy.getCursesNames(applyCurseDamage)));
-            i++;
+            String curseDamage = enemy.getCursesNames(applyCurseDamage);
+
+                string += String.format("%s[38;5;160m%-11s" + separator +
+                                ConsoleColors.ORANGE_BOLD + "%-8s" + separator +
+                                ConsoleColors.RED_BOLD_BRIGHT + "❤ %-9s" + separator + "%s\n" + ConsoleColors.RESET,
+                        "(" + i + ") ", enemy.getFirstname() + " " + enemy.getLastname(),
+                        "Level " + enemy.getLevel(),
+                        Math.round(enemy.getCurrentHealthPoints())
+                                + "/" + Math.round(enemy.getMaxHealthPoints()),
+                        ((enemy.getCurseList().keySet().isEmpty()) ? "" : curseDamage));
+                i++;
+
         }
         return string.stripTrailing();
     }

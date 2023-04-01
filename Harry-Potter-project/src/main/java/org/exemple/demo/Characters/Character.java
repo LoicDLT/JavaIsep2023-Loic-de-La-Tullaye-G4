@@ -50,7 +50,6 @@ public abstract class Character {
         }
     }
 
-
     public String applyCurse(Curse curse, boolean wizardOrEnemy) {
         curseList.put(curse, curse.getCurseDuration());
         return (wizardOrEnemy ? "You" : "The enemy") + " have been cursed by " + curse.getCurseName() + " for " + curse.getCurseDuration() + " turns";
@@ -73,6 +72,7 @@ public abstract class Character {
             if (currentHealthPoints <= 0) {
                 dead = true;
             }
+
         }
         cursesNames += ")" + ((applyCurseDamage & CurseDamageCharacter != 0) ? " Curse damage :"+ ConsoleColors.RED_BOLD_BRIGHT+  " -"  + Math.round(CurseDamageCharacter) + " ❤" + ConsoleColors.RESET : "");
         return cursesNames;

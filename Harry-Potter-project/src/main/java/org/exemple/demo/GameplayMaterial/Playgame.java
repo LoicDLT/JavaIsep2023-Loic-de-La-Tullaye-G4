@@ -35,6 +35,26 @@ public class Playgame {
         } else {
             shopOrNot = YearsList.year_4(Hero);
         }
+        if (shopOrNot) {
+            Shop.year4Shop().ShopTime(Hero);
+            shopOrNot = YearsList.year_5(Hero);
+        } else {
+
+            shopOrNot = YearsList.year_5(Hero);
+        }
+
+        if (shopOrNot) {
+            Shop.year5Shop().ShopTime(Hero);
+            shopOrNot = YearsList.year_6(Hero);
+        } else {
+            shopOrNot = YearsList.year_6(Hero);
+        }
+        if (shopOrNot) {
+            Shop.year6Shop().ShopTime(Hero);
+            YearsList.year_7(Hero);
+        } else {
+            YearsList.year_7(Hero);
+        }
 
     }}
 

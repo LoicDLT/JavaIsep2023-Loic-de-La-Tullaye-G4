@@ -29,11 +29,11 @@ public class Year {
     @NonNull
     private ArrayList<Enemy> enemyList;
 
-    private boolean potion_choosed = false;
+    private boolean potion_chosen = false;
 
-    private boolean equipement_choosed_state = false;
+    private boolean equipement_chosen_state = false;
 
-    private boolean spell_choosed_state = false;
+    private boolean spell_chosen_state = false;
 
     private boolean dodge_selected = false;
 
@@ -124,7 +124,7 @@ public class Year {
 
 
         Year year5 = new Year(5, "Dolores Umbridge keeps a watchful eye on things."+
-                "\nYour objective is to distract her long enough for the fireworks to be ready for use.", enemyList, -1);
+                "\nYour objective is to distract her long enough for the fireworks to be ready for use.", enemyList, 10);
 
         return year5;
     }
@@ -140,7 +140,7 @@ public class Year {
 
 
 
-        Year year6 = new Year(6, "Translate to English: The Death Eaters are attacking Hogwarts. " +
+        Year year6 = new Year(6, "The Death Eaters are attacking Hogwarts. " +
                 "\nAre you ready to defend yourselves? You must face them head-on.", enemyList, -1);
 
         return year6;
@@ -223,7 +223,7 @@ public class Year {
     }
 
     public void potionSwitchCase(Displayer displayer, Wizard Hero) {
-        while (!potion_choosed) {
+        while (!potion_chosen) {
 
             String Choice = Main.scanner.nextLine();
             ArrayList<Potion> found = (ArrayList<Potion>) Hero.getPotionsNames().get(1);
@@ -231,7 +231,7 @@ public class Year {
             if (Choice.equals("back")) {
                 //MAIN SCREEN
                 displayer.mainDisplayUpdate(currentState, enemyList, Hero, false, false);
-                potion_choosed = true;
+                potion_chosen = true;
             }
 
             try {
@@ -243,7 +243,7 @@ public class Year {
                         SoundEffectPlayer.setVolume(0.1F);
                     }
                     currentState = "\n\n\n" + found.get(selected - 1).getName() + " used successfully!";
-                    potion_choosed = true;
+                    potion_chosen = true;
 
                     displayer.mainDisplayUpdate(currentState, enemyList, Hero, false, false);
                 } else {
@@ -261,7 +261,7 @@ public class Year {
             currentState = ("\n\nYou don't have any equipement ");
             displayer.mainDisplayUpdate(currentState, enemyList, Hero, false, false);
 
-        } else if (equipement_choosed_state) {
+        } else if (equipement_chosen_state) {
             currentState = ("\n\nYou have already used equipement this turn ");
             displayer.mainDisplayUpdate(currentState, enemyList, Hero, false, false);
 
@@ -269,7 +269,7 @@ public class Year {
             displayer.equipementDisplayUpdate(enemyList, Hero, false);
 
 
-            while (!equipement_choosed_state) {
+            while (!equipement_chosen_state) {
 
                 String Choice = Main.scanner.nextLine();
 
@@ -277,7 +277,7 @@ public class Year {
                     //MAIN SCREEN
                     displayer.mainDisplayUpdate(currentState, enemyList, Hero, false, false);
 
-                    equipement_choosed_state = false;
+                    equipement_chosen_state = false;
                 }
 
                 try {
@@ -285,7 +285,7 @@ public class Year {
                     if (selected > 0 & selected <= Hero.getEquipements().size()) {
                         Equipement equipement_choosed = Hero.getEquipements().get(selected - 1);
                         displayer.targetDisplayUpdate("", enemyList, Hero, false);
-                        while (!equipement_choosed_state) {
+                        while (!equipement_chosen_state) {
                             Choice = Main.scanner.nextLine();
                             try {
 
@@ -298,7 +298,7 @@ public class Year {
                                     //get target
                                     Enemy enemy = enemyList.get(selectedTargetIndex - 1);
                                     //currentState = "\n\n\n" + equipement_choosed.getName() + " used successfully!";
-                                    equipement_choosed_state = true;
+                                    equipement_chosen_state = true;
                                     currentState = Hero.useEquipement(equipement_choosed, enemy);
                                     if (enemy.isDead()) {
                                         currentState += "\n" + Hero.getRewardFrom(enemy);
@@ -325,7 +325,7 @@ public class Year {
     }
 
     public @NotNull void spellSwitchCase(Displayer displayer, Wizard Hero, String Choice) {
-        while (!spell_choosed_state) {
+        while (!spell_chosen_state) {
 
             Choice = Main.scanner.nextLine();
             if (Choice.equals("back")) {
@@ -356,7 +356,7 @@ public class Year {
                             }
                         }
                         displayer.targetDisplayUpdate("", enemyList, Hero, false);
-                        while (!spell_choosed_state) {
+                        while (!spell_chosen_state) {
                             Choice = Main.scanner.nextLine();
                             try {
 
@@ -369,7 +369,7 @@ public class Year {
                                 } else {
                                     //get target
                                     Enemy enemy = enemyList.get(selectedTargetIndex - 1);
-                                    spell_choosed_state = true;
+                                    spell_chosen_state = true;
                                     //reduce all curse cooldowns
                                     CurseCooldown(Hero);
 
@@ -413,8 +413,9 @@ public class Year {
 
     public void switchLevel(Wizard Hero, Displayer displayer) throws InterruptedException {
         do {
+            if (enemyList.isEmpty()) break;
             String Choice = Main.scanner.nextLine();
-            potion_choosed = false;
+            potion_chosen = false;
 
 
             switch (Choice) {
@@ -461,12 +462,15 @@ public class Year {
                     break;
             }
 
-        } while (!dodge_selected & !spell_choosed_state);
+        } while (!dodge_selected & !spell_chosen_state);
     }
 
     public void whenAlive(Wizard Hero, Displayer displayer) throws InterruptedException {
         while (!enemyList.isEmpty() & !Hero.isDead()) {
-
+            enemyList.removeIf(Enemy::isDead);
+            if (enemyList.isEmpty()) {
+                break;
+            }
             resetStates(); //RESET ALL STATES
             switchLevel(Hero, displayer); //SWITCH FOR THE 4 OPTIONS
 
@@ -475,7 +479,7 @@ public class Year {
             currentState = attackResult + "\n\n";
 
             if (exitYear) {
-                displayer.mainDisplayUpdate(currentState.stripLeading(), enemyList, Hero, false, true);
+                displayer.mainDisplayUpdate(currentState.stripLeading(), enemyList, Hero, false, false);
                 break;
             }
 
@@ -486,6 +490,7 @@ public class Year {
 
             displayer.mainDisplayUpdate(currentState.stripLeading(), enemyList, Hero, false, true);
 
+
             if (dodge_selected) {
                 Hero.setDodgingChancePercentage(oldAgility);
             }
@@ -494,8 +499,8 @@ public class Year {
     }
 
     public void resetStates() {
-        equipement_choosed_state = false;
-        spell_choosed_state = false;
+        equipement_chosen_state = false;
+        spell_chosen_state = false;
         dodge_selected = false;
         oldAgility = 0;
         attackResult = "";
@@ -508,7 +513,7 @@ public class Year {
                 Hero.addEquipement(Equipement.basiliskFang());
                 Main.scanner.nextLine();
             case 5:
-                displayer.eventDisplayUpdate("Fireworks are finally ready !!! you get" + ConsoleColors.GREEN + "Fireworks" + ConsoleColors.RESET + "\n" + Equipement.fireworks().getDescription(), "press enter to continue", Hero);
+                displayer.eventDisplayUpdate("Fireworks are finally ready !!! you get " + ConsoleColors.GREEN + "Fireworks" + ConsoleColors.RESET + "\n" + Equipement.fireworks().getDescription(), "press enter to continue", Hero);
                 Hero.addEquipement(Equipement.fireworks());
                 Main.scanner.nextLine();
         }
@@ -517,10 +522,10 @@ public class Year {
 
             nbaccio += 1;
             attackResult = "\n\nYou cast accio ! moving the Portkey closer to you";
-            spell_choosed_state = true;
+            spell_chosen_state = true;
             if (nbaccio == 6) {
-                attackResult += "\n You have moved the Portkey to your location, you use it to escape";
-                spell_choosed_state = true;
+                attackResult += "\nYou have moved the Portkey to your location, you use it to escape";
+                spell_chosen_state = true;
                 exitYear = true;
                 return true;
             }
