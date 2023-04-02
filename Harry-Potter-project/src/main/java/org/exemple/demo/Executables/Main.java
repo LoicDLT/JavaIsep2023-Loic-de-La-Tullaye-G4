@@ -9,10 +9,7 @@ import org.exemple.demo.Spells.AbstractSpell;
 import org.exemple.demo.Spells.Curse;
 import org.exemple.demo.Usables.Equipement;
 import org.exemple.demo.Usables.Potion;
-import org.exemple.demo.WizardCreation.Core;
-import org.exemple.demo.WizardCreation.House;
-import org.exemple.demo.WizardCreation.Pet;
-import org.exemple.demo.WizardCreation.Wand;
+import org.exemple.demo.WizardCreation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -62,49 +59,22 @@ if (musicEnabled) {
 
 
 
-        //Parameters for player
-        House chosenHouse = House.GRYPHONDOR;
-        Pet chosenPet = Pet.OWL;
-        Wand chosenWand = new Wand(Core.PHOENIX_FEATHER, 35);
+        //Parameters for playe
 
         //build wizard
-        Wizard Hero = Wizard.builder()
-                .level(1)
-                .firstname("John")
-                .lastname("Doe")
-                .levelUpRatio(0.20F)
-                .maxHealthPoints(1000)
-                .currentHealthPoints(1000)
-                .knownSpells(new ArrayList<AbstractSpell>())
-                .potions(new ArrayList<Potion>())
-                .equipements(new ArrayList<Equipement>())
-                .curseList(new HashMap<Curse, Integer>())
-                .maxManaPoints(1000)
-                .currentManaPoints(1000)
-                .currentLuckPoints(100)
-                .maxLuckPoints(100)
-                .currentStrengthPoints(300)
-                .maxStrengthPoints(300)
-                .dodgingChancePercentage(0)
-                .maxDodgingChancePercentage(100)
-                .gold(10)
-                .pet(chosenPet)
-                .wand(chosenWand)
-                .house(chosenHouse)
-                .build();
-
+        Wizard hero = WizardCreator.createWizard();
 
         //test adding potions
-        Hero.addPotions(Health_potion);
-        Hero.addPotions(Health_potion);
-        Hero.addPotions(Mana_potion);
-        Hero.addPotions(Mana_potion);
-        Hero.addPotions(Mana_potion);
-        Hero.addPotions(Mana_potion);
-        Hero.addPotions(Strength_potion);
+        hero.addPotions(Health_potion);
+        hero.addPotions(Health_potion);
+        hero.addPotions(Mana_potion);
+        hero.addPotions(Mana_potion);
+        hero.addPotions(Mana_potion);
+        hero.addPotions(Mana_potion);
+        hero.addPotions(Strength_potion);
 
         //starting Year 1
-        Playgame.playgame(Hero);
+        Playgame.playgame(hero);
 
         System.out.println("TEST SORTIE PLAYGAME");
 

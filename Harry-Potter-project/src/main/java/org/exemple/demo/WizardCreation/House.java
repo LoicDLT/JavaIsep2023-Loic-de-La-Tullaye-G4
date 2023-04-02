@@ -14,36 +14,29 @@ public enum House {
     private float PotionBuff;
 
     public static House ChooseHouse() {
-        System.out.println("HELLO THERE !\nPLEASE CHOOSE A HOUSE BETWEEN THOSE ONES :\n" +
-                "GRYPHONDOR\n" +
-                "HUFFLEPUFF\n" +
-                "RAVENCLAW\n" +
-                "SLYTHERIN");
-        String temphouse = null;
+        System.out.println("\nPlease choose which quality describes you the best :\n" +
+                "(1) Courage\n" +
+                "(2) Loyalty \n" +
+                "(3) Intelligence \n" +
+                "(4) Ambition \n\n");
+
         while (true) {
-            temphouse = Main.scanner.nextLine();
-            House result = houseNotContains(temphouse);
-
-            if (result==null) {
-                System.out.println("please enter a valid House name");
-            } else {
-                System.out.printf("I SEE U CHOOSED %s, IT'S A GOOD IDEA", result.name());
-                return result;
+            String choice = Main.scanner.nextLine();
+            switch (choice) {
+                case "1":
+                    return GRYPHONDOR;
+                case "2":
+                    return HUFFLEPUFF;
+                case "3":
+                    return RAVENCLAW;
+                case "4":
+                    return SLYTHERIN;
+                default:
+                    System.out.println("Please enter a valid number");
             }
+
+
         }
     }
-
-
-    public static House houseNotContains(String test) {
-
-        for (House c : House.values()) {
-            if (c.name().equalsIgnoreCase(test)) {
-                return c;
-            }
-        }
-
-        return null;
-    }
-
 
 }

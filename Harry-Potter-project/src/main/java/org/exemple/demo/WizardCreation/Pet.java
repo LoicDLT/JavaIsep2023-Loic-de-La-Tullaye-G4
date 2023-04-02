@@ -16,47 +16,33 @@ public enum Pet {
     PUFF;
 
     public static Pet ChoosePet() {
-        System.out.println("\n\nNOW PLEASE CHOOSE A PET BETWEEN THOSE ONES :\n" +
-                "OWL\n" +
-                "RAT\n" +
-                "CAT\n" +
-                "TOAD\n" +
-                "PUFF");
+        System.out.println("\nPlease choose a pet :\n" +
+                "(1) Owl\n" +
+                "(2) Rat \n" +
+                "(3) Cat \n" +
+                "(4) Toad \n" +
+                "(5) Puff\n\n");
 
-        String temppet = null;
         while (true) {
-            temppet = Main.scanner.nextLine();
-            if (petNotContains(temppet)) {
-                System.out.println("please enter a valid Pet name");
-            } else {
-                break;
-            }
-        }
-        Pet result = null;
-        for (Pet pet : values()) {
-            if (pet.name().equalsIgnoreCase(temppet)) {
-                result = pet;
-                break;
-            }
-        }
-        Pet chosenPet = result;
-        System.out.printf("I SEE U CHOOSED %s, IT'S A GOOD IDEA BUT BE CAREFUL U LITTLE SHIT", chosenPet.name());
+            String choice = Main.scanner.nextLine();
+            switch (choice) {
+                case "1":
+                    return OWL;
+                case "2":
+                    return RAT;
+                case "3":
+                    return CAT;
+                case "4":
+                    return TOAD;
+                case "5":
+                    return PUFF;
+                default:
+                    System.out.println("Please enter a valid number");
 
-        return chosenPet;
+            }
 
+
+        }
 
     }
-
-    public static boolean petNotContains(String test) {
-
-        for (Pet c : Pet.values()) {
-            if (c.name().equalsIgnoreCase(test)) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
 }
-
