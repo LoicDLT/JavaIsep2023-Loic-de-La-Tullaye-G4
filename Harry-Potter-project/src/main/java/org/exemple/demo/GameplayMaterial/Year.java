@@ -58,7 +58,6 @@ public class Year {
         //building enemies
         ArrayList<Enemy> enemyList = new ArrayList<>();
         enemyList.add(Enemy.createTroll(listTrollAttacks));
-        enemyList.add(Enemy.Trollette(listTrollAttacks));
 
         Year year1 = new Year(1, "You enter the bathroom and you see, standing in front of you, a giant Troll looking at you with menacing eyes", enemyList, -1);
 
